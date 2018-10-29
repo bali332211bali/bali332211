@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35433f00-0a0d-403a-af1b-3a19934560dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mileconverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/animalsandlegs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,22 +22,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="353" />
+          <entry key="java" value="457" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="353" />
+          <entry key="JAVA" value="457" />
         </counts>
       </usages-collector>
     </session>
@@ -71,11 +71,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mileconverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+            <state>
+              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/animalsandlegs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -98,6 +107,7 @@
         <option value="$PROJECT_DIR$/src/SecondsInADay.java" />
         <option value="$PROJECT_DIR$/src/hellouser.java" />
         <option value="$PROJECT_DIR$/src/mileconverter.java" />
+        <option value="$PROJECT_DIR$/src/animalsandlegs.java" />
       </list>
     </option>
   </component>
@@ -152,7 +162,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540812742451" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540812984325" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -166,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.mileconverter">
+  <component name="RunManager" selected="Application.animalsandlegs">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="day-4" />
@@ -179,6 +189,13 @@
     </configuration>
     <configuration name="SecondsInADay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SecondsInADay" />
+      <module name="day-4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="animalsandlegs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="animalsandlegs" />
       <module name="day-4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,9 +220,11 @@
       <item itemvalue="Application.SecondsInADay" />
       <item itemvalue="Application.hellouser" />
       <item itemvalue="Application.mileconverter" />
+      <item itemvalue="Application.animalsandlegs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.animalsandlegs" />
         <item itemvalue="Application.mileconverter" />
         <item itemvalue="Application.hellouser" />
         <item itemvalue="Application.SecondsInADay" />
@@ -223,12 +242,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540811241853</updated>
-      <workItem from="1540811283884" duration="1450000" />
+      <workItem from="1540811283884" duration="1690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1450000" />
+    <option name="totallyTimeSpent" value="1690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -294,8 +313,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mileconverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/animalsandlegs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
         </state>
       </provider>
     </entry>
