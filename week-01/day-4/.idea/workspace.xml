@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35433f00-0a0d-403a-af1b-3a19934560dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/even.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/multiplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,37 +22,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="12" />
+          <entry key="java" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="12" />
+          <entry key="JAVA" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1714" />
+          <entry key="java" value="1774" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1714" />
+          <entry key="JAVA" value="1774" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SecondsInADay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/animalsandlegs.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/indicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="21">
+              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="21" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -125,11 +116,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/even.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="84">
+              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="8" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/multiplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -161,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/conditional.java" />
         <option value="$PROJECT_DIR$/src/cheat.java" />
         <option value="$PROJECT_DIR$/src/even.java" />
+        <option value="$PROJECT_DIR$/src/multiplication.java" />
       </list>
     </option>
   </component>
@@ -215,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540817999793" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540818298358" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -229,14 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.even">
-    <configuration name="bigger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bigger" />
-      <module name="day-4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.multiplication">
     <configuration name="cheat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cheat" />
       <module name="day-4" />
@@ -265,20 +259,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="multiplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="multiplication" />
+      <module name="day-4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.bigger" />
       <item itemvalue="Application.indicator" />
       <item itemvalue="Application.conditional" />
       <item itemvalue="Application.cheat" />
       <item itemvalue="Application.even" />
+      <item itemvalue="Application.multiplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.multiplication" />
         <item itemvalue="Application.even" />
         <item itemvalue="Application.cheat" />
         <item itemvalue="Application.conditional" />
         <item itemvalue="Application.indicator" />
-        <item itemvalue="Application.bigger" />
       </list>
     </recent_temporary>
   </component>
@@ -292,12 +293,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540811241853</updated>
-      <workItem from="1540811283884" duration="5224000" />
+      <workItem from="1540811283884" duration="5523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5224000" />
+    <option name="totallyTimeSpent" value="5523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -403,13 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/indicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conditional.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -424,10 +418,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/indicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/even.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="84">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/multiplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
