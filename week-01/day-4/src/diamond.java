@@ -32,12 +32,14 @@ public class diamond {
             }
         }
 
+        int n = 0;
+
         for (l = user/2 + 1; l < user; l++) {
             System.out.println();
             for (j = user; j > i; j--) {
                 System.out.print(" ");
             }
-            for (k = user/2; k < (2 * i - 1); k++) {
+            for (k = 0; k < (2 * i - 1); k++) {
                 System.out.print("*");
             }
 
