@@ -17,7 +17,7 @@ public class dsgsag {
         int[] numbers2 = {1, 2, 54};
 
         int[] numbers4;
-        numbers4 = new int[1];
+        numbers4 = new int[4];
         numbers4[0] = 54;
 
         for (int element : numbers) {
@@ -63,5 +63,8 @@ public class dsgsag {
             made[i] = i + 1;
         }
     }
+
+
+
 
 }
