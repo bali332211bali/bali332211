@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af51f5c3-7481-4a26-adf0-aceb428617a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/printparams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/third.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,23 +28,23 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="7" />
+          <entry key="java" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="7" />
+          <entry key="JAVA" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1945" />
+          <entry key="java" value="1993" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1945" />
+          <entry key="JAVA" value="1993" />
         </counts>
       </usages-collector>
     </session>
@@ -101,11 +101,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/printparams.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
               <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/third.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -144,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/sum.java" />
         <option value="$PROJECT_DIR$/src/factorial.java" />
         <option value="$PROJECT_DIR$/src/printparams.java" />
+        <option value="$PROJECT_DIR$/src/third.java" />
       </list>
     </option>
   </component>
@@ -185,7 +195,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540900246062" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540900418772" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../day-4/out/production/day-4/count.class" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -203,16 +213,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.printparams">
+  <component name="RunManager" selected="Application.third">
     <configuration name="append" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="append" />
-      <module name="day-5" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dsgsag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dsgsag" />
       <module name="day-5" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -239,20 +242,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="third" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="third" />
+      <module name="day-5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.dsgsag" />
       <item itemvalue="Application.greet" />
       <item itemvalue="Application.append" />
       <item itemvalue="Application.sum" />
       <item itemvalue="Application.printparams" />
+      <item itemvalue="Application.third" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.third" />
         <item itemvalue="Application.printparams" />
         <item itemvalue="Application.sum" />
         <item itemvalue="Application.append" />
         <item itemvalue="Application.greet" />
-        <item itemvalue="Application.dsgsag" />
       </list>
     </recent_temporary>
   </component>
@@ -267,16 +277,15 @@
       <option name="presentableId" value="Default" />
       <updated>1540886782180</updated>
       <workItem from="1540886871601" duration="4680000" />
-      <workItem from="1540892257469" duration="7428000" />
+      <workItem from="1540892257469" duration="7602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12108000" />
+    <option name="totallyTimeSpent" value="12282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -396,6 +405,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/third.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
