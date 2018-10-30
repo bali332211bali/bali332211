@@ -64,7 +64,13 @@ public class dsgsag {
         }
     }
 
-public static void list(int[] numbers) {
+    
+    
+import java.util.Arrays;
+
+public class unique2 {
+
+    public static void list(int[] numbers) {
 
         for (int i = 0; i<numbers.length;i++) {
             for (int j = i + 1; j < numbers.length; j++) {
@@ -154,6 +160,22 @@ public static void list(int[] numbers) {
 
         count(given);
         givenShort(given, count(given));
+
+
+
+
+
+
+
+
+        //  Create a function that takes a list of numbers as a parameter
+        //  Returns a list of numbers where every number in the list occurs only once
+        //  Example
+        //       System.out.println(unique(new int[] {1, 11, 34, 11, 52, 61, 1, 34}));
+        //  should print: `[1, 11, 34, 52, 61]`
+
+    }
+}
 
 
 }
