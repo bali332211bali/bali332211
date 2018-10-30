@@ -184,7 +184,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540902627259" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540902735718" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../day-4/out/production/day-4/count.class" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -202,7 +202,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.changeelement">
+  <component name="RunManager" selected="Application.incrementelement">
     <configuration name="changeelement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="changeelement" />
       <module name="day-5" />
@@ -217,8 +217,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="printparams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="printparams" />
+    <configuration name="incrementelement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="incrementelement" />
       <module name="day-5" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -239,19 +239,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.printparams" />
       <item itemvalue="Application.third" />
       <item itemvalue="Application.compare" />
       <item itemvalue="Application.sumelements" />
       <item itemvalue="Application.changeelement" />
+      <item itemvalue="Application.incrementelement" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.incrementelement" />
         <item itemvalue="Application.changeelement" />
         <item itemvalue="Application.sumelements" />
         <item itemvalue="Application.compare" />
         <item itemvalue="Application.third" />
-        <item itemvalue="Application.printparams" />
       </list>
     </recent_temporary>
   </component>
