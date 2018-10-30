@@ -25,8 +25,7 @@ public class matrix {
         for (int i = 0; i < nir.length; i++) {
             for (int j = 0; j < nir[i].length; j++) {
                 if (i == j) {
-                    int l = 1;
-                nir[i][j] = l;
+                nir[i][j] = 1;
                 }
                 System.out.print(nir[i][j] + "\t");
             }
