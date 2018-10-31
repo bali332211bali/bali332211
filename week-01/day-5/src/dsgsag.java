@@ -45,16 +45,6 @@ public class dsgsag {
 
 
 
-    }
-
-
-
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class dsgsag {
-    public static void main(String[] args) {
-
         System.out.println("number");
         Scanner scanner = new Scanner(System.in);
         int user = scanner.nextInt();
@@ -116,10 +106,6 @@ public class dsgsag {
     }
 
 
-
-import java.util.Arrays;
-
-public class unique2 {
 
     public static void list(int[] numbers) {
 
@@ -248,9 +234,6 @@ public class unique2 {
 
 
 
-import java.util.Arrays;
-
-<<<<<<< HEAD
     public class unique2 {
 
         public static void list(int[] numbers) {
@@ -345,8 +328,6 @@ import java.util.Arrays;
             givenShort(given, count(given));
 
 
-=======
-public class unique2 {
 
     public static void list(int[] numbers) {
 
@@ -438,14 +419,7 @@ public class unique2 {
 
         count(given);
         givenShort(given, count(given));
->>>>>>> 547e398adec7b550f37311f7fa74ef8081db7864
 
-
-
-
-
-
-<<<<<<< HEAD
             //  Create a function that takes a list of numbers as a parameter
             //  Returns a list of numbers where every number in the list occurs only once
             //  Example
@@ -454,7 +428,6 @@ public class unique2 {
 
         }
     }
-=======
 
 
         //  Create a function that takes a list of numbers as a parameter
@@ -465,7 +438,6 @@ public class unique2 {
 
     }
 }
->>>>>>> 547e398adec7b550f37311f7fa74ef8081db7864
 
 
 }
