@@ -10,6 +10,9 @@ public class unique2 {
                     System.out.print(numbers[i] + " ");
                     System.out.print(numbers[i+1] + " ");
                     i++;
+                } else if ((numbers[i] == numbers[j]) && (i >= numbers.length -2)) {
+                    System.out.print(numbers[i] + " ");
+                    i++;
                 } else if ((numbers[i] != numbers[j])) {
                     System.out.print(numbers[i] + " ");
                     i++;
@@ -34,9 +37,13 @@ public class unique2 {
                     count++;
                     count++;
                     i++;
+                } else if ((numbers[i] == numbers[j]) && (i >= numbers.length -2)) {
+                    count++;
+                    i++;
                 } else if ((numbers[i] != numbers[j])) {
                     count++;
                     i++;
+
                 } else {
                     i++;
                 }
@@ -60,6 +67,9 @@ public class unique2 {
                     made[l+1] = numbers[i+1];
                     i++;
                     l +=2;
+                } else if ((numbers[i] == numbers[j]) && (i >= numbers.length -2)) {
+                    made[l] = numbers[i];
+                    i++;
                 } else if ((numbers[i] != numbers[j])) {
                     made[l] = numbers[i];
                     i++;
@@ -79,12 +89,14 @@ public class unique2 {
 
 
     public static void main(String[] args) {
-        int[] given = {1, 1, 1, 2, 3, 3, 3, 2, 2, 3, 4};
+        int[] given = {1, 1, 1, 2, 3, 3, 3, 2, 2, 3, 4, 4, 4};
         Arrays.sort(given);
 
         System.out.print(Arrays.toString(given));
         System.out.println();
         System.out.println();
+
+
 
         list(given);
         System.out.println();

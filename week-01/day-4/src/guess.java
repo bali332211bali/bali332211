@@ -12,7 +12,7 @@ public class guess {
 
         int a = 4;
 
-       boolean win = false;
+        boolean win = false;
 
         while (win == false) {
             System.out.println("number");
