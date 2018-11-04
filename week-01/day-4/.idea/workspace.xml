@@ -141,8 +141,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540886685408" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/production/day-4/diamond.class" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541351533474" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -156,7 +156,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.diamond2">
+  <component name="RunManager" selected="Application.count">
+    <configuration name="count" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="count" />
+      <module name="day-4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="diamond" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="diamond" />
       <module name="day-4" />
@@ -171,8 +178,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="pyramid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pyramid" />
+    <configuration name="diamond3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diamond3" />
       <module name="day-4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,27 +192,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="substr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="substr" />
-      <module name="day-4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.pyramid" />
-      <item itemvalue="Application.substr" />
       <item itemvalue="Application.square" />
       <item itemvalue="Application.diamond" />
       <item itemvalue="Application.diamond2" />
+      <item itemvalue="Application.count" />
+      <item itemvalue="Application.diamond3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.count" />
+        <item itemvalue="Application.diamond3" />
         <item itemvalue="Application.diamond2" />
         <item itemvalue="Application.diamond" />
         <item itemvalue="Application.square" />
-        <item itemvalue="Application.substr" />
-        <item itemvalue="Application.pyramid" />
       </list>
     </recent_temporary>
   </component>

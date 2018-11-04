@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class diamond {
-    public diamond() {
+public class diamond3 {
+    public diamond3() {
     }
     public static void main(String[] args) {
         System.out.println("number");
