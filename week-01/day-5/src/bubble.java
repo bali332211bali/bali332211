@@ -1,19 +1,29 @@
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class bubble {
-
+    public static List<Integer> advancedBubble(int[] numbers, boolean descending) {
+        return IntStream.of(numbers)
+                .boxed()
+                .sorted(descending ? Comparator.reverseOrder() : Comparator.naturalOrder())
+                .collect(Collectors.toList());
+    }
 
     public static void arrange(int[] numbers, boolean descending) {
-        if (descending == false) {
+        if (!descending) {
             Arrays.sort(numbers);
             System.out.print(Arrays.toString(numbers));
         } else {
             Arrays.sort(numbers);
             for (int i = 0; i < numbers.length/2; i++) {
-                int[] temp = {numbers[i]};
+                int temp = numbers[i];
                 numbers[i] = numbers[numbers.length-(i+1)];
-                numbers[numbers.length-(i+1)] = temp[0];
+                numbers[numbers.length-(i+1)] = temp;
             }
+
             System.out.print(Arrays.toString(numbers));
         }
     }

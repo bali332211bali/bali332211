@@ -6,13 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af51f5c3-7481-4a26-adf0-aceb428617a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../day 4/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day 4/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day 4/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day 4/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day 4/day 4.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day-4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day-4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bubble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sum.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,24 +56,60 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="267" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="267" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bubble.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+              <folding>
+                <element signature="e#61#62#0" expanded="true" />
+                <element signature="e#89#90#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/doubling.java" />
         <option value="$PROJECT_DIR$/src/greet.java" />
         <option value="$PROJECT_DIR$/src/append.java" />
-        <option value="$PROJECT_DIR$/src/sum.java" />
         <option value="$PROJECT_DIR$/src/factorial.java" />
         <option value="$PROJECT_DIR$/src/third.java" />
         <option value="$PROJECT_DIR$/src/compare.java" />
@@ -117,10 +148,11 @@
         <option value="$PROJECT_DIR$/src/unique2.java" />
         <option value="$PROJECT_DIR$/src/anagram.java" />
         <option value="$PROJECT_DIR$/src/palindrome.java" />
-        <option value="$PROJECT_DIR$/src/bubble.java" />
         <option value="$PROJECT_DIR$/src/diagonal.java" />
         <option value="$PROJECT_DIR$/src/unique.java" />
         <option value="$PROJECT_DIR$/src/unique3.java" />
+        <option value="$PROJECT_DIR$/src/sum.java" />
+        <option value="$PROJECT_DIR$/src/bubble.java" />
       </list>
     </option>
   </component>
@@ -144,8 +176,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="day 5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="day-5" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="day 5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="day-5" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,13 +203,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541351300585" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../day-4" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541352835986" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/bubble.java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -183,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.unique3">
+  <component name="RunManager" selected="Application.bubble">
     <configuration name="bubble" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bubble" />
       <module name="day-5" />
@@ -228,11 +275,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.bubble" />
         <item itemvalue="Application.unique3" />
         <item itemvalue="Application.unique2" />
         <item itemvalue="Application.unique" />
         <item itemvalue="Application.diagonal" />
-        <item itemvalue="Application.bubble" />
       </list>
     </recent_temporary>
   </component>
@@ -269,8 +316,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -279,7 +327,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3503546" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3503546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33758864" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,7 +336,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.31868133" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32827735" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -370,13 +418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -545,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bubble.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagonal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -568,6 +602,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../day-4/src/average.java">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bubble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#61#62#0" expanded="true" />
+            <element signature="e#89#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

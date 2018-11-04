@@ -2,12 +2,8 @@ public class sum {
 
 
     public static int sum(int a, int b) {
-
-
-       int sumab = a + b;
-        return sumab;
+        return a + b;
     }
-
 
 
     public static void main(String[] args) {
