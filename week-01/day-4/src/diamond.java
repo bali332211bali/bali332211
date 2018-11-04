@@ -38,53 +38,14 @@ public class diamond {
             add(i*2+1,"*");
             System.out.println();
         }
-
         add(user,"*");
         System.out.println();
 
         for (int i = 0; i < half;i++ ) {
-            add(i+1," ");
-            add(user-2*(i+1),"*");
+            add(1+i," ");
+            add(user-(i+1)*2,"*");
             System.out.println();
         }
-
-//        for (int i = 0; i < user;i++ ) {
-//            if (i <= half) {
-//                addStr(half-i," ");
-//                addStr(i*2-1,"*");
-//            } else {
-//                addStr(i-half," ");
-//                addStr((user-((i-half+1)*2)),"*");
-//            }
-//            System.out.println();
-//
-//        }
-
-
-
-
-//        for (l = 0; l < i*2 -1; l++) {
-//            System.out.print("*");
-//        }
-
-
-
-
-
-
-//        int i, j, k, l;
-//
-//        for (i = 0; i < user/2 + 1; i++) {
-//            System.out.println();
-//            for (j = user; j > i; j--) {
-//                System.out.print(" ");
-//            }
-//            for (k = 0; k < (2 * i - 1); k++) {
-//                System.out.print("*");
-//            }
-//        }
-
-
 
 
     }
