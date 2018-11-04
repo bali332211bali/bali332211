@@ -4,9 +4,9 @@ public class swap {
     public static void main(String[] args) {
         String[] abc = {"first", "second", "third"};
 
-       String[] temp = {abc[0]};
+       String temp = abc[0];
         abc[0] = abc[2];
-        abc[2] = temp[0];
+        abc[2] = temp;
 
         for(int i = 0; i<abc.length;i++) {
             System.out.print(abc[i] + "\t");

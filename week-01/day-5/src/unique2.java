@@ -102,7 +102,6 @@ public class unique2 {
         System.out.println();
         System.out.println();
 
-        count(given);
         givenShort(given, count(given));
 
 
