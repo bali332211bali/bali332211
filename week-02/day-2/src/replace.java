@@ -7,10 +7,9 @@ public class replace {
 
 
         String example = "In a dishwasher far far away";
-
-        String replaced = example.replace("dishwasher", "galaxy");
-
-        System.out.println(replaced);
+//        String replaced = example.replace("dishwasher", "galaxy");
+//        System.out.println(replaced);
+        System.out.println(example.replace("dishwasher", "galaxy"));
 
         // I would like to replace "dishwasher" with "galaxy" in this example, but it has a problem.
         // Please fix it for me!
