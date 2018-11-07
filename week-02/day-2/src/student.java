@@ -64,7 +64,7 @@ public class student {
         double count = 0;
         for (int i = 0; i < map.size();i++) {
             if ((Integer) map.get(i).get("candies") < 5) {
-                count += Double.valueOf(map.get(i).get("age"));
+              //  count += Double.valueOf(map.get(i).get("age"));
 
             //valueOf((double) map.get(i).get("age"));
 
