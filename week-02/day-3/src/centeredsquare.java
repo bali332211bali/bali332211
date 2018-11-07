@@ -1,36 +1,22 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class horizontal {
-
-    private static void line(Graphics graphics, int x, int y) {
-        graphics.drawLine(x,y,x+50,y);
-    }
+public class centeredsquare {
 
 
 
     public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 2 parameters:
-        // The x and y coordinates of the line's starting point
-        // and draws a 50 long horizontal line from that point.
-        // Draw 3 lines with that function. Use loop for that.
-
-        for (int i = 0; i<3;i++) {
-            System.out.println("x");
-            Scanner scanner = new Scanner(System.in);
-            int userx = scanner.nextInt();
-            System.out.println("y");
-            Scanner scanner2 = new Scanner(System.in);
-            int usery = scanner2.nextInt();
-
-            line(graphics, userx, usery);
-        }
+        // Draw a green 10x10 square to the canvas' center.
 
 
+        graphics.setColor(Color.GREEN);
+        int[] x = {WIDTH/2-5, WIDTH/2-5, WIDTH/2+5, WIDTH/2+5};
+        int[] y = {HEIGHT/2-5, HEIGHT/2+5, HEIGHT/2+5, HEIGHT/2-5};
+
+        graphics.drawPolygon(x,y,4);
 
 
     }
@@ -56,6 +42,7 @@ public class horizontal {
             super.paintComponent(graphics);
             mainDraw(graphics);
 
+            this.setBackground(Color.BLACK);
         }
     }
 }
