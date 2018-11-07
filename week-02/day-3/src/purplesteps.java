@@ -10,7 +10,6 @@ public class purplesteps {
     private static void square(Graphics graphics, int x, int y, int s) {
 
         for( int i = 0; i<s*20;i+=s) {
-
             x =  i;
             y =  i;
             graphics.setColor(new Color(150,0,200));
@@ -35,7 +34,7 @@ public class purplesteps {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
-        square(graphics, 0,0, 10);
+        square(graphics, 0,0, 15);
 
 
 
