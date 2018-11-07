@@ -15,17 +15,14 @@ public class triangle {
         graphics.drawPolygon(x,y,3);
     }
 
-
-    private static void triangleRow(Graphics graphics, int k, int startTopx, int startTopy) {
-
+    private static void triangleRow(Graphics graphics, int s, int r, int k, int startTopx, int startTopy) {
         for (int i = 0; i < k; i++) {
-            int r = 8;
-            int[] tx = {startTopx+r*i, startTopx+8+r*i, startTopx-8+r*i};
-            int[] ty = {startTopy+2*r*i, startTopy+16+2*r*i, startTopy+16+2*r*i};
+            int[] tx = {startTopx+r*i, startTopx+s+r*i, startTopx-s+r*i};
+            int[] ty = {startTopy+2*r*i, startTopy+s*2+2*r*i, startTopy+s*2+2*r*i};
 
             if (i < k-1) {
-                int[] tx2 = {startTopx+r*i, startTopx+8+r*i, startTopx-8+r*i};
-                int[] ty2 = {startTopy+32+2*r*i, startTopy+16+2*r*i, startTopy+16+2*r*i};
+                int[] tx2 = {startTopx+r*i, startTopx+s+r*i, startTopx-s+r*i};
+                int[] ty2 = {startTopy+s*4+2*r*i, startTopy+s*2+2*r*i, startTopy+s*2+2*r*i};
 
                 triangle2(graphics, tx2, ty2);
             }
@@ -45,12 +42,12 @@ public class triangle {
 //        triangleRow(graphics, 12, WIDTH/2, HEIGHT/3);
 //        triangleRow(graphics, 10, WIDTH/2-8, HEIGHT/3+16);
 
-
         int l = 13;
-        int r = 8;
+        int r = 7;
+        int s = 7;
         for (int i = 0; i < 20; i++) {
                 l = l - 1;
-            triangleRow(graphics, l, WIDTH/2-r*i, HEIGHT/3+2*r*i);
+            triangleRow(graphics, s, r, l, WIDTH/2-r*i, HEIGHT/3+2*r*i);
         }
 
 
