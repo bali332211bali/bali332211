@@ -1,28 +1,34 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class rectangles {
+public class positionsquare {
 
-
-    private static void colors(Graphics graphics) {
-        graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256),(int)(Math.random()*256)));
+    private static void square(Graphics graphics, int x, int y) {
+        int[] xX = {x,x+50,x+50,x};
+        int[] yY = {y,y,y+50,y+50};
+        graphics.drawPolygon(xX,yY,4);
     }
 
 
-    public static void mainDraw(Graphics graphics) {
-        // draw four different size and color rectangles.
+    public static void mainDraw(Graphics graphics){
+        // create a square drawing function that takes 2 parameters:
+        // the x and y coordinates of the square's top left corner
+        // and draws a 50x50 square from that point.
+        // draw 3 squares with that function.
         // avoid code duplication.
-        for (int i = 0; i<4;i++) {
-            int colorR = 1+(int)(Math.random()*255);
-            colors(graphics);
 
-            int r = 1+(int)(Math.random()*159);
-            int[] x = {WIDTH/2-r, WIDTH/2-r, WIDTH/2+r, WIDTH/2+r};
-            int[] y = {HEIGHT/2-r, HEIGHT/2+r, HEIGHT/2+r, HEIGHT/2-r};
-            graphics.drawPolygon(x,y,4);
+        for (int i = 0; i<3;i++) {
+            System.out.println("x y");
+            Scanner scanner = new Scanner(System.in);
+            int userx = scanner.nextInt();
+            int usery = scanner.nextInt();
+
+            square(graphics, userx, usery);
+
         }
 
 
@@ -53,4 +59,5 @@ public class rectangles {
             mainDraw(graphics);
         }
     }
+
 }
