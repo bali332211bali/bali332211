@@ -24,15 +24,11 @@ public class connect {
         // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
         // {120, 100}, {85, 130}, {50, 100}}
 
-
         int[][] numbers = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
         int[][] numbers2 = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},{120, 100}, {85, 130}, {50, 100}};
 
         line(graphics, numbers);
         line(graphics, numbers2);
-
-
-
     }
 
     // Don't touch the code below
