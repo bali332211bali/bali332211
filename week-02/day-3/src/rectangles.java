@@ -11,15 +11,18 @@ public class rectangles {
         graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256),(int)(Math.random()*256)));
     }
 
-
     public static void mainDraw(Graphics graphics) {
         // draw four different size and color rectangles.
         // avoid code duplication.
         for (int i = 0; i<4;i++) {
-            int colorR = 1+(int)(Math.random()*255);
-            colors(graphics);
 
-            int r = 1+(int)(Math.random()*159);
+            int colorR = (int)(Math.random()*256);
+            int colorR2 = (int)(Math.random()*256);
+            int colorR3 = (int)(Math.random()*256);
+            graphics.setColor(new Color(colorR, colorR2,colorR3));
+            //colors(graphics);
+
+            int r = (int)(Math.random()*160);
             int[] x = {WIDTH/2-r, WIDTH/2-r, WIDTH/2+r, WIDTH/2+r};
             int[] y = {HEIGHT/2-r, HEIGHT/2+r, HEIGHT/2+r, HEIGHT/2-r};
             graphics.drawPolygon(x,y,4);
