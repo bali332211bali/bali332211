@@ -8,7 +8,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class star {
 
-
     private static Color colors(Graphics graphics) {
         int gray = 100+(int)(Math.random()*120);
         return new Color(gray,gray,gray);
@@ -19,7 +18,6 @@ public class star {
         graphics.setColor((colors(graphics)));
         int x = (int)(Math.random()*(WIDTH-size));
         int y = (int)(Math.random()*(HEIGHT-size));
-
         int[] xX = {x,x+size,x+size,x};
         int[] yY = {y,y,y+size,y+size};
         graphics.fillPolygon(xX,yY,4);
