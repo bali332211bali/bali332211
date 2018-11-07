@@ -9,12 +9,11 @@ public class connect {
     private static void line(Graphics graphics, int[][] endStart) {
 
         graphics.setColor(Color.GREEN);
-        for (int i = 0; i < endStart.length; i++) {
-            graphics.drawLine(endStart[i][i], endStart[i][i+1], endStart[i+1][i], endStart[i+1][i+1]);
+        for(int l = 0; l < endStart.length-1;l++) {
+            graphics.drawLine(
+                    endStart[l][0], endStart[l][1],
+                    endStart[l+1][0], endStart[l+1][1]);
         }
-
-
-
     }
 
     public static void mainDraw(Graphics graphics) {
