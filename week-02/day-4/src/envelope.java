@@ -27,14 +27,14 @@ public class envelope {
     public static void mainDraw(Graphics graphics){
 
 
-        int r = 6;
+        int r = 5;
         int temp = r;
         int l = 7;
         graphics.setColor(Color.GREEN);
 //        addLines(graphics, r, l,WIDTH/4, HEIGHT/2, WIDTH/2, HEIGHT/4);
 
 
-
+        addLine(graphics, WIDTH/2, 0, WIDTH/2, HEIGHT);
         for (int i = 0; i < l ; i++) {
             addLine(graphics, WIDTH/4+r*i, HEIGHT/2, WIDTH/2, HEIGHT/4-r*i);
             r++;

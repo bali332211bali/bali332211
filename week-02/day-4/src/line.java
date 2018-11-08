@@ -60,6 +60,8 @@ public class line {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
+
+            this.setBackground(Color.BLACK);
         }
     }
 

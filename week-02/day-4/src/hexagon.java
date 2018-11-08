@@ -7,7 +7,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class hexagon {
 
     private static void addLine(Graphics graphics, int k) {
-        int r = 28;
         int l = 32;
         for (int i = 0; i < k; i++) {
             int[] x = {WIDTH/2-10, WIDTH/2+10, WIDTH/2+10+8, WIDTH/2+10, WIDTH/2-10, WIDTH/2-10-8};
@@ -17,7 +16,6 @@ public class hexagon {
     }
 
     private static void addLine2(Graphics graphics, int r, int c, int l2, int j, int k) {
-
         int l = 32;
         for (int i = 0; i < k; i++) {
             int[] x = {WIDTH/2-10+r*c, WIDTH/2+10+r*c, WIDTH/2+10+8+r*c, WIDTH/2+10+r*c, WIDTH/2-10+r*c, WIDTH/2-10-8+r*c};
@@ -28,7 +26,6 @@ public class hexagon {
 
 
     private static void addLine3(Graphics graphics, int r, int c, int l2, int j, int k) {
-
         int l = 32;
         for (int i = 0; i < k; i++) {
             int[] x = {WIDTH/2-10-r*c, WIDTH/2+10-r*c, WIDTH/2+10+8-r*c, WIDTH/2+10-r*c, WIDTH/2-10-r*c, WIDTH/2-10-8-r*c};
@@ -50,7 +47,6 @@ public class hexagon {
             k--;
             addLine2(graphics, r, c, l2, j, k);
         }
-
     }
 
     private static void left(Graphics graphics) {
