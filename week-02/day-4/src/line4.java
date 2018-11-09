@@ -4,7 +4,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class line {
+public class line4 {
 
 
     private static void addLine(Graphics graphics, int x, int y, int x2, int y2) {
@@ -22,7 +22,7 @@ public class line {
             addLine(graphics, x, y+r*i, x2+r*i, y2);
             r++;
         }
-        for (int i = 0; i < 7 ; i++) {
+        for (int i = 0; i < 5 ; i++) {
             addLine(graphics, x, y-r*i, x2-r*i, y2);
             r++;
         }
@@ -40,7 +40,7 @@ public class line {
             addLine(graphics, x, y+r*i, x2+r*i, y2);
             r++;
         }
-        for (int i = 0; i < 7 ; i++) {
+        for (int i = 0; i < 5 ; i++) {
             addLine(graphics, x, y-r*i, x2-r*i, y2);
             r++;
         }
@@ -48,8 +48,8 @@ public class line {
 
 
     private static void left2(Graphics graphics, int r, int l, int j, int c, int k, boolean v) {
-            right(graphics, r, WIDTH-l, HEIGHT/4+j, WIDTH*3/4-l, 0+j, v);
-            left(graphics, r, 0+c, HEIGHT*3/4-k, WIDTH/4+c, HEIGHT-k, v);
+        right(graphics, r, WIDTH-l, HEIGHT/4+j, WIDTH*3/4-l, 0+j, v);
+        left(graphics, r, 0+c, HEIGHT*3/4-k, WIDTH/4+c, HEIGHT-k, v);
 
 
     }
@@ -57,11 +57,11 @@ public class line {
 
     public static void mainDraw(Graphics graphics) {
 
-        int r = 16;
-//        left2(graphics, r, HEIGHT/2, HEIGHT/2, 0 ,0, true);
-//        left2(graphics, r, HEIGHT/2, 0, 0, HEIGHT/2, true);
-//        left2(graphics, r, 0, 0, HEIGHT/2, HEIGHT/2, true);
-//        left2(graphics, r, 0, HEIGHT/2, HEIGHT/2, 0, true);
+        int r = 4;
+        left2(graphics, r, HEIGHT/2, HEIGHT/2, 0 ,0, true);
+        left2(graphics, r, HEIGHT/2, 0, 0, HEIGHT/2, true);
+        left2(graphics, r, 0, 0, HEIGHT/2, HEIGHT/2, true);
+        left2(graphics, r, 0, HEIGHT/2, HEIGHT/2, 0, true);
 
 
 
@@ -71,26 +71,26 @@ public class line {
 
 
 
-        graphics.setColor(new Color(100, 0, 180));
-        for (int i = 0; i < 7 ; i++) {
-            addLine(graphics, WIDTH, HEIGHT/2+r*i, WIDTH/2+r*i, 0);
-            r++;
-        }
-        for (int i = 0; i < 7 ; i++) {
-            addLine(graphics, WIDTH, HEIGHT/2-r*i, WIDTH/2-r*i, 0);
-            r++;
-        }
-
-        r = 16;
-        graphics.setColor(Color.GREEN);
-        for (int i = 0; i < 7 ; i++) {
-            addLine(graphics, 0, HEIGHT/2+r*i, WIDTH/2+r*i, HEIGHT);
-            r++;
-        }
-        for (int i = 0; i < 7 ; i++) {
-            addLine(graphics, 0, HEIGHT/2-r*i, WIDTH/2-r*i, HEIGHT);
-            r++;
-        }
+//        graphics.setColor(new Color(100, 0, 180));
+//        for (int i = 0; i < 7 ; i++) {
+//            addLine(graphics, WIDTH, HEIGHT/2+r*i, WIDTH/2+r*i, 0);
+//            r++;
+//        }
+//        for (int i = 0; i < 7 ; i++) {
+//            addLine(graphics, WIDTH, HEIGHT/2-r*i, WIDTH/2-r*i, 0);
+//            r++;
+//        }
+//
+//        r = 16;
+//        graphics.setColor(Color.GREEN);
+//        for (int i = 0; i < 7 ; i++) {
+//            addLine(graphics, 0, HEIGHT/2+r*i, WIDTH/2+r*i, HEIGHT);
+//            r++;
+//        }
+//        for (int i = 0; i < 7 ; i++) {
+//            addLine(graphics, 0, HEIGHT/2-r*i, WIDTH/2-r*i, HEIGHT);
+//            r++;
+//        }
 
 
     }
