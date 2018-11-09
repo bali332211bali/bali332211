@@ -71,27 +71,6 @@ public class line4 {
 
 
 
-//        graphics.setColor(new Color(100, 0, 180));
-//        for (int i = 0; i < 7 ; i++) {
-//            addLine(graphics, WIDTH, HEIGHT/2+r*i, WIDTH/2+r*i, 0);
-//            r++;
-//        }
-//        for (int i = 0; i < 7 ; i++) {
-//            addLine(graphics, WIDTH, HEIGHT/2-r*i, WIDTH/2-r*i, 0);
-//            r++;
-//        }
-//
-//        r = 16;
-//        graphics.setColor(Color.GREEN);
-//        for (int i = 0; i < 7 ; i++) {
-//            addLine(graphics, 0, HEIGHT/2+r*i, WIDTH/2+r*i, HEIGHT);
-//            r++;
-//        }
-//        for (int i = 0; i < 7 ; i++) {
-//            addLine(graphics, 0, HEIGHT/2-r*i, WIDTH/2-r*i, HEIGHT);
-//            r++;
-//        }
-
 
     }
 
