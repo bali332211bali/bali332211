@@ -27,7 +27,6 @@ public class triangle {
                 triangle2(graphics, tx2, ty2);
             }
             triangle(graphics, tx, ty);
-
         }
     }
 
