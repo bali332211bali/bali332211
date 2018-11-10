@@ -15,7 +15,7 @@ public class divide {
         try {
             System.out.println(10/user);
 
-        } catch ( ArithmeticException e) {
+        } catch ( ArithmeticException a) {
             System.out.println("can't");
         }
 
