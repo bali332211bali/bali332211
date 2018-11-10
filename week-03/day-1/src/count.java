@@ -30,6 +30,14 @@ public class count {
     public static void main(String[] args) {
 
         System.out.println(file("file.txt"));
+
+        try {
+            Path path = Paths.get("file.txt");
+            Files.deleteIfExists(path);
+            System.out.println("deleted");
+        } catch (Exception b) {
+            System.out.println("can't delete");
+        }
         System.out.println();
         System.out.println();
         System.out.println();
@@ -59,13 +67,7 @@ public class count {
             System.out.println("can't");
         }
 
-//        try {
-//            Path path = Paths.get("file.txt");
-//            Files.deleteIfExists(path);
-//            System.out.println("deleted");
-//        } catch (Exception b) {
-//            System.out.println("can't delete");
-//        }
+
 
 
 
