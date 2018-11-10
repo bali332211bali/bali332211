@@ -38,7 +38,6 @@ public class writemultiple {
             Files.lines(Paths.get("file.txt"))
                     .forEach(str -> System.out.println(str));
 
-
         } catch(Exception a) {
             System.out.println(a);
         }

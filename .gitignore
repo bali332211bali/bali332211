@@ -69,3 +69,4 @@ fabric.properties
 .idea/
 out/
 *.iml
+/week-03/day-1/file.txt
