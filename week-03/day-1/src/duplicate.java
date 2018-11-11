@@ -8,33 +8,71 @@ public class duplicate {
 
 
 
+    private static void make(String file, int k) {
+
+        try {
+            Path path = Paths.get(file);
+            List<String> duplicate = Files.readAllLines(path);
+            String duplicateStr = "";
+            for (int i = 0; i < duplicate.get(k).length()-1;i++) {
+                if ( i % 2 == 0 ) {
+                    duplicateStr += (duplicate.get(0).charAt(i));
+                }
+            }
+            duplicate.add(duplicateStr);
+
+        } catch ( Exception a) {
+            System.out.println(a);
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
 
     public static void remove(String file) {
 
         try {
             Path path = Paths.get(file);
             List<String> duplicate = Files.readAllLines(path);
-            String duplicateStr = "";
+
 
 
             List<String> shortDuplicate = new ArrayList<>();
 
-            String str2 = "";
-            int count = 0;
-            String str = "";
-            for (String strAdd : duplicate) {
-                str += strAdd;
-                count++;
-                if (count % 2 == 1) {
-                    str2 += str.charAt(count);
+            String duplicateStr = "";
+            for (int i = 0; i < duplicate.get(0).length()-1;i++) {
+                if ( i % 2 == 0 ) {
+                    duplicateStr += (duplicate.get(0).charAt(i));
                 }
-
-                shortDuplicate.add(str2);
-
             }
+            shortDuplicate.add(duplicateStr);
 
 
-            System.out.println(str2);
+            duplicateStr = "";
+            for (int i = 0; i < duplicate.get(1).length()-1;i++) {
+                if ( i % 2 == 0 ) {
+                    duplicateStr += (duplicate.get(1).charAt(i));
+                }
+            }
+            shortDuplicate.add(duplicateStr);
+
+
+
+            Path path2 = Paths.get("duplicate2.txt");
+            Files.write(path2, shortDuplicate);
+
+            Files.lines(path2)
+                    .forEach(strPath2 -> System.out.println(strPath2));
+
+            //System.out.println(shortDuplicate);
 
 
 
