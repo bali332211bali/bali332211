@@ -55,6 +55,7 @@ public class DiceSet {
             }
         }
 
+        System.out.println(Arrays.toString(diceSet.getCurrent()));
 
 //        diceSet.getCurrent();
 //        diceSet.roll();
@@ -63,8 +64,8 @@ public class DiceSet {
 //        diceSet.reroll();
 //        diceSet.getCurrent();
 //        diceSet.reroll(4);
-        
-        System.out.println(Arrays.toString(diceSet.getCurrent()));
+
+
 
     }
 }
