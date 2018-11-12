@@ -19,6 +19,17 @@ public class animal {
     }
 
 
+    public static void main(String[] args) {
+
+        animal lion = new animal();
+        System.out.println(lion.hunger);
+
+        lion.eat();
+        lion.play();
+        System.out.println(lion.hunger);
+        System.out.println(lion.thirst);
+
+    }
 
 
 
