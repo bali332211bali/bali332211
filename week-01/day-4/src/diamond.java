@@ -5,7 +5,7 @@ public class diamond {
 
     private static void add(int n, String m) {
 
-        for (int l = 0; l < n; l++) {
+        for (int i = 0; i < n; i++) {
             System.out.print(m);
         }
     }
@@ -31,18 +31,20 @@ public class diamond {
         int user = scanner.nextInt();
 
 
+
         int half = user/2;
 
-        for (int i = 0; i < half;i++ ) {
+        for (int i = 0; i < half; i++) {
             add(half-i," ");
-            add(i*2+1,"*");
+            add((i*2)+1,"*");
             System.out.println();
         }
+
         add(user,"*");
         System.out.println();
 
-        for (int i = 0; i < half;i++ ) {
-            add(1+i," ");
+        for (int i = 0; i < half; i++ ) {
+            add(i+1," ");
             add(user-(i+1)*2,"*");
             System.out.println();
         }

@@ -5,7 +5,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class logs {
+public class
+logs {
 
 
     private static List<String> address(String str) {

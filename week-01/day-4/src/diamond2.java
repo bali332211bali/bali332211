@@ -13,27 +13,30 @@ public class diamond2 {
 
         for(i = 0; i < user / 2 + 1; ++i) {
             System.out.println();
-
             for(j = user; j > i; --j) {
                 System.out.print(" ");
             }
-
             for(k = 0; k < 2 * i - 1; ++k) {
                 System.out.print("*");
             }
         }
-
         for(int l = user / 2 + 1; l < user; ++l) {
             System.out.println();
-
             for(j = user; j > i; --j) {
                 System.out.print(" ");
             }
-
             for(k = 0; k < 2 * i - 1; ++k) {
                 System.out.print("*");
             }
         }
+
+
+
+
+
+
+
+
 
     }
 }
