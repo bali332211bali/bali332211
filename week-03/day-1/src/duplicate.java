@@ -8,7 +8,7 @@ public class duplicate {
 
 
 
-    private static String make(String file, int k) {
+    private static String remove(String file, int k) {
         List<String> duplicate = new ArrayList<>();
         String duplicateStr = "";
 
@@ -39,8 +39,8 @@ public class duplicate {
             Path path = Paths.get("duplicated-chars.txt");
             List<String> duplicate = Files.readAllLines(path);
 
-            for (int i = 0;i<duplicate.size();i++) {
-                shortDuplicate.add(make("duplicated-chars.txt", i));
+            for (int i = 0; i < duplicate.size(); i++) {
+                shortDuplicate.add(remove("duplicated-chars.txt", i));
             }
 
             Path path2 = Paths.get("duplicate2.txt");
