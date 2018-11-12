@@ -56,34 +56,18 @@ public class copy {
         }
 
 
-//        List<String> str2 = new ArrayList<>();
-//        str2.add("asdgrhg");
-//        str2.add("ahg");
-//        str2.add("adhdsdafsdfadsfgrhg");
-//        str2.add("adhgjhgjhsdgrsdafdahg");
-//
-//        try {
-//            Path path2 = Paths.get("file2.txt");
-//            Files.write(path2, str2 );
-//
-//
-//        } catch ( Exception a) {
-//            System.out.println(a);
-//        }
-
-
-
-
-
-
-        copy("file.txt", "file2.txt");
+        if (copy("file.txt", "file2.txt")) {
+            System.out.println("copied");
+            System.out.println();
+        }
 
         try {
-            Files.lines(Paths.get("file.txt")).forEach(str3 -> System.out.println(str3));
+            Files.lines(Paths.get("file.txt"))
+                    .forEach(str3 -> System.out.println(str3));
             System.out.println();
             System.out.println();
-            System.out.println();
-            Files.lines(Paths.get("file2.txt")).forEach(str4 -> System.out.println(str4));
+            Files.lines(Paths.get("file2.txt"))
+                    .forEach(str4 -> System.out.println(str4));
 
         } catch(Exception b) {
             System.out.println(b);
