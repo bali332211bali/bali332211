@@ -35,15 +35,36 @@ public class DiceSet {
         dices[k] = (int) (Math.random() * 6) + 1;
     }
 
+    public void all() {
+        for (int i = 0; i < dices.length; i++) {
+            if (dices[i] == 6) {
+
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         DiceSet diceSet = new DiceSet();
-        diceSet.getCurrent();
+
         diceSet.roll();
-        diceSet.getCurrent();
-        diceSet.getCurrent(5);
-        diceSet.reroll();
-        diceSet.getCurrent();
-        diceSet.reroll(4);
-        diceSet.getCurrent();
+
+        for (int i = 0; i < diceSet.getCurrent().length; i++) {
+            while (diceSet.dices[i] != 6) {
+                diceSet.reroll(i);
+            }
+        }
+
+
+//        diceSet.getCurrent();
+//        diceSet.roll();
+//        diceSet.getCurrent();
+//        diceSet.getCurrent(5);
+//        diceSet.reroll();
+//        diceSet.getCurrent();
+//        diceSet.reroll(4);
+        
+        System.out.println(Arrays.toString(diceSet.getCurrent()));
+
     }
 }
