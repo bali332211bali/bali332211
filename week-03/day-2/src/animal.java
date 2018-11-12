@@ -4,16 +4,18 @@ public class animal {
     int hunger = 50;
     int thirst = 50;
 
-    public int eat() {
-        return hunger-1;
+    public void eat() {
+        hunger--;
     }
 
-    public int drink() {
-        return thirst-1;
+    public void drink() {
+        thirst--;
     }
-    
-    public int play() {
-        return thirst-1 && hunger-1;
+
+    public void play() {
+        hunger--;
+        thirst--;
+
     }
 
 
