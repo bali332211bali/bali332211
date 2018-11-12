@@ -39,7 +39,6 @@ public class encoded {
 
         List<String> valueStart;
         Path path = Paths.get("encoded.txt");
-
         List<String> value2 = new ArrayList<>();
 
         try {
