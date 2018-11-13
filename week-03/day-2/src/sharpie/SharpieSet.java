@@ -6,15 +6,31 @@ import java.util.List;
 public class SharpieSet {
 
 
-//    List<Sharpie> sharpies.Sharpie;
+    static List<Sharpie> sharpies = Sharpie.initializeSharpies();;
 
 
 
-    public void countUsable() {
-
+    public static List<Sharpie> sharpies2() {
+        return sharpies;
     }
 
-    public void removeTrash() {
+    public static List<Sharpie> countUsable() {
+        List<Sharpie> usable = new ArrayList<>();
+
+        for (int i = 0; i < sharpies.size(); i++) {
+            if (sharpies.get(i).getInk() > 0) {
+                usable.add(sharpies.get(i));
+            }
+        }
+        return usable;
+    }
+
+    public static void removeTrash() {
+        for (int i = 0; i < sharpies.size(); i++) {
+            if (sharpies.get(i).getInk() == 0) {
+                sharpies.remove(i);
+            }
+        }
 
     }
 
