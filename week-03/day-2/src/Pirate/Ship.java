@@ -8,7 +8,7 @@ public class Ship {
 
 
     List<Pirates> piratesOnShip = new ArrayList<>();
-    Pirates captain;
+
 
 
     void makeCaptain() {

@@ -10,6 +10,7 @@ public class Main {
 
         List<Pirates> piratesAll = initializePirates();
 
+        System.out.println(piratesAll.get(10).name);
 
 
 

@@ -18,10 +18,6 @@ public class Pirates {
         this.name = name;
     }
 
-    List<Pirates> piratesAll() {
-        return piratesAll;
-    }
-
     void drinkSomeRum() {
         if (this.alive) {
             this.intoxicated++;
