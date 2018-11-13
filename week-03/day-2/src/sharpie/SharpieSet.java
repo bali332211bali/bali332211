@@ -6,7 +6,7 @@ import java.util.List;
 public class SharpieSet {
 
 
-    static List<Sharpie> sharpies = Sharpie.initializeSharpies();;
+    static List<Sharpie> sharpies = Sharpie.initializeSharpies();
 
 
 
