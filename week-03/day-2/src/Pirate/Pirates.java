@@ -1,16 +1,25 @@
 package Pirate;
 
+import java.util.List;
+
 public class Pirates {
 
+    List<Pirates> piratesAll;
     String name;
     int intoxicated;
     boolean awake = true;
     boolean alive = true;
     boolean parrot = false;
+    boolean captain = false;
 
 
-    Pirates() {
 
+    Pirates(String name) {
+        this.name = name;
+    }
+
+    List<Pirates> piratesAll() {
+        return piratesAll;
     }
 
     void drinkSomeRum() {
@@ -61,9 +70,16 @@ public class Pirates {
         }
     }
 
-    void getParrot(Pirates pirate) {
-        pirate.parrot = true;
+    void getParrot() {
+        this.parrot = true;
     }
+
+    void getCaptain() {
+        this.captain = true;
+    }
+
+
+
 
 
 }
