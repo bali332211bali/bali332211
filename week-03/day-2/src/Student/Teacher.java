@@ -11,14 +11,6 @@ public class Teacher {
         System.out.println("answer to " + question + " answer");
     }
 
-    public static void main(String[] args) {
-
-        Teacher teacher = new Teacher();
-        Student student = new Student();
-
-        student.question(teacher,"question");
-        teacher.teach(student, "teach");
-    }
 
 
 

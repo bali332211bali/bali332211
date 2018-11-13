@@ -6,7 +6,8 @@ import java.util.List;
 public class SharpieSet {
 
 
-    List<String> sharpie.Sharpie;
+//    List<Sharpie> sharpies.Sharpie;
+
 
 
     public void countUsable() {

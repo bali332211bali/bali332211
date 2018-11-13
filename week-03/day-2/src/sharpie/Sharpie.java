@@ -1,5 +1,7 @@
 package sharpie;
 
+import org.omg.CORBA.ARG_IN;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,9 +13,15 @@ public class Sharpie {
     float inkAmount = 100;
     String name;
 
+    List<Sharpie> sharpies;
 
-    Sharpie() {
 
+//    Sharpie() {
+//        sharpies.add(this.sharpies);
+//    }
+
+    public float getInk() {
+        return this.inkAmount;
     }
 
     public void use() {
