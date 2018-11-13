@@ -1,28 +1,30 @@
-public class sharpie {
+package sharpie;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Sharpie {
 
     String color;
     float width;
     float inkAmount = 100;
+    String name;
 
+
+    Sharpie() {
+
+    }
 
     public void use() {
         inkAmount--;
     }
 
-    public static void main(String[] args) {
-
-
-        sharpie blade = new sharpie();
-
-        blade.use();
-        System.out.println(blade.inkAmount);
-    }
 
 
 
 
-//    Create Sharpie class
+//    Create sharpie.Sharpie class
 //
 //    We should know about each sharpie their color (which should be a string), width (which will be a floating point number), inkAmount (another floating point number)
 //    When creating one, we need to specify the color and the width

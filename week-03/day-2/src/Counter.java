@@ -4,8 +4,16 @@ public class Counter {
 
 
     int field = 0;
+    int fieldStart;
 
 
+    Counter() {
+
+    }
+    Counter(int number) {
+        field = number;
+        fieldStart = field;
+    }
 
     public void add(int number) {
         field += number;
@@ -16,7 +24,7 @@ public class Counter {
     }
 
        public void reset() {
-        field = 0;
+        field = fieldStart;
     }
 
        public void get() {
