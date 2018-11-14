@@ -6,6 +6,7 @@ import java.util.List;
 public class Ship {
 
     String name;
+    static int names;
 
 
     List<Pirates> piratesOnShip = new ArrayList<>();
@@ -51,9 +52,9 @@ public class Ship {
 
     Pirates getCaptain() {
         Pirates a = null;
-        for (int i = 0; i < piratesOnShip.size(); i++) {
-            if (piratesOnShip.get(i).captain) {
-                a = piratesOnShip.get(i);
+        for (int i = 0; i < this.piratesOnShip.size(); i++) {
+            if (this.piratesOnShip.get(i).captain) {
+                a = this.piratesOnShip.get(i);
             }
         }
         return a;
@@ -106,11 +107,8 @@ public class Ship {
     }
 
 
-    void addPirates(Pirates pirate) {
-        piratesOnShip.add(pirate);
-    }
-
     void fillShip() {
+        names++;
         int a = (int)(Math.random()*10)+2;
         PiratesNames piratesNames = new PiratesNames();
         for(int i = 0; i < a; i++) {
@@ -123,33 +121,54 @@ public class Ship {
         System.out.println(piratesOnShip.size());
     }
 
+    void win() {
+        for (int i = 0; i < this.piratesOnShip.size() ; i++) {
+            if (piratesOnShip.get(i).alive) {
+                piratesOnShip.get(i).intoxicated += (int) (Math.random()*3);
+            }
+        }
+    }
+
+    void lose(Ship ship) {
+        int die = (int) (Math.random()*ship.piratesAlive());
+        int dieStart = die;
+        for (int i = 0; i < ship.piratesOnShip.size() ; i++) {
+            if (ship.piratesOnShip.get(i).alive && die >= 1) {
+                ship.piratesOnShip.get(i).alive = false;
+                die--;
+            }
+        }
+    }
+
 
     boolean battle(Ship ship) {
-       int a = this.piratesAlive() + getCaptain().intoxicated;
-       int b = ship.piratesAlive() + ship.getCaptain().intoxicated;
-       if (a > b) {
-           int c = (int) (Math.random()*ship.piratesAlive());
-           int cStart = c;
+       int thisStrength = this.piratesAlive() + getCaptain().intoxicated;
+       int shipStrength = ship.piratesAlive() + ship.getCaptain().intoxicated;
+       if (thisStrength > shipStrength) {
+           int die = (int) (Math.random()*ship.piratesAlive());
+           int dieStart = die;
            for (int i = 0; i < ship.piratesOnShip.size() ; i++) {
-               if (ship.piratesOnShip.get(i).alive && c >= 1) {
+               if (ship.piratesOnShip.get(i).alive && die >= 1) {
                    ship.piratesOnShip.get(i).alive = false;
-                   c--;
+                   die--;
                }
            }
            System.out.println(this.name + " won");
-           System.out.println(cStart + " pirates died on " + ship.name);
+           System.out.println(dieStart + " pirates died on " + ship.name);
+           this.win();
            return true;
        } else {
-           int v = (int) (Math.random()*this.piratesAlive());
-           int vStart = v;
+           int die2 = (int) (Math.random()*this.piratesAlive());
+           int dieStart2 = die2;
            for (int i = 0; i < this.piratesOnShip.size(); i++) {
-               if (this.piratesOnShip.get(i).alive && v >= 1) {
+               if (this.piratesOnShip.get(i).alive && die2 >= 1) {
                    this.piratesOnShip.get(i).alive = false;
-                   v--;
+                   die2--;
                }
            }
            System.out.println(ship.name + " won");
-           System.out.println(vStart + " pirates died on " + this.name);
+           System.out.println(dieStart2 + " pirates died on " + this.name);
+           ship.win();
 
        }
         return false;

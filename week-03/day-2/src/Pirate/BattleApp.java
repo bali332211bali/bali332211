@@ -27,15 +27,18 @@ public class BattleApp {
         List<Pirates> piratesOnShip;
 
         List<Ship> ships = initializeShips();
+
 //        List<Pirates> piratesAll = initializePirates();
 
 
         ships.get(0).fillShip();
         ships.get(1).fillShip();
         ships.get(0).battle(ships.get(1));
+        System.out.println();
 
         ships.get(0).piratesStart();
         System.out.println("alive " + ships.get(0).piratesAlive());
+        System.out.println();
 
         ships.get(1).piratesStart();
         System.out.println("alive " + ships.get(1).piratesAlive());
@@ -44,17 +47,15 @@ public class BattleApp {
 //        ships.get(0).piratesOnShip().get(0).howsItGoingMate();
 //        ships.get(0).piratesOnShip().get(1).howsItGoingMate();
 
-        System.out.println();
-
 //        for(int i = 0; i < ships.get(0).piratesOnShip().size(); i++) {
 //            System.out.println(ships.get(0).piratesOnShip().get(i).name);
 //        }
 
-//        System.out.println();
-//        ships.get(0).piratesDetails();
-//        System.out.println();
-//        System.out.println();
-//        ships.get(1).piratesDetails();
+        System.out.println();
+        ships.get(0).piratesDetails();
+        System.out.println();
+        System.out.println();
+        ships.get(1).piratesDetails();
 
 
 
@@ -91,7 +92,7 @@ public class BattleApp {
     static List<Ship> initializeShips() {
         List<Ship> shipStart = new ArrayList<>();
         for(int i = 0; i < 2; i++) {
-            shipStart.add(new Ship(ShipNames.shipNames().get(i)));
+            shipStart.add(new Ship(ShipNames2.shipNames().get(i)));
         }
         return shipStart;
     }
