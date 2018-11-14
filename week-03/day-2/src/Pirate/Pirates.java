@@ -46,7 +46,13 @@ public class Pirates {
         } else {
             System.out.println(this.name + " dead");
         }
+        intoxicatedSleep();
+    }
 
+    void intoxicatedSleep() {
+        if (this.intoxicated > 4) {
+            this.awake = false;
+        }
     }
 
     void howsItGoingMate() {

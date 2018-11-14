@@ -30,7 +30,23 @@ public class BattleApp {
 
 //        List<Pirates> piratesAll = initializePirates();
 
+        Armada armada = new Armada();
+        Armada armada2 = new Armada();
 
+        armada.fillArmada();
+        armada2.fillArmada();
+
+        armada.war(armada2);
+
+//        for (int i = 0; i < armada.shipsInArmada.size() ; i++) {
+//            System.out.println(armada.shipsInArmada.get(i).name);
+//        }
+//        for (int i = 0; i < armada2.shipsInArmada.size() ; i++) {
+//            System.out.println(armada2.shipsInArmada.get(i).name);
+//        }
+
+
+        System.out.println();
         ships.get(0).fillShip();
         ships.get(1).fillShip();
         ships.get(0).battle(ships.get(1));

@@ -125,6 +125,7 @@ public class Ship {
         for (int i = 0; i < this.piratesOnShip.size() ; i++) {
             if (piratesOnShip.get(i).alive) {
                 piratesOnShip.get(i).intoxicated += (int) (Math.random()*3);
+                piratesOnShip.get(i).intoxicatedSleep();
             }
         }
     }
