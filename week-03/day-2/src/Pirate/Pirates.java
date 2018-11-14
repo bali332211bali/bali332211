@@ -14,8 +14,30 @@ public class Pirates {
 
 
 
+
+
+    Pirates() {
+        int a = (int)(Math.random()*100);
+        intoxicated = (int)(Math.random()*5);
+        if(a<20) {
+            this.awake = true;
+            this.parrot = true;
+        } else if (a<50) {
+            awake = false;
+        }
+    }
+
     Pirates(String name) {
         this.name = name;
+
+        int a = (int)(Math.random()*100);
+        intoxicated = (int)(Math.random()*5);
+        if(a<20) {
+            this.awake = true;
+            this.parrot = true;
+        } else if (a<50) {
+            awake = false;
+        }
     }
 
     void drinkSomeRum() {
@@ -70,7 +92,7 @@ public class Pirates {
         this.parrot = true;
     }
 
-    void getCaptain() {
+    void makeCaptain() {
         this.captain = true;
     }
 

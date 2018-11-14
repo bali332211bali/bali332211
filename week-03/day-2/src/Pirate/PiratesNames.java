@@ -6,7 +6,7 @@ import java.util.List;
 public class PiratesNames {
 
 
-    static List<String> pirateNames() {
+     List<String> pirateNames() {
         List<String> pirateNames = new ArrayList<>();
 
         pirateNames.add("Hunt 'Handsome' Fulton");
