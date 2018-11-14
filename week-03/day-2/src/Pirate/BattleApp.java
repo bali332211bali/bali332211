@@ -3,7 +3,7 @@ package Pirate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class BattleApp {
 
     public static void main(String[] args) {
 
@@ -31,20 +31,32 @@ public class Main {
 
 
         ships.get(0).fillShip();
+        ships.get(1).fillShip();
+        ships.get(0).battle(ships.get(1));
 
-        ships.get(0).piratesOnShip().get(0).brawl(ships.get(0).piratesOnShip().get(1));
+        ships.get(0).piratesStart();
+        System.out.println("alive " + ships.get(0).piratesAlive());
 
-        ships.get(0).piratesOnShip().get(0).howsItGoingMate();
-        ships.get(0).piratesOnShip().get(1).howsItGoingMate();
+        ships.get(1).piratesStart();
+        System.out.println("alive " + ships.get(1).piratesAlive());
+//        ships.get(0).piratesOnShip().get(0).brawl(ships.get(0).piratesOnShip().get(1));
+//
+//        ships.get(0).piratesOnShip().get(0).howsItGoingMate();
+//        ships.get(0).piratesOnShip().get(1).howsItGoingMate();
 
         System.out.println();
 
-        for(int i = 0; i < ships.get(0).piratesOnShip().size(); i++) {
-            System.out.println(ships.get(0).piratesOnShip().get(i).name);
-        }
+//        for(int i = 0; i < ships.get(0).piratesOnShip().size(); i++) {
+//            System.out.println(ships.get(0).piratesOnShip().get(i).name);
+//        }
 
-        System.out.println();
-        ships.get(0).piratesDetails();
+//        System.out.println();
+//        ships.get(0).piratesDetails();
+//        System.out.println();
+//        System.out.println();
+//        ships.get(1).piratesDetails();
+
+
 
 
 
@@ -79,7 +91,7 @@ public class Main {
     static List<Ship> initializeShips() {
         List<Ship> shipStart = new ArrayList<>();
         for(int i = 0; i < 2; i++) {
-            shipStart.add(new Ship());
+            shipStart.add(new Ship(ShipNames.shipNames().get(i)));
         }
         return shipStart;
     }
