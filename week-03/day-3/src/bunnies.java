@@ -9,7 +9,7 @@ public class bunnies {
 
 
     public static void main(String[] args) {
-        
+
         System.out.println(bunnies(4, 2));
 
         // We have a number of bunnies and each bunny has two big floppy ears.
