@@ -6,18 +6,21 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Hexagon {
 
-    private static void polygon(Graphics graphic, ) {
 
-        int[] x = {WIDTH/4,WIDTH};
-        int[] y = {0,};
 
-        graphic.drawPolygon(x,y,4);
+    private static void polygon(Graphics graphics, int x, int y, int w, int h) {
+
+        int[] xX = {w/4,w*3/4,w,w*3/4,w/4,x};
+        int[] yY = {y,y,h/2,h,h,h/2};
+
+        graphics.drawPolygon(xX,yY,6);
     }
 
 
     public static void mainDraw(Graphics graphics) {
 
 
+        polygon(graphics, 0, 0, WIDTH, HEIGHT);
 
     }
 
