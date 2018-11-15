@@ -7,126 +7,33 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class graphic {
 
-  private static void square(Graphics graphics, int r) {
-    graphics.drawRect(WIDTH*1/3,HEIGHT*0/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(WIDTH*0/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(WIDTH*1/3,HEIGHT*2/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(WIDTH*2/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
+
+
+  private static void squares2(Graphics graphics, int x, int y, int w, int h) {
+    squares(graphics, x, y, w, h);
+
+    if (w >= 20 && h >= 20) {
+      squares2(graphics,x+w/3,y, w/3, h/3);
+      squares2(graphics,x+w/3,y+h*2/3, w/3, h/3);
+      squares2( graphics,x ,y+h/3, w/3, h/3);
+      squares2(graphics,x+w*2/3,y+h/3, w/3, h/3);
+    }
   }
 
-  private static void square2(Graphics graphics, int r, int k, int c, int l) {
-    int a = c;
-    graphics.drawRect(a*3*l,a*1*l, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*4*l,a*0*l, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*4*l,a*2*l, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*5*l,a*1*l, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-  }
 
-  private static void square3(Graphics graphics, int r, int k, int c) {
-    int a = c;
-    graphics.drawRect(a*0,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*1,a*3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*1,a*5, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*2,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-  }
+  private static void squares(Graphics graphics, int x, int y, int w, int h) {
+    graphics.drawRect(x+w/3,y, w/3, h/3);
+    graphics.drawRect(x+w/3,y+h*2/3, w/3, h/3);
+    graphics.drawRect(x,y+h/3, w/3, h/3);
+    graphics.drawRect(x+w*2/3,y+h/3, w/3, h/3);
+}
 
-  private static void square4(Graphics graphics, int r, int k, int c) {
-    int a = c;
-    graphics.drawRect(a*3,a*7, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*4,a*6, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*4,a*8, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*5,a*7, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-  }
-
-  private static void square5(Graphics graphics, int r, int k, int c) {
-    int a = c;
-    graphics.drawRect(a*6,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*7,a*3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*7,a*5, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-    graphics.drawRect(a*8,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-  }
-
-//  private static void square2(Graphics graphics, int r, int k) {
-//    int a = WIDTH*1/9;
-//    graphics.drawRect(a*4,a*0, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*1,a*3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*4,a*6, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*7,a*3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//  }
-//
-//  private static void square3(Graphics graphics, int r, int k) {
-//    int a = WIDTH*1/9;
-//    graphics.drawRect(a*5,a*1, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*2,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*5,a*7, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*8,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//  }
-//
-//  private static void square4(Graphics graphics, int r, int k) {
-//    int a = WIDTH*1/9;
-//    graphics.drawRect(a*3,a*1, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*1,a*5, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*4,a*8, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*7,a*5, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//  }
-//
-//  private static void square5(Graphics graphics, int r, int k) {
-//    int a = WIDTH*1/9;
-//    graphics.drawRect(a*4,a*2, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*0,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*3,a*7, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(a*6,a*4, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//  }
-
-
-
-
-//  private static void square2(Graphics graphics, int r, int k, int c, int l) {
-//    graphics.drawRect(WIDTH*1/3,HEIGHT*0/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(WIDTH*0/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(WIDTH*1/3,HEIGHT*2/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//    graphics.drawRect(WIDTH*2/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
-//  }
-
-
-
-
-//  private static void make(Graphics graphics, int n, int k) {
-//    if (n > 1) {
-//      make(graphics, (n-1), k);
-//      line(graphics, n*k);
-//    }
-//    line(graphics, 1);
-//  }
 
   public static void mainDraw(Graphics graphics) {
 
-    int c;
-    int l;
-    l = 1;
+    squares2(graphics,0,0,WIDTH,HEIGHT);
 
 
-    c = WIDTH*1/9;
-    square2(graphics, 3,0, c, l);
-    square3(graphics, 3,0, c);
-    square4(graphics, 3,0, c);
-    square5(graphics, 3,0, c);
-
-    c = WIDTH*1/27;
-
-    square2(graphics, 9,0, c, 1);
-//    square3(graphics, 3,0, c);
-//    square4(graphics, 3,0, c);
-//    square5(graphics, 3,0, c);
-
-
-
-
-    square(graphics, 1);
-
-    //square(graphics, 6, WIDTH*1/9);
-
-//    make(graphics, 2, 2);
 
 
 
