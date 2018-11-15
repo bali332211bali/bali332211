@@ -5,7 +5,11 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class graphic {
+public class Square {
+
+
+
+
 
 
     private static void squares2(Graphics graphics, int x, int y, int w, int h) {
@@ -27,9 +31,14 @@ public class graphic {
     }
 
     public static void mainDraw(Graphics graphics) {
-
         squares2(graphics, 0, 0, WIDTH, HEIGHT);
     }
+
+
+
+
+
+
 
     // Don't touch the code below
     static int WIDTH = 729;
