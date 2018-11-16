@@ -8,10 +8,10 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class graphic {
 
   private static void square(Graphics graphics, int r) {
-    graphics.drawRect(WIDTH*1/3,HEIGHT*0/3, WIDTH*1/3*r, HEIGHT*1/3*r);
-    graphics.drawRect(WIDTH*0/3,HEIGHT*1/3, WIDTH*1/3*r, HEIGHT*1/3*r);
-    graphics.drawRect(WIDTH*1/3,HEIGHT*2/3, WIDTH*1/3*r, HEIGHT*1/3*r);
-    graphics.drawRect(WIDTH*2/3,HEIGHT*1/3, WIDTH*1/3*r, HEIGHT*1/3*r);
+    graphics.drawRect(WIDTH*1/3,HEIGHT*0/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
+    graphics.drawRect(WIDTH*0/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
+    graphics.drawRect(WIDTH*1/3,HEIGHT*2/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
+    graphics.drawRect(WIDTH*2/3,HEIGHT*1/3, WIDTH*1/(3*r), HEIGHT*1/(3*r));
   }
 
 
