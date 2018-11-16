@@ -4,17 +4,15 @@ import java.util.ArrayList;
 public class fibonacci {
 
 
-  private static int number(int n) {
+    private static int number(int n) {
 
-    if (n < 1) {
-      return 0;
-    } else if (n < 2) {
-      return 1;
-    } else if (n >= 2) {
-      return number(n-1) + number(n-2);
-    }
-    return n;
-
+      if (n == 0) {
+        return 0;
+      } else if (n == 1) {
+        return 1;
+      } else {
+        return number(n-1) + number(n-2);
+      }
   }
 
   public static void main(String[] args) {
