@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -9,6 +10,7 @@ public class Hexagon {
 
     private static void polygon2(Graphics graphics, int x, int y, int s) {
         polygon(graphics, x, y, s);
+
         if (s > 50) {
             polygon2(graphics, x, y, s/2);
             polygon2(graphics, x+s/2+s *1/3, y+s/2, s/2);
@@ -44,6 +46,8 @@ public class Hexagon {
 
 
     public static void mainDraw(Graphics graphics) {
+
+
 
         polygonStart(graphics, WIDTH/4,0, WIDTH);
         polygon2(graphics, WIDTH/4, 0, WIDTH/2);
