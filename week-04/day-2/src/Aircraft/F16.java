@@ -7,9 +7,8 @@ public class F16 extends Aircrafts {
 
   F16() {
     this.maxAmmo = 8;
-    this.baseDamage = 30;
+    this.baseDamage = 20 + (int) (Math.random()*10);
     this.ammoCurrent = 0;
-
   }
 
 }

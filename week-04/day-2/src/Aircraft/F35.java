@@ -7,7 +7,7 @@ public class F35 extends Aircrafts {
 
   F35() {
     this.maxAmmo = 12;
-    this.baseDamage = 50;
+    this.baseDamage = 30 + (int) (Math.random()*20);
     this.ammoCurrent = 0;
   }
 }

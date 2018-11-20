@@ -18,6 +18,7 @@ public class Aircrafts {
     int temp = this.ammoCurrent;
     if (this.ammoCurrent + amount <= this.maxAmmo) {
       this.ammoCurrent += amount;
+      return 0;
     } else {
       this.ammoCurrent = this.maxAmmo;
     }
@@ -38,7 +39,7 @@ public class Aircrafts {
   }
 
   public boolean isPriority() {
-    if (this.getType().equals("F16")) {
+    if (this.getType().equals("F35")) {
       return true;
     }
     return false;

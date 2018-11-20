@@ -10,7 +10,7 @@ public class Carrier {
   List<Aircrafts> aircrafts = new ArrayList<>();
 
   Carrier(int ammo, int health) {
-    this.ammoStore = 200 + (int) (Math.random() * ammo);
+    this.ammoStore = 50 + (int) (Math.random() * ammo);
     this.health = 300 + (int) (Math.random() * health);
   }
 
@@ -19,14 +19,14 @@ public class Carrier {
   }
 
   public void fill() throws Exception {
-    if (ammoStore == 0) {
+    if (ammoStore <= 0) {
       throw new Exception("Ammo store empty");
     }
 
     if (totalAmmoNeeded() > this.ammoStore) {
       for (int i = 0; i < aircrafts.size(); i++) {
-        if (aircrafts.get(i).isPriority()) {
-          aircrafts.get(i).refill(this.ammoStore);
+        if (aircrafts.get(i).isPriority() && ammoStore >= 0) {
+          this.ammoStore = aircrafts.get(i).refill(this.ammoStore);
         }
       }
     } else {
@@ -40,7 +40,7 @@ public class Carrier {
 
   public void fillAmmoAll() {
     for (int i = 0; i < aircrafts.size(); i++) {
-      aircrafts.get(i).refill(this.ammoStore);
+      this.ammoStore = aircrafts.get(i).refill(this.ammoStore);
     }
   }
 
@@ -72,22 +72,21 @@ public class Carrier {
   }
 
   public int totalDamage() {
-    int totalAmmoF16 = 0;
-    int totalAmmoF35 = 0;
+    int totalDamage = 0;
     for (int i = 0; i < aircrafts.size(); i++) {
-      if (aircrafts.get(i).getType().equals("F35")) {
-        totalAmmoF16 += aircrafts.get(i).ammoCurrent;
+      if (aircrafts.get(i).getType().equals("F16")) {
+        totalDamage += aircrafts.get(i).ammoCurrent * aircrafts.get(i).baseDamage;
       } else {
-        totalAmmoF35 += aircrafts.get(i).ammoCurrent;
+        totalDamage += aircrafts.get(i).ammoCurrent * aircrafts.get(i).baseDamage;
       }
     }
-    return totalAmmoF16 * F16.baseDamageF16 + totalAmmoF35 * F35.baseDamageF35;
+    return totalDamage;
   }
 
   public void getStatus() {
     if (this.health > 0) {
       System.out.println("health " + this.health + ", " + aircrafts.size() + " aircrafts " + ", "
-          + ammoStore + " ammo in store" + ", " + totalDamage() + " total damage");
+          + ammoStore + " ammo in store" + ", " + this.totalDamage() + " total damage");
       System.out.println("Aircrafts");
       for (int i = 0; i < aircrafts.size(); i++) {
         System.out.println("Type " + aircrafts.get(i).getType() + ", " +
