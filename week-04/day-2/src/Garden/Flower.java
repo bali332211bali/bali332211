@@ -1,18 +1,18 @@
 package Garden;
 
-public class Flower extends Plant {
-
+public class Flower extends Plants {
 
   Flower() {
-
+    this.waterAmount = (int) (Math.random()*7);
   }
 
-  public void needsWater() {
-    if (this.waterAmount < 5) {
-      System.out.println(this.color + " Flower needs water");
-    } else {
-      System.out.println(this.color + " doesn't need water");
-    }
+  Flower(String color) {
+    this.color = color;
+    this.waterAmount = (int) (Math.random()*7);
+  }
+
+  public void needsWaterStr() {
+    this.needsWaterClass(5);
   }
 
 
