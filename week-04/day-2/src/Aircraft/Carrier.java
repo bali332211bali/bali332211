@@ -10,8 +10,8 @@ public class Carrier {
   List<Aircrafts> aircrafts = new ArrayList<>();
 
   Carrier(int ammo, int health) {
-    this.ammoStore = 200 + (int) (Math.random()*ammo);
-    this.health = 300 + (int) (Math.random()*health);
+    this.ammoStore = 200 + (int) (Math.random() * ammo);
+    this.health = 300 + (int) (Math.random() * health);
   }
 
   public void add(Aircrafts aircraft) {
@@ -25,7 +25,7 @@ public class Carrier {
 
     if (totalAmmoNeeded() > this.ammoStore) {
       for (int i = 0; i < aircrafts.size(); i++) {
-        if(aircrafts.get(i).isPriority()) {
+        if (aircrafts.get(i).isPriority()) {
           aircrafts.get(i).refill(this.ammoStore);
         }
       }
@@ -87,7 +87,7 @@ public class Carrier {
   public void getStatus() {
     if (this.health > 0) {
       System.out.println("health " + this.health + ", " + aircrafts.size() + " aircrafts " + ", "
-          + ammoStore + " ammo in store"  + ", " + totalDamage() + " total damage");
+          + ammoStore + " ammo in store" + ", " + totalDamage() + " total damage");
       System.out.println("Aircrafts");
       for (int i = 0; i < aircrafts.size(); i++) {
         System.out.println("Type " + aircrafts.get(i).getType() + ", " +
@@ -100,7 +100,6 @@ public class Carrier {
 
 
   }
-
 
 
 }

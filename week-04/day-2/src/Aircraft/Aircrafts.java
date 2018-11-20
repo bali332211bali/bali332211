@@ -21,11 +21,11 @@ public class Aircrafts {
     } else {
       this.ammoCurrent = this.maxAmmo;
     }
-    return amount - (maxAmmo-temp);
+    return amount - (maxAmmo - temp);
   }
 
   public String getType() {
-    if(this instanceof F16) {
+    if (this instanceof F16) {
       return "F16";
     } else {
       return "F35";

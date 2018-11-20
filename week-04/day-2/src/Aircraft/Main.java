@@ -9,7 +9,7 @@ public class Main {
 
     List<Carrier> carriers = new ArrayList<>();
 
-    for (int i = 0; i < 2 ; i++) {
+    for (int i = 0; i < 2; i++) {
       carriers.add(new Carrier(100, 5000));
     }
 
@@ -47,11 +47,6 @@ public class Main {
     System.out.println();
     System.out.println();
     carriers.get(1).getStatus();
-
-
-
-
-
 
 
   }
