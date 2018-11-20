@@ -5,22 +5,23 @@ public class Aircrafts {
 
   int maxAmmo;
   int baseDamage;
-  int ammoStore;
+  int ammoCurrent;
 
   public int fight() {
-    this.ammoStore = 0;
-    return this.ammoStore * this.baseDamage;
+    int temp = this.ammoCurrent;
+    this.ammoCurrent = 0;
+    return temp * this.baseDamage;
   }
 
 
   public int refill(int amount) {
-    int temp = this.ammoStore;
-    if (this.ammoStore + amount <= this.maxAmmo) {
-      this.ammoStore += amount;
+    int temp = this.ammoCurrent;
+    if (this.ammoCurrent + amount <= this.maxAmmo) {
+      this.ammoCurrent += amount;
     } else {
-      this.ammoStore = this.maxAmmo;
+      this.ammoCurrent = this.maxAmmo;
     }
-    return amount - temp;
+    return amount - (maxAmmo-temp);
   }
 
   public String getType() {
@@ -32,7 +33,7 @@ public class Aircrafts {
   }
 
   public String getStatus() {
-    return "Type " + getType() + ", " + "Ammo " + this.ammoStore + ", " + "Base damage " + this.baseDamage
+    return "Type " + getType() + ", " + "Ammo " + this.ammoCurrent + ", " + "Base damage " + this.baseDamage
         + ", " + "All damage " + this.fight();
   }
 
