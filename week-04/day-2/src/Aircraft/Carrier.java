@@ -38,16 +38,11 @@ public class Carrier {
     }
   }
 
-
-
-
   public void fillAmmoAll() {
     for (int i = 0; i < aircrafts.size(); i++) {
       aircrafts.get(i).refill(this.ammoStore);
     }
   }
-
-
 
   public int totalAmmoNeeded() {
     int ammoNeeded = 0;
@@ -72,7 +67,6 @@ public class Carrier {
     return false;
   }
 
-
   public void fight(Carrier carrier) {
     carrier.health -= this.totalDamage();
   }
@@ -91,15 +85,22 @@ public class Carrier {
   }
 
   public void getStatus() {
-    System.out.println("health " + this.health + ", " + aircrafts.size() + " aircrafts " + ", "
-        + ammoStore + " ammo in store"  + ", " + totalDamage() + " total damage");
-    System.out.println("Aircrafts");
-    for (int i = 0; i < aircrafts.size(); i++) {
-      System.out.println("Type " + aircrafts.get(i).getType() + ", " +
-          "Ammo " + aircrafts.get(i).ammoCurrent + ", " + "Base damage " + aircrafts.get(i).baseDamage
-          + ", " + "All damage " + aircrafts.get(i).ammoCurrent * aircrafts.get(i).baseDamage);
-
+    if (this.health > 0) {
+      System.out.println("health " + this.health + ", " + aircrafts.size() + " aircrafts " + ", "
+          + ammoStore + " ammo in store"  + ", " + totalDamage() + " total damage");
+      System.out.println("Aircrafts");
+      for (int i = 0; i < aircrafts.size(); i++) {
+        System.out.println("Type " + aircrafts.get(i).getType() + ", " +
+            "Ammo " + aircrafts.get(i).ammoCurrent + ", " + "Base damage " + aircrafts.get(i).baseDamage
+            + ", " + "All damage " + aircrafts.get(i).ammoCurrent * aircrafts.get(i).baseDamage);
+      }
+    } else {
+      System.out.println("destroyed");
     }
+
+
   }
+
+
 
 }
