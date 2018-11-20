@@ -31,4 +31,8 @@ public class Student extends Person {
     System.out.println("name " + this.name + " " + this.age + " age " + this.gender + " gender " + "from " + this.previousOrganization + " skipped " + this.skippedDays);
   }
 
+  public void skipDays(int days) {
+    this.skippedDays += days;
+  }
+
 }

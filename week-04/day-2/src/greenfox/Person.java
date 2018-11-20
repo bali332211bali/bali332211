@@ -8,6 +8,9 @@ public class Person {
   String gender;
 
   Person() {
+    this.name = "Jane";
+    this.age = 20;
+    this.gender = "female";
 
   }
 
