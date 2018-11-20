@@ -31,7 +31,6 @@ public class Ship {
                 break;
             }
         }
-
     }
 
     List<Pirates> piratesOnShip() {

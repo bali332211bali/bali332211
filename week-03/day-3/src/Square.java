@@ -11,7 +11,6 @@ public class Square {
 
 
 
-
     private static void squares2(Graphics graphics, int x, int y, int w, int h) {
         squares(graphics, x, y, w, h);
 
