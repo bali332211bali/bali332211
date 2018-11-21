@@ -1,11 +1,16 @@
 package Thing;
 
 public class Thing implements Comparable<Thing> {
-  private String name;
-  private boolean completed;
+  boolean completed;
 
-  public Thing(String name) {
-    this.name = name;
+  public Thing() {
+    int n = (int) (Math.random()*10);
+    if (n > 5) {
+      this.completed = true;
+    } else {
+      this.completed = false;
+    }
+
   }
 
   @Override
@@ -25,7 +30,7 @@ public class Thing implements Comparable<Thing> {
 
   @Override
   public String toString() {
-    return (completed ? "[x] " : "[ ] ") + name;
+    return (completed ? "[x] " : "[ ] ");
   }
 
 
