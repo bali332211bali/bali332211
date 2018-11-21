@@ -9,12 +9,16 @@ public class AppFlyable {
     Vehicle helicopter = new Helicopter();
 
     ((Bird) bird2).land();
+    System.out.println(((Bird) bird2).getName());
+    System.out.println(((Bird) bird2).born());
     ((Bird) bird2).fly();
     ((Bird) bird2).takeOff();
     System.out.println();
     ((Helicopter) helicopter).fly();
     ((Helicopter) helicopter).takeOff();
     ((Helicopter) helicopter).land();
+    System.out.println();
+
 
 
 

@@ -6,7 +6,6 @@ public class Mammal extends Animal {
     this.name = name;
   }
 
-
   @Override
   public String getName() {
     return this.name;
