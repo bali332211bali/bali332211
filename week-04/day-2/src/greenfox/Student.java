@@ -23,6 +23,13 @@ public class Student extends Person {
     this.skippedDays = 0;
   }
 
+  public Object clone(Student student) {
+    return new Student(student.name,student.age,student.gender,student.previousOrganization);
+  }
+
+
+
+
   public void getGoal() {
     System.out.println("goal again");
   }

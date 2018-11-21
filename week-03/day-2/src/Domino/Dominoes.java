@@ -1,9 +1,11 @@
 package Domino;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Dominoes {
+
 
 
     public static void main(String[] args) {
@@ -12,6 +14,10 @@ public class Dominoes {
         // You have the list of Domino.Dominoes
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
+
+        Collections.sort(dominoes);
+        System.out.println(dominoes);
+        System.out.println();
 
         System.out.println(dominoes);
 

@@ -8,6 +8,14 @@ public class Main {
   public static void main(String[] args) {
 
 
+    Student newStudent2 = new Student("John", 20, "male","organization");
+
+    newStudent2.clone(newStudent2);
+
+    System.out.println();
+    System.out.println();
+    System.out.println();
+
 
     Person newPerson = new Person("Jane", 20, "female");
     Student newStudent = new Student();
