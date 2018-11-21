@@ -15,10 +15,15 @@ public class Reservations implements Reservationy {
     return "Booking# " + reservation();
   }
 
+  String reset = "\u001B[0m";
+  String red = "\u001B[31m";
+
   @Override
   public String getDowBooking() {
     String[] days = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
-    return " for " + days[(int) (Math.random()*7)];
+    return red + " for " + reset + days[(int) (Math.random()*7)];
   }
+
+
 
 }
