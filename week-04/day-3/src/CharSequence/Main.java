@@ -14,6 +14,10 @@ public class Main {
 
     System.out.println(gnirts.equals(gnirts2));
 
+    Shifter s = new Shifter("example", 2);
+    System.out.println(s.charAt(0));
+// should print out: a
+
   }
 
 }
