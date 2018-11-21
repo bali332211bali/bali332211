@@ -1,19 +1,7 @@
 package Domino;
 
-public class Domino implements Comparable<Domino> {
 
-    @Override
-    public int compareTo(Domino o) {
-
-        if (o.getLeftSide() != this.getLeftSide()) {
-            if (o.getLeftSide() < this.getLeftSide())
-                return -1;
-        } else {
-            return 1;
-        }
-        return 0;
-    }
-
+public class Domino implements Printable {
 
     private final int left;
     private final int right;
@@ -34,5 +22,14 @@ public class Domino implements Comparable<Domino> {
     @Override
     public String toString() {
         return "[" + left + ", " + right + "]";
+    }
+
+    @Override
+    public void printAllFields() {
+        System.out.print(getLeftSide());
+        System.out.print(" ");
+        System.out.print(getRightSide());
+        System.out.println();
+
     }
 }
