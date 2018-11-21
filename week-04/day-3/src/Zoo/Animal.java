@@ -2,8 +2,8 @@ package Zoo;
 
 abstract public class Animal {
 
-  String name;
-  int age;
+  public String name;
+  public int age;
 
 
   abstract public String getName();
