@@ -24,6 +24,4 @@ public class Reservations implements Reservationy {
     return red + " for " + reset + days[(int) (Math.random()*7)];
   }
 
-
-
 }
