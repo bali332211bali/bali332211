@@ -9,4 +9,12 @@ public class FibonacciTest {
     Fibonacci fibonacci = new Fibonacci();
     assertEquals(13, fibonacci.numbers(7));
   }
+
+  @Test
+  public void numbers2() {
+    Fibonacci fibonacci = new Fibonacci();
+    assertEquals(13, fibonacci.numbers2(7));
+  }
+
+
 }

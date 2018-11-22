@@ -25,7 +25,7 @@ public class CountLetters {
 
 //  public static void main(String[] args) {
 //
-//    for (Map.Entry<Character, Integer> entry: letters("string").entrySet()) {
+//    for (Map.Entry<Character, Integer> entry: letters("aab").entrySet()) {
 //      System.out.println(entry.getKey() + " " + entry.getValue());
 //    }
 //  }

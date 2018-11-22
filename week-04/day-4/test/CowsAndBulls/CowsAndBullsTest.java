@@ -24,18 +24,13 @@ public class CowsAndBullsTest {
 
   @Test
   public void scanner() {
+
     List<Integer> numbers = new ArrayList<>();
     numbers.add(1);
     numbers.add(2);
     numbers.add(3);
 
-    for (int i = 0; i < numbers.size(); i++) {
-      System.out.println("number");
-      Scanner scanner = new Scanner(System.in);
-      int user = scanner.nextInt();
-    }
-
-    assertEquals("cowcowbull", cowsAndBulls.);
-
+//    assertEquals("cowcowbull", cowsAndBulls.scanner(numbers));
   }
+
 }
