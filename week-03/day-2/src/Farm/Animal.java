@@ -22,8 +22,9 @@ public class Animal {
         this.thirst = thirst;
     }
 
-    public void eat() {
+    public int eat() {
         hunger--;
+        return this.hunger;
     }
 
     public void drink() {
