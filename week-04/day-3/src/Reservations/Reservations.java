@@ -1,12 +1,16 @@
 package Reservations;
 
-public class Reservations implements Reservationy {
+public class Reservations implements ReservationInterface {
 
   public String reservation() {
     String reservation = "";
-    for (int i = 0; i < 8; i++) {
-      reservation += (char) (65+(int) (Math.random()*26));
-    }
+      for (int i = 0; i < 8; i++) {
+        if ((int) (Math.random() * 2) < 1) {
+          reservation += (char) (65 + (int) (Math.random() * 26));
+        } else {
+          reservation += (char) (48 + (int) (Math.random() * 10));
+        }
+      }
     return reservation;
   }
 

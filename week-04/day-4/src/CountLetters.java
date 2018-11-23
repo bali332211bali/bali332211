@@ -4,7 +4,7 @@ import java.util.Map;
 public class CountLetters {
 
 
-  static int charEquals(String string, int k) {
+  static int countChar(String string, int k) {
     int count = 0;
     for (int i = 0; i < string.length(); i++) {
       if (string.charAt(i) == string.charAt(k)) {
@@ -18,7 +18,7 @@ public class CountLetters {
 
     HashMap<Character, Integer> newHashMap = new HashMap<>();
     for (int i = 0; i < string.length(); i++) {
-      newHashMap.put(string.charAt(i), charEquals(string, i));
+      newHashMap.put(string.charAt(i), countChar(string, i));
     }
     return newHashMap;
   }

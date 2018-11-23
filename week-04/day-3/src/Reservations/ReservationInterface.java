@@ -1,6 +1,6 @@
 package Reservations;
 
-public interface Reservationy {
+public interface ReservationInterface {
   public String getDowBooking();
   public String getCodeBooking();
 }
