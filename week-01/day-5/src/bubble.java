@@ -34,8 +34,9 @@ public class bubble {
         int[] given = {2, 5, 34, 58, 19};
 
 
+        System.out.println(advancedBubble(given, false));
 
-        arrange(given, true);
+       // arrange(given, true);
 
 
     }
