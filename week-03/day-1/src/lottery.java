@@ -85,7 +85,7 @@ public class lottery {
 //                lotteryInt(lotteryAll, i);
 //            }
 
-            int[] numbers = lotteryAll.get(0).split(" ");
+            String[] numbers = lotteryAll.get(0).split(" ");
 
 
 
