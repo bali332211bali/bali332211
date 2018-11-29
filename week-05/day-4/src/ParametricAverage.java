@@ -33,6 +33,10 @@ public class ParametricAverage {
       System.out.println(a);
     }
 
+    String number = "7";
+    int number2 = Integer.parseInt(number);
+    System.out.println(number2);
+
     int n = 3;
     for (int i = 0; i < n; i++) {
       numbers.add(number());
