@@ -2,10 +2,10 @@ package Reservations;
 
 public class Reservations implements ReservationInterface {
 
-  public String reservation() {
+  public String reservationCode() {
     String reservation = "";
       for (int i = 0; i < 8; i++) {
-        if ((int) (Math.random() * 2) < 1) {
+        if ((int) (Math.random() * 36) > 9) {
           reservation += (char) (65 + (int) (Math.random() * 26));
         } else {
           reservation += (char) (48 + (int) (Math.random() * 10));
@@ -16,7 +16,7 @@ public class Reservations implements ReservationInterface {
 
   @Override
   public String getCodeBooking() {
-    return "Booking# " + reservation();
+    return "Booking# " + reservationCode();
   }
 
   String reset = "\u001B[0m";
@@ -29,3 +29,8 @@ public class Reservations implements ReservationInterface {
   }
 
 }
+
+
+
+
+
