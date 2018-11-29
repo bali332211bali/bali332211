@@ -27,6 +27,12 @@ public class ParametricAverage {
     try {
       Path path = Paths.get("src/log.txt");
       List<String> str = Files.readAllLines(path);
+
+      for (String string : str) {
+        System.out.println(string);
+      }
+      System.out.println();
+
       Files.lines(path)
           .forEach(System.out::println);
     } catch (Exception a) {
