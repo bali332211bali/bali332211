@@ -20,7 +20,6 @@ public class ParametricAverage {
 
   public static void main(String[] args) {
 
-
     HashMap<String, Integer> hashMap = new HashMap<>();
     List<Integer> numbers = new ArrayList<>();
 
