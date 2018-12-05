@@ -10,8 +10,8 @@ public class GreetingsRESTController extends AtomicLong {
 
 
   @RequestMapping(value="/greeting")
-  public Greetings Greeting(@RequestParam("name") String name) {
-    return new Greetings( "greetings " + name);
+  public Greetings greeting(@RequestParam String name) {
+    return new Greetings("greetings " + name);
   }
 
 

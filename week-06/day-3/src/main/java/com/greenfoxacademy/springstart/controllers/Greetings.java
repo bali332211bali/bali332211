@@ -8,6 +8,10 @@ public class Greetings {
   static long id;
   String content;
 
+  Greetings() {
+    id = atomicLong.getAndIncrement();
+  }
+
   Greetings(String content) {
     id = atomicLong.getAndIncrement();
     this.content = content;
