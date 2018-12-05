@@ -17,17 +17,13 @@ public class WebController {
         "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
         "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
 
-//    int n = ;
-
-    model.addAttribute("hello", hellos[(int) (Math.random()*hellos.length)]);
+    model.addAttribute("hello", hellos[(int) (Math.random() * hellos.length)]);
     model.addAttribute("name", " value");
     model.addAttribute("color", "orange");
     model.addAttribute("size", 40);
     model.addAttribute("load", Greetings.id);
     return "greeting";
   }
-
-
 
 
 }
