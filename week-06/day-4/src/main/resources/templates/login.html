@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+   <script type="text/javascript">
+
+  function checkForm(form) {
+    
+      if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      }
+      else {
+      form.pwd2.setCustomValidity("Passwords Don't Match");
+      form.pwd1.focus();
+      return false;
+    }
+    form.pwd2.setCustomValidity("Match");
+//    return true;
+  }
+      
+
+//    if(form.username.value == "") {
+//      alert("Error: Username cannot be blank!");
+//      form.username.focus();
+//      return false;
+//    }
+//    re = /^\w+$/;
+//    if(!re.test(form.username.value)) {
+//      alert("Error: Username must contain only letters, numbers and underscores!");
+//      form.username.focus();
+//      return false;
+//    }
+//
+//    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+//      if(form.pwd1.value.length < 6) {
+//        alert("Error: Password must contain at least six characters!");
+//        form.pwd1.focus();
+//        return false;
+//      }
+//      if(form.pwd1.value == form.username.value) {
+//        alert("Error: Password must be different from Username!");
+//        form.pwd1.focus();
+//        return false;
+//      }
+//      re = /[0-9]/;
+//      if(!re.test(form.pwd1.value)) {
+//        alert("Error: password must contain at least one number (0-9)!");
+//        form.pwd1.focus();
+//        return false;
+//      }
+//      re = /[a-z]/;
+//      if(!re.test(form.pwd1.value)) {
+//        alert("Error: password must contain at least one lowercase letter (a-z)!");
+//        form.pwd1.focus();
+//        return false;
+//      }
+//      re = /[A-Z]/;
+//      if(!re.test(form.pwd1.value)) {
+//        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+//        form.pwd1.focus();
+//        return false;
+//      }
+//    } else {
+//      alert("Error: Please check that you've entered and confirmed your password!");
+//      form.pwd1.focus();
+//      return false;
+//    }
+//
+//    alert("You entered a valid password: " + form.pwd1.value);
+//    return true;
+//  }
+
+</script>
+  </head>
+  <body>
+      
+
+      
+    <header>
+<!--      <img src="img/logo.png" />-->
+    </header>
+    <form action="thanks.html" id="my-first-form" onsubmit="return checkForm(this);">
+      <!-- Gender -->
+      <p>You are a...</p>
+      <input type="radio" id="male" name="gender" />
+      <label for="male">Male</label><br/>
+      <input type="radio" id="female" name="gender" />
+      <label for="female">Female</label>
+
+      <!-- Interests -->
+      <p>Who is interested in...</p>
+      <input type="checkbox" id="web" />
+      <label for="web">Web development</label><br/>
+      <input type="checkbox" id="photoshop" />
+      <label for="photoshop">Photoshop</label><br/>
+      <input type="checkbox" id="madona" />
+      <label for="madona">Singing Madona Songs</label>
+
+      <!-- Contact details -->
+      <fieldset>
+        <legend>Contact Info</legend>
+        <input type="text" placeholder="Username" name="username" />
+        <input type="email" placeholder="Email" />
+        <span class="tick"></span>
+        <input type="telephone" placeholder="Phone number" />
+        <span class="tick"></span>
+      </fieldset>
+        
+
+              
+        <legend>Confirm password</legend>
+        <input type="password" placeholder="Password" id="pwd1" required>
+        <input type="password" placeholder="Confirm Password" id="pwd2" required>
+<!--        <button type="confirm" class="pure-button pure-button-primary">Confirm</button>-->
+        
+        
+        
+      <!-- Preferred -->
+      <p>How would you like to be contacted?</p>
+      <select>
+        <option>By email</option>
+        <option>By telephone</option>
+      </select>
+      <input type="submit" value="Submit" form="my-first-form">
+    </form>
+<!--      <button type="submit" form="my-first-form" value="Submit">Submit</button>-->
+      
+      <table class="firsttable">
+          <tr>
+              <th>Month</th>
+              <th>Price</th>
+          </tr>          
+          <tr>
+              <td>Feb</td>
+              <td>200000</td>
+          </tr>        
+          <tr>
+              <td>March</td>
+              <td>200</td>
+          </tr>
+      </table>
+      
+  </body>
+</html>
