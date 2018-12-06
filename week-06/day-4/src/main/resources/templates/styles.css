@@ -13,7 +13,7 @@ header {
 }
 
 form {
-    margin: 20px;
+    margin-left: 40%;
     color: #eee;
 }
 
@@ -22,10 +22,12 @@ form p {
     letter-spacing: 0.1em;
 }
 
-iput[type=radio] {
-    opacity: 0;
-    width: 0;
-    margin: 0;
+input[type=radio] {
+    opacity: 100;
+    resize: both;
+    height: 15px;
+    width: 15px;
+    margin: 10;
 }
 
 label[for="male"], label[for="female"] {
@@ -72,7 +74,8 @@ input:checked + label[for="madona"] {
 fieldset {
     padding: 20px;
     margin: 20px 0;
-    border: 3px solid #000000;
+    border: 3px outset #b5b5b5;
+    margin-right: 100%;
 }
 
 legend {
@@ -80,6 +83,11 @@ legend {
     font-size: 30px;
     letter-spacing: 0.2em;
 }
+
+input[type="password"] {
+    margin-bottom: 40px;
+}
+
 
 input[type="text"],
 input[type="email"],
@@ -90,17 +98,17 @@ input[type="telephone"] {
     border: 0;
     border-radius: 4px;
 /*    background: url(png) no-repeat;*/
-    background-color: #ffff00;
+    background-image: radial-gradient(#2400be, #000000);
     font-size: 16px;
-    color: #2700ff;
+    color: #ffffff;
 }
 
 input[type="email"] {
-    background-position: 7px 8px;
+/*    background-position: 7px 8px;*/
 }
 
 input[type="telephone"] {
-    background-position: 7px -58px;
+/*    background-position: 7px -58px;*/
 }
 
 select {
@@ -113,11 +121,12 @@ select {
     display: block;
     margin: 30px 0;
     padding: 10px 50px 10px 10px;
-    background: url(png) no-repeat 95% center;
-    background-color: #222;
-    color: #fff;
+/*    background: url(png) no-repeat 95% center;*/
+    background-image: linear-gradient(yellow, #000000);
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 4px;
-    border: 2px solid #fff;
+    border: 2px solid #ffff00;
     width: 280px;
 }
 
@@ -128,8 +137,8 @@ input[type="submit"] {
     color: #000000;
     font-size: 20px;
     letter-spacing: 0.1em;
-    border-radius: 4px;
-    border: 0;
+    border-radius: 15px;
+    border: 10px inset #f5ff00;
     box-shadow: 0px 0px 30px 20px #00ffff;
     width: 280px;
 
@@ -151,6 +160,14 @@ button[type="submit"] {
 }
 */
 
+
+.divline {
+    border: 10px solid black;
+    position: relative;
+    top: 15px;
+}
+
+
 table {
     background-color: #000000;
     width:70%;
@@ -164,11 +181,10 @@ table {
     margin-bottom: 50px;
     position: relative;
     top: 50px;
-
 } 
 
 th {
-    border: 2px solid #aaa406;
+    border: 15px inset #aaa406;
     border-radius: 15px;
     background:#ffff00;
     color:#000000;
@@ -176,7 +192,7 @@ th {
 } 
 
 td {
-    border: 2px solid #f5ff00;
+    border: 10px outset #aaa406;
     border-radius: 15px;
     padding:5px;
     color: bisque;

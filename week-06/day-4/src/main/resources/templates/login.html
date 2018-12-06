@@ -8,14 +8,15 @@
   function checkForm(form) {
     
       if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      form.pwd2.setCustomValidity("Match");
       }
       else {
       form.pwd2.setCustomValidity("Passwords Don't Match");
       form.pwd1.focus();
       return false;
     }
-    form.pwd2.setCustomValidity("Match");
-//    return true;
+    alert("You entered a valid password: " + form.pwd1.value);
+    return true;
   }
       
 
@@ -108,7 +109,7 @@
         
 
               
-        <legend>Confirm password</legend>
+        <legend class="legend">Confirm password</legend>
         <input type="password" placeholder="Password" id="pwd1" required>
         <input type="password" placeholder="Confirm Password" id="pwd2" required>
 <!--        <button type="confirm" class="pure-button pure-button-primary">Confirm</button>-->
@@ -124,6 +125,9 @@
       <input type="submit" value="Submit" form="my-first-form">
     </form>
 <!--      <button type="submit" form="my-first-form" value="Submit">Submit</button>-->
+      
+      
+     <div class="divline"></div>
       
       <table class="firsttable">
           <tr>
