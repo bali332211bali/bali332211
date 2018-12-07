@@ -65,13 +65,27 @@ public class ShopController {
 
     @RequestMapping(value="/shopaverage")
     public String shopAverage(Model model) {
-
         double n = 0;
         for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
             n += ShopItem.getShopItems().get(i).quantity;
         }
         model.addAttribute("itemsAttr", n/ShopItem.getShopItems().size());
         return "shop2";
+    }
+
+    @RequestMapping(value="/shopexpensive")
+    public String shopExpensive(Model model) {
+        List<ShopItem> shopItem = new ArrayList<>();
+        int n = 0;
+        for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
+            if (ShopItem.getShopItems().get(i).price > n) {
+                n = ShopItem.getShopItems().get(i).price;
+                shopItem.clear();
+                shopItem.add(ShopItem.getShopItems().get(i));
+            }
+        }
+        model.addAttribute("itemsAttr", shopItem);
+        return "shop";
     }
 
 }
