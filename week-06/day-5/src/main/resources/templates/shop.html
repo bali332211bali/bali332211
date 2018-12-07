@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="stylesshoptemplates.css" rel="stylesheet" type="text/css" />
+        <link href="stylesshop.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>
@@ -25,20 +25,17 @@
                 <th>Price</th>
                 <th>Stock</th>
             </tr>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.getName()}"></td>
+            </tr>
+
         </table>
 
 
 
-
-<!--
-        <tr th:each="item : ${items}">
-            <td th:text="item.getName()"></td>
-        </tr>
--->
-
-<!--
-        ?sortBy=price
-        ?available=yes
+        <!--
+?sortBy=price
+?available=yes
 -->
 
 

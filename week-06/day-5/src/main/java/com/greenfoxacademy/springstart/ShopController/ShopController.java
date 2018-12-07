@@ -5,23 +5,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class ShopController {
 
 
     ShopController() {
         ShopItem.initializeShopItems();
-        ShopItem.getShopItems();
 
     }
 
     @RequestMapping(value="/shop")
-    public String shop() {
+    public String shop(Model model) {
 
-//        model.addAttribute("items", shopItems);
+        model.addAttribute("items", ShopItem.getShopItems());
 
 //        @RequestParam String name, Model model
 //        model.addAttribute("name", " value");

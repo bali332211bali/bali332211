@@ -1,4 +1,11 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
 body {
+    margin-left: 4%;
     font-family:cursive;
 }
 
@@ -9,7 +16,7 @@ header {
 }
 
 .divLine {
-    margin-top: -28px;;
+    margin-top: 0px;;
     height: 2px;
     background-color: #1dc0e6;
 }
@@ -28,9 +35,8 @@ a:link {
 }
 
 th {
-   
+    margin-top: 10px;
+    text-align: center;
     padding: 20px;
-    height: 20px;
     background-color: aqua;
-    
 }
