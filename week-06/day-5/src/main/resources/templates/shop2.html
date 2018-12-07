@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="stylesshop.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <p>My Shop</p>
+            <div class="divLine"></div>
+        </header>
+        <div class="divline"></div>
+        <h1>
+            <a class="only" href="/shopavailable" target="_blank">ONLY AVAILABLE</a>
+            <a class="cheapest" href="/shopcheapestfirst" target="_blank">CHEAPEST FIRST</a>
+            <a class="nike" href="/shopcontainsnike" target="_blank">CONTAINS NIKE</a>
+            <a class="average" href="/shopaverage" target="_blank">AVERAGE STOCK</a>
+            <a class="expensive" href="/shopexpensive" target="_blank">MOST EXPENSIVE</a>
+        </h1>
+        
+         <h2 th:text= "'Average is ' + ${itemsAttr}"></h2>
+
+        <!--
+?sortBy=price
+?available=yes
+-->
+
+
+
+
+
+
+    </body>
+</html>
