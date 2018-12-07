@@ -35,8 +35,15 @@ a:link {
 }
 
 th {
-    margin-top: 10px;
     text-align: center;
     padding: 20px;
-    background-color: aqua;
+    background-color: aqua; 
+}
+
+table {
+
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
 }

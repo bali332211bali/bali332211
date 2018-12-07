@@ -16,13 +16,8 @@ public class ShopController {
 
     @RequestMapping(value="/shop")
     public String shop(Model model) {
-
         model.addAttribute("items", ShopItem.getShopItems());
-
 //        @RequestParam String name, Model model
-//        model.addAttribute("name", " value");
-//        model.addAttribute("color", "orange");
-//        model.addAttribute("size", 40);
         return "shop";
     }
 

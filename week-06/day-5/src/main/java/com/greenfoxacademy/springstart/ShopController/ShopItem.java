@@ -21,10 +21,10 @@ public class ShopItem {
 
     static void initializeShopItems() {
         shopItems.add(new ShopItem("Running Shoes", "running", 5000, 5));
-        shopItems.add(new ShopItem("Printer", "print", 3000, 5));
-        shopItems.add(new ShopItem("Cola", "0.5l", 200, 5));
-        shopItems.add(new ShopItem("Lunch", "with rice", 10000, 5));
-        shopItems.add(new ShopItem("Shirt", "blue", 7000, 5));
+        shopItems.add(new ShopItem("Printer", "print", 3000, 2));
+        shopItems.add(new ShopItem("Cola", "0.5l", 200, 0));
+        shopItems.add(new ShopItem("Lunch", "with rice", 10000, 100));
+        shopItems.add(new ShopItem("Shirt", "blue", 7000, 1));
     }
 
     static public List<ShopItem> getShopItems() {
