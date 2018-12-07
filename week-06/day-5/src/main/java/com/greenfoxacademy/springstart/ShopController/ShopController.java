@@ -19,8 +19,10 @@ public class ShopController {
 
     @RequestMapping(value="/shop")
     public String shop(Model model) {
+//        ShopItem.shopItems.clear();
+//        ShopItem.initializeShopItems();
+
         model.addAttribute("itemsAttr", ShopItem.getShopItems());
-//        @RequestParam String name, Model model
         return "shop";
     }
 
@@ -32,6 +34,7 @@ public class ShopController {
                     availableShopItems.add(ShopItem.getShopItems().get(i));
                 }
             }
+
         model.addAttribute("itemsAttr", availableShopItems);
         return "shop";
     }
@@ -42,12 +45,33 @@ public class ShopController {
         for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
             cheapestFirstShopItems.add(ShopItem.getShopItems().get(i));
         }
-
         Collections.sort(cheapestFirstShopItems, new SortByQuantity());
-
         model.addAttribute("itemsAttr", cheapestFirstShopItems);
-
         return "shop";
+    }
+
+    @RequestMapping(value="/shopcontainsnike")
+    public String shopContainsNike(Model model) {
+        List<ShopItem> containsNike = new ArrayList<>();
+        for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
+
+            if (ShopItem.getShopItems().get(i).description.contains("Nike")) {
+                containsNike.add(ShopItem.getShopItems().get(i));
+            }
+        }
+        model.addAttribute("itemsAttr", containsNike);
+        return "shop";
+    }
+
+    @RequestMapping(value="/shopaverage")
+    public String shopAverage(Model model) {
+
+        double n = 0;
+        for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
+            n += ShopItem.getShopItems().get(i).quantity;
+        }
+        model.addAttribute("itemsAttr", n/ShopItem.getShopItems().size());
+        return "shop2";
     }
 
 }

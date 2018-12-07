@@ -25,6 +25,11 @@ h1 {
     margin-top: 10px;
 }
 
+h2 {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
 a:link {
   color: white;
   background-color: red;
