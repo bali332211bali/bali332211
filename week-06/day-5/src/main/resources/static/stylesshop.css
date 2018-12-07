@@ -1,12 +1,17 @@
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(white, gray);
     margin-left: 4%;
     font-family:cursive;
+
 }
 
 header {
@@ -26,19 +31,34 @@ h1 {
 }
 
 a:link {
-  color: white;
-  background-color: red;
-  text-decoration: none;
+    color: white;
+    background-color: red;
+    text-decoration: none;
     border-radius: 10px;
     font-size: 20px;
     padding: 5px;
 }
 
+a:hover {
+    background-image: radial-gradient(yellow, red);
+}
+
+a:active {
+    color: blue;
+    background-image: radial-gradient(yellow, orange);
+    border-color: orange;
+
+} 
+
+a:visited {
+    color: black;
+}
 
 th {
     text-align: center;
     padding: 20px;
-    background-color: aqua; 
+    background-image: linear-gradient(blue, aqua); 
+    color: white;
 }
 
 table {
