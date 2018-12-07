@@ -14,6 +14,10 @@ body {
 
 }
 
+form {
+    margin: auto;
+}
+
 header {
     color: #1dc0e6;
     font-weight: 900;

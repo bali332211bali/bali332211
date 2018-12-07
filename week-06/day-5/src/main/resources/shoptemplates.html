@@ -18,7 +18,7 @@
             <a class="expensive" href="/myshop/expensive" target="_blank">MOST EXPENSIVE</a>
         </h1>
 
-        <h2 th:text= "'Average is ' + '${itemsAttr}'">sdafdg</h2>
+        <h2>sdafdg</h2>
         <table>
             <tr>
                 <th>Name</th>
@@ -33,6 +33,11 @@
 
         </table>
 
+
+        <form method="post" action="/shopsearch">
+            <label>Search for <input name="search" type="text"/></label>
+            <input type="submit" value="Search"/>
+        </form>
         <!--
 ?sortBy=price
 ?available=yes

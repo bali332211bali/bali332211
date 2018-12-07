@@ -1,7 +1,11 @@
 package com.greenfoxacademy.springstart.ShopController;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -84,6 +88,19 @@ public class ShopController {
       }
     }
     model.addAttribute("itemsAttr", shopItem);
+    return "shop";
+  }
+
+  @PostMapping(value = "/shopsearch")
+  public String shopSearch(Model model, String search) {
+
+    List<ShopItem> searched = new ArrayList<>();
+    for (int i = 0; i < ShopItem.getShopItems().size(); i++) {
+      if (ShopItem.getShopItems().get(i).name.contains(search)) {
+        searched.add(ShopItem.getShopItems().get(i));
+      }
+    }
+    model.addAttribute("itemsAttr", searched);
     return "shop";
   }
 
