@@ -11,11 +11,11 @@
         </header>
         <div class="divline"></div>
         <h1>
-            <a class="only" href="/shop/only" target="_blank">ONLY AVAILABLE</a>
-            <a class="cheapest" href="/myshop/cheapest" target="_blank">CHEAPEST FIRST</a>
-            <a class="nike" href="/myshop/nike" target="_blank">CONTAINS NIKE</a>
-            <a class="average" href="/myshop/average" target="_blank">AVERAGE STOCK</a>
-            <a class="expensive" href="/myshop/expensive" target="_blank">MOST EXPENSIVE</a>
+            <a class="only" href="/shopavailable" target="_blank">ONLY AVAILABLE</a>
+            <a class="cheapest" href="/shopcheapestfirst" target="_blank">CHEAPEST FIRST</a>
+            <a class="nike" href="/shop/nike" target="_blank">CONTAINS NIKE</a>
+            <a class="average" href="/shop/average" target="_blank">AVERAGE STOCK</a>
+            <a class="expensive" href="/shop/expensive" target="_blank">MOST EXPENSIVE</a>
         </h1>
 
         <table>
@@ -25,7 +25,7 @@
                 <th>Price</th>
                 <th>Stock</th>
             </tr>
-            <tr th:each="item : ${items}">
+            <tr th:each="item : ${itemsAttr}">
                 <td th:text="${item.getName()}"></td>
                 <td th:text="${item.getDescription()}"></td>
                 <td th:text="${item.getPrice()} + ' $'"></td>

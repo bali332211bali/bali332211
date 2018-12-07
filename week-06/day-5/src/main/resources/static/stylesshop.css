@@ -34,6 +34,7 @@ a:link {
     padding: 5px;
 }
 
+
 th {
     text-align: center;
     padding: 20px;
@@ -41,7 +42,6 @@ th {
 }
 
 table {
-
     font-size: 25px;
     text-align: center;
     margin: auto;

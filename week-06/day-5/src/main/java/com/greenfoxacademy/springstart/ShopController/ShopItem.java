@@ -46,4 +46,5 @@ public class ShopItem {
     public int getQuantity() {
         return quantity;
     }
+
 }
