@@ -1,7 +1,7 @@
 public class FizzBuzz {
 
   public static String getFizzBuzzValue(int elementOfFizzBuzz) {
-    
+
     if (elementOfFizzBuzz % 3 == 0 && elementOfFizzBuzz % 5 == 0) {
       return "FizzBuzz";
     } else if (elementOfFizzBuzz % 5 == 0) {
