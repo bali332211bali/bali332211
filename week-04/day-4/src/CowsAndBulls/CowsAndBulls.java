@@ -13,8 +13,8 @@ public class CowsAndBulls {
   }
 
   List<Integer> split(int number) {
-    List<Integer> numbers = new ArrayList<>();
 
+    List<Integer> numbers = new ArrayList<>();
     while(number > 0) {
       numbers.add(number % 10);
       number = number / 10;
