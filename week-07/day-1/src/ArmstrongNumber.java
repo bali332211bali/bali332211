@@ -9,7 +9,7 @@ public class ArmstrongNumber {
 
     String[] numberStr = Integer.toString(number).split("");
 
-   int armstrongSum = Arrays.stream(numberStr)
+    int armstrongSum = Arrays.stream(numberStr)
         .mapToInt(str -> (int) (Math.pow(Integer.parseInt(str), numberStr.length)))
         .sum();
 

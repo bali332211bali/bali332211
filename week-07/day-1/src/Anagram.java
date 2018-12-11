@@ -8,8 +8,6 @@ public class Anagram {
 
   public static boolean isAnagram(String word_1, String word_2) {
 
-
-
     String word_1Sorted = Arrays.stream(word_1.split(""))
         .sorted(String::compareTo)
         .collect(Collectors.joining());

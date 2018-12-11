@@ -19,6 +19,6 @@ public class FibonacciTest {
     assertEquals(5, Fibonacci.getFibonacciElement(5));
     assertEquals(144, Fibonacci.getFibonacciElement(12));
 
- }
+  }
 
 }
