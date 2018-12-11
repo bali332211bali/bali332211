@@ -14,4 +14,24 @@ public class Book {
         this.author = author;
         this.releaseYear = releaseYear;
     }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public Integer getReleaseYear() {
+        return releaseYear;
+    }
 }
