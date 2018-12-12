@@ -23,7 +23,6 @@ public class BankAccountController {
   @RequestMapping(path = "/table", method = RequestMethod.GET)
   public String showTable(Model model) {
     model.addAttribute("bankAccounts", Accounts.bankAccounts);
-    model.addAttribute("true", true);
     return "table";
   }
 

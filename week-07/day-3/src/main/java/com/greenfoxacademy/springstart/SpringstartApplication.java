@@ -14,7 +14,7 @@ public class SpringstartApplication {
     Accounts.bankAccounts.add(new BankAccount("Simb", 200, "lio"));
     Accounts.bankAccounts.add(new BankAccount("Sim", 20, "li"));
     Accounts.bankAccounts.add(new BankAccount("Si", 2, "l"));
-    Accounts.bankAccounts.add(new BankAccount("S", 1, "b", true));
+    Accounts.bankAccounts.add(new BankAccount("S", 1, "b", true, "Good"));
 
 
     SpringApplication.run(SpringstartApplication.class, args);

@@ -17,11 +17,16 @@
 
     <tr th:each="bankAccount : ${bankAccounts}"
         th:class="${bankAccount.isKing()} ? King : NotKing">
-            <td th:text="${bankAccount.getIndexOf()}"></td>
-            <td th:text="${bankAccount.getName()}"></td>
-            <td th:text="${bankAccount.getBalance() + ' Zebra'}"></td>
-            <td th:text="${bankAccount.getAnimalType()}"></td>
-            <td th:text="${bankAccount.getAnimalType()}"></td>
+        <td th:text="${bankAccount.getIndexOf()}"></td>
+        <td th:text="${bankAccount.getName()}"></td>
+        <td th:text="${bankAccount.getBalance() + ' Zebra'}"></td>
+        <td th:text="${bankAccount.getAnimalType()}"></td>
+
+        <div th:switch="${bankAccount.goodOrBad()}">
+            <td th:case="'Bad'">Bad</td>
+            <td th:case="'Good'">Good</td>
+        </div>
+
     </tr>
 
 
