@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BankAccount fields</title>
+    <p th:text="${bankAccount.getName()}"></p>
+    <p th:text="${bankAccount.getBalance() + '.00' + ' Zebra'}"></p>
+    <p th:text="${bankAccount.getAnimalType()}"></p>
+
+    <p th:utext="${string}"></p>
+    <p th:text="${string}"></p>
+</head>
+<body>
+
+</body>
+</html>
