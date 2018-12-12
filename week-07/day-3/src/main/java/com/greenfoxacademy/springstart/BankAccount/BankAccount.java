@@ -3,10 +3,14 @@ package com.greenfoxacademy.springstart.BankAccount;
 public class BankAccount {
 
   String name;
-  int balance;
+  public int balance;
   String animalType;
   boolean king;
   String goodOrBad;
+
+  public BankAccount() {
+
+  }
 
   public BankAccount(String name, int balance, String animalType) {
     this.name = name;
@@ -48,5 +52,7 @@ public class BankAccount {
     return this.goodOrBad;
   }
 
-
+  public void setBalance(int balance) {
+    this.balance += balance;
+  }
 }
