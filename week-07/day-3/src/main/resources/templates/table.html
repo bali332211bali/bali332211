@@ -13,6 +13,7 @@
         <th>Balance</th>
         <th>Animal Type</th>
         <th>Good or Bad</th>
+        <th>Without switch</th>
     </tr>
 
     <tr th:each="bankAccount : ${bankAccounts}"
@@ -26,6 +27,12 @@
             <td th:case="'Bad'">Bad</td>
             <td th:case="'Good'">Good</td>
         </div>
+
+        <td th:if="${bankAccount.goodOrBad() == 'Bad'}">Bad</td>
+        <td th:unless="${bankAccount.goodOrBad() == 'Bad'}">Good</td>
+
+
+
 
     </tr>
 

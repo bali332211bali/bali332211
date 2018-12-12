@@ -3,6 +3,10 @@
     color: yellow;
 }
 
+table {
+    border-spacing: 20px;
+}
+
 
 body {
     background-color: aqua;
