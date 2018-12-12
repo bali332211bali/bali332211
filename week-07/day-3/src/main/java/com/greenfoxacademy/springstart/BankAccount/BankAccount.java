@@ -24,4 +24,9 @@ public class BankAccount {
   public String getAnimalType() {
     return animalType;
   }
+
+  public int getIndexOf() {
+    return Accounts.bankAccounts.indexOf(this);
+  }
+
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+<body>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+    </tr>
+    <tr th:each="bankAccount : ${bankAccounts}">
+        <td th:text="${bankAccount.getIndexOf()}"></td>
+        <td th:text="${bankAccount.getName()}"></td>
+        <td th:text="${bankAccount.getBalance() + ' Zebra'}"></td>
+        <td th:text="${bankAccount.getAnimalType()}"></td>
+    </tr>
+
+</table>
+
+</body>
+
+
+</head>
+<body>
+
+</body>
+</html>
