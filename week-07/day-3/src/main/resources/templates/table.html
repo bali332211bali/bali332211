@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="../static/styles.css" th:href="@{styles.css}" rel="stylesheet" type="text/css" media="all"/>
     <meta charset="UTF-8">
     <title>Table</title>
+</head>
 <body>
 <table>
     <tr>
@@ -10,20 +12,24 @@
         <th>Name</th>
         <th>Balance</th>
         <th>Animal Type</th>
+        <th>Good or Bad</th>
     </tr>
-    <tr th:each="bankAccount : ${bankAccounts}">
-        <td th:text="${bankAccount.getIndexOf()}"></td>
-        <td th:text="${bankAccount.getName()}"></td>
-        <td th:text="${bankAccount.getBalance() + ' Zebra'}"></td>
-        <td th:text="${bankAccount.getAnimalType()}"></td>
+
+    <tr th:each="bankAccount : ${bankAccounts}"
+        th:class="${bankAccount.isKing()} ? King : NotKing">
+            <td th:text="${bankAccount.getIndexOf()}"></td>
+            <td th:text="${bankAccount.getName()}"></td>
+            <td th:text="${bankAccount.getBalance() + ' Zebra'}"></td>
+            <td th:text="${bankAccount.getAnimalType()}"></td>
+            <td th:text="${bankAccount.getAnimalType()}"></td>
     </tr>
+
 
 </table>
 
 </body>
 
 
-</head>
 <body>
 
 </body>
