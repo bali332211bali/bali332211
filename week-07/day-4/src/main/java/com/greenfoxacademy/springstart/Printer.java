@@ -3,7 +3,6 @@ package com.greenfoxacademy.springstart;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
-@Service
 public class Printer {
 
   public void log(String message) {
