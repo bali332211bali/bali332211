@@ -1,22 +1,25 @@
 package com.greenfoxacademy.springstart.Controllers;
 
 
+import com.greenfoxacademy.springstart.StudentService.StudentService;
 import com.greenfoxacademy.springstart.UtilityService.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DIController {
 
   private UtilityService utilityService;
+  private StudentService studentService;
 
   @Autowired
-  DIController(UtilityService utilityService) {
+  DIController(UtilityService utilityService, StudentService studentService) {
     this.utilityService = utilityService;
+    this.studentService = studentService;
   }
 
   @GetMapping("/useful")
@@ -63,11 +66,31 @@ public class DIController {
 
   @GetMapping("/useful/decoded")
   public String useDecoded(Model model, @RequestParam String decoded, @RequestParam int number) {
-    model.addAttribute("decoded", utilityService.caesar(decoded, number*(-1)));
+    model.addAttribute("decoded", utilityService.caesar(decoded, number * (-1)));
     return "decoded";
   }
 
+  @GetMapping("/useful/gfa")
+  public String useGfa() {
+    return "/gfa/gfa";
+  }
 
+  @GetMapping("/useful/gfa/students")
+  public String useGfaStudents(Model model) {
+    model.addAttribute("students", studentService.findAll());
+    return "/gfa/students";
+  }
+
+  @GetMapping("/useful/gfa/add")
+  public String useGfaAdd() {
+    return "gfa/add";
+  }
+
+  @PostMapping("/useful/gfa/add")
+  public String useGfaSave(@RequestParam String name) {
+    studentService.findAll().add(name);
+    return "redirect:/gfa/gfa";
+  }
 
 
 }
