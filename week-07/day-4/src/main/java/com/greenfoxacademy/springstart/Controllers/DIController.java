@@ -53,8 +53,21 @@ public class DIController {
     } else {
       return "invalidEmail";
     }
-
   }
+
+  @GetMapping("/useful/encoded")
+  public String useEncoded(Model model, @RequestParam String encoded, @RequestParam int number) {
+    model.addAttribute("encoded", utilityService.caesar(encoded, number));
+    return "encoded";
+  }
+
+  @GetMapping("/useful/decoded")
+  public String useDecoded(Model model, @RequestParam String encoded, @RequestParam int number) {
+    model.addAttribute("encoded", utilityService.caesar(encoded, number*(-1)));
+    return "decoded";
+  }
+
+
 
 
 }
