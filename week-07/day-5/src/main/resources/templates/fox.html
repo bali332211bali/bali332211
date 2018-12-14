@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>fox</title>
+</head>
+
+<header>
+    <a class="only" href="/fox" target="_blank">information</a>
+</header>
+<body>
+<div th:switch="${img}">
+    <img th:case="'fox'" src="greenfox.png" alt="fox">
+    <img th:case="'dead'" src="dead.png" alt="fox">
+    <img th:case="'sleep'" src="sleep.png" alt="fox">
+</div>
+
+
+<form th:action="fox" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="namef" id="name" placeholder="name">
+    <input type="submit" value="change name">
+    <p th:text="'Name is ' + ${name} + '. ' + 'Eating ' + ${food} +' and drinking ' + ${drink}"></p>
+</form>
+
+<!--<form th:action="fox/food" method="post">-->
+<label for="food">Choose food</label>
+    <select name="food" id="food">
+        <option>bird</option>
+        <option>fish</option>
+    </select>
+    <input type="submit" value="change food">
+<!--</form>-->
+
+
+<label for="drink">Choose drink</label>
+<select id="drink">
+    <option>water</option>
+    <option>lemonade</option>
+</select>
+
+<h1>Tricks</h1>
+<form th:action="@{fox/dead}">
+    <button name="dead">dead</button>
+</form>
+<form th:action="@{fox/sleep}">
+    <button name="sleep">sleep</button>
+</form>
+<form th:action="@{fox/fox}">
+    <button name="fox">fox</button>
+</form>
+
+
+</body>
+</html>

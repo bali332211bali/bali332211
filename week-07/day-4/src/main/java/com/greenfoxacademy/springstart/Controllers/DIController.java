@@ -87,7 +87,7 @@ public class DIController {
   }
 
   @PostMapping("/useful/gfa/add")
-  public String useGfaSave(@RequestParam(value="name") String name) {
+  public String useGfaSave(@RequestParam String name) {
     studentService.save(name);
     return "redirect:/useful/gfa";
   }
