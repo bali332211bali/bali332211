@@ -21,15 +21,9 @@ public class SpringstartApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    todoRepository.save(new Todo("dasgfssda"));
-    todoRepository.save(new Todo("dasgfgsafrgfssda"));
-    todoRepository.save(new Todo("dasgfasfsdfrtegaggsafrgfssda"));
-
-
-//    Todo todo = new Todo("title");
-//    todoService.addTodo(todo);
-//    System.exit(0);
-
+//    todoRepository.save(new Todo("todo", true, false));
+//    todoRepository.save(new Todo("todo2", false, true));
+//    todoRepository.save(new Todo("todo3", false, false));
   }
 }
 

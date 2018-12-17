@@ -10,18 +10,20 @@ public class Todo {
   long id;
   @Column(name = "nameOfTodo")
   String title;
-  boolean isUrgent;
-  boolean isDone;
+  boolean urgent;
+  boolean done;
 
   public Todo() {
 
   }
 
-  public Todo(String title) {
+  public Todo(String title, boolean isUrgent, boolean isDone) {
     this.title = title;
-    this.isUrgent = false;
-    this.isDone = false;
+    this.urgent = isUrgent;
+    this.done = isDone;
   }
+
+
 
   public long getId() {
     return id;
@@ -32,10 +34,26 @@ public class Todo {
   }
 
   public boolean isUrgent() {
-    return isUrgent;
+    return urgent;
   }
 
   public boolean isDone() {
-    return isDone;
+    return done;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setUrgent(boolean urgent) {
+    this.urgent = urgent;
+  }
+
+  public void setDone(boolean done) {
+    this.done = done;
   }
 }
