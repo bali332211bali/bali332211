@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart.Repositories;
+package com.greenfoxacademy.springstart.Models;
 
 import javax.persistence.*;
 
@@ -12,6 +12,10 @@ public class Todo {
   String title;
   boolean isUrgent;
   boolean isDone;
+
+  public Todo() {
+
+  }
 
   public Todo(String title) {
     this.title = title;
