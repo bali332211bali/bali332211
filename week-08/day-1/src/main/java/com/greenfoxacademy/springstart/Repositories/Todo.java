@@ -1,9 +1,6 @@
 package com.greenfoxacademy.springstart.Repositories;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Todo {
@@ -11,11 +8,12 @@ public class Todo {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   long id;
+  @Column(name = "nameOfTodo")
   String title;
   boolean isUrgent;
   boolean isDone;
 
-  Todo(String title) {
+  public Todo(String title) {
     this.title = title;
     this.isUrgent = false;
     this.isDone = false;

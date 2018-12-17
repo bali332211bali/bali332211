@@ -8,15 +8,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoService {
 
-  @Autowired
+
   TodoRepository todoRepository;
 
+  @Autowired
   TodoService(TodoRepository todoRepository) {
     this.todoRepository = todoRepository;
   }
 
   public void addTodo(Todo todo) {
-    this.todoRepository.save(todo);
+    if(todo != null) {
+      this.todoRepository.save(todo);
+    }
+
   }
 
 
