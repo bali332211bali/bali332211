@@ -54,6 +54,9 @@
             <td th:text="${todo.getTitle()}"></td>
             <td th:text="${todo.isUrgent()}"></td>
             <td th:text="${todo.isDone()}"></td>
+            <td><a th:href="|/todo/delete?id=${todo.getId()}|">delete</a></td>
+
+
         </tr>
     </div>
 </table>

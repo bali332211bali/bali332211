@@ -40,9 +40,13 @@ public class TodoController {
     if (activeSelect != null) {
       if (activeSelect.equalsIgnoreCase("active")) {
         model.addAttribute("todos", todoService.getActive());
+      } else {
+        model.addAttribute("todos", todoRepository.findAll());
       }
+    } else {
+      model.addAttribute("todos", todoRepository.findAll());
     }
-    model.addAttribute("todos", todoRepository.findAll());
+
 
     return "todoList";
   }
@@ -54,8 +58,8 @@ public class TodoController {
   }
 
   @GetMapping("/delete")
-  public String delete() {
-    todoRepository.deleteAll();
+  public String delete(@RequestParam long id) {
+    todoService.deleteTodo(id);
     return "redirect:/todo/list";
   }
 
