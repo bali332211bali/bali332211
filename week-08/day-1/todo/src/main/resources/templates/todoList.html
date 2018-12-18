@@ -72,6 +72,7 @@
             <th>Urgent</th>
             <th>Done</th>
             <th>Action</th>
+            <th>Edit</th>
         </tr>
 
         <div th:each="todo : ${todos}">
@@ -85,7 +86,8 @@
                     <div th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></div>
                 </td>
                 <td><a th:href="|/todo/delete?id=${todo.getId()}|" class="btn btn-lg btn-warning">delete</a></td>
-                <!--<td><a th:href="@{|/todo/${todo.getId()}/delete|}">delete</a></td>-->
+                <!--<td><a th:href="|/todo/edit?id=${todo.getId()}|" class="btn btn-lg btn-info">edit</a></td>-->
+                <td><a th:href="@{|/todo/${todo.getId()}/edit|}">edit</a></td>
             </tr>
         </div>
     </table>

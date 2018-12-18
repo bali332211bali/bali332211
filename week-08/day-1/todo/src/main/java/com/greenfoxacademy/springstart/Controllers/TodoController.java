@@ -65,6 +65,18 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
+  @GetMapping("/{id}/edit")
+  public String edit(Model model, @PathVariable long id) {
+      model.addAttribute("editedTodo", todoService.getTodoById(id));
+    return "edit";
+  }
+
+  @PostMapping("/{id}/edit")
+  public String edit(@ModelAttribute Todo editedTodo) {
+    todoService.addTodo(editedTodo);
+    return "redirect:/todo/list";
+  }
+
   @GetMapping("/deleteAll")
   public String deleteAll() {
     todoRepository.deleteAll();

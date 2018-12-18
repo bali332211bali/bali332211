@@ -7,11 +7,11 @@ public class Todo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  long id;
+  private long id;
   @Column(name = "nameOfTodo")
-  String title;
-  boolean urgent;
-  boolean done;
+  private String title;
+  private boolean urgent;
+  private boolean done;
 
   public Todo() {
 

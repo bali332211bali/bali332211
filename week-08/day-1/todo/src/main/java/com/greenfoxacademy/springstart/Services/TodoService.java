@@ -20,7 +20,7 @@ public class TodoService {
   }
 
   public void addTodo(Todo todo) {
-    if(todo != null) {
+    if (todo != null) {
       this.todoRepository.save(todo);
     }
   }
@@ -30,7 +30,7 @@ public class TodoService {
     List<Todo> todosActive = new ArrayList<>();
 
     for (int i = 0; i < todos.size(); i++) {
-      if(!todos.get(i).isDone()) {
+      if (!todos.get(i).isDone()) {
         todosActive.add(todos.get(i));
       }
     }
@@ -46,5 +46,17 @@ public class TodoService {
     Collections.sort(todos, new SortById());
     return todos;
   }
+
+  public void editTodo(long id) {
+    if (todoRepository.findById(id).isPresent()) {
+      todoRepository.save(todoRepository.findById(id).get());
+    }
+
+  }
+
+  public Todo getTodoById(long id) {
+    return todoRepository.findById(id).get();
+  }
+
 
 }
