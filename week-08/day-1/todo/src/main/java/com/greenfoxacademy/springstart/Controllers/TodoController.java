@@ -40,6 +40,8 @@ public class TodoController {
     if (activeSelect != null) {
       if (activeSelect.equalsIgnoreCase("active")) {
         model.addAttribute("todos", todoService.getActive());
+      } else if (activeSelect.equalsIgnoreCase("sort by id")){
+        model.addAttribute("todos", todoService.getSortById());
       } else {
         model.addAttribute("todos", todoRepository.findAll());
       }

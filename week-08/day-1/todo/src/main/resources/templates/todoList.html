@@ -1,51 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:href="http://www.springframework.org/schema/data/jaxb">
 <head>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
     <meta charset="UTF-8">
     <title>todoList</title>
 </head>
 <body>
 <div class="container">
 
+
     <h1>Todos</h1>
+    </br>
 
     <form th:action="@{/todo/list}" action="/todo/list" id="activeForm">
         <input type="submit" class="btn btn-lg btn-warning">
     </form>
 
-        <select name="activeSelect" form="activeForm" class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-            <option selected>Choose...</option>
-            <option value="active">Active</option>
-            <option value="all">All</option>
-        </select>
+    <select name="activeSelect" form="activeForm" class="custom-select" id="inputGroupSelect03"
+            aria-label="Example select with button addon">
+        <option selected>Choose filter</option>
+        <option value="active">Active</option>
+        <option value="sort by id">Sort by id</option>
+    </select>
 
 
     <!--<select name="activeSelect" form="activeForm">-->
-        <!--<option value="active">Active</option>-->
-        <!--<option value="all">All</option>-->
+    <!--<option value="active">Active</option>-->
+    <!--<option value="all">All</option>-->
     <!--</select>-->
 
     </br>
 
     </br>
 
-    <form action="#" th:action="@{/todo/add}" th:object="${newTodo}" method="post">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" th:field="*{title}">
-        <label for="title">isUrgent</label>
-        <input type="checkbox" name="urgent" id="urgent" th:field="*{urgent}">
-        <label for="title">isDone</label>
-        <input type="checkbox" name="done" id="done" th:field="*{done}">
-        <!--<button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>-->
-        <button type="submit" class="btn btn-primary">Save <span class="badge badge-light">Todo</span></button>
-    </form>
+    <!--<div class="d-inline p-2 bg-primary text-white">-->
+    <div class="newTodos2">
+    <label for="new">New todo</label>
+    </div>
+    <div align="center">
+
+    <form action="#" th:action="@{/todo/add}" th:object="${newTodo}" method="post" id="new">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" th:field="*{title}">
+            <label for="urgent">Urgent</label>
+            <input type="checkbox" name="urgent" id="urgent" th:field="*{urgent}">
+            <label for="done">Done</label>
+            <input type="checkbox" name="done" id="done" th:field="*{done}">
+            <!--<button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>-->
+            <button type="submit" class="btn btn-primary">Save <span class="badge badge-light">Todo</span></button>
+        </form>
+    </div>
+    <!--</div>-->
 
     </br>
     </br>
 
     <form th:action="@{/todo/deleteAll}">
-        <input type="submit" class="btn btn-lg btn-danger" value="delete all">
+        <div align="center">
+            <input type="submit" class="btn btn-lg btn-danger" value="delete all">
+        </div>
     </form>
 
     </br>
@@ -63,11 +77,13 @@
         <div th:each="todo : ${todos}">
             <tr>
                 <td th:text="${todo.getId()}" class="badge"></td>
-                <td th:text="${todo.getTitle()}" class="alert alert-info" role="alert"></td>
+                <td th:text="${todo.getTitle()}"></td>
                 <!--<td><div th:text="${todo.isUrgent()}" class="label label-info"></div></td>-->
                 <td th:class="${todo.isUrgent()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></td>
                 <!--<td><div th:text="${todo.isDone()}" class="label label-info"></div></td>-->
-                <td><div th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></div></td>
+                <td>
+                    <div th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></div>
+                </td>
                 <td><a th:href="|/todo/delete?id=${todo.getId()}|" class="btn btn-lg btn-warning">delete</a></td>
                 <!--<td><a th:href="@{|/todo/${todo.getId()}/delete|}">delete</a></td>-->
             </tr>
