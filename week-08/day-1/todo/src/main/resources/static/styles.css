@@ -1,13 +1,30 @@
 .newTodos2 {
-
     margin-left: 315px;
+}
+
+nav {
+    padding-top: 7px;
+    padding-left: 7px;
+}
+
+body {
+    padding-top: 60px;
+}
+
+input[type="checkbox"] {
+    opacity: 100;
+    resize: both;
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+    padding-bottom: -20px;
 }
 
 label[for="title"], label[for="urgent"], label[for="done"] {
     margin-bottom: 10px;
     display: inline-block;
     padding-left: 26px;
-    /*    background: url(png) no-repeat;*/
+    /*background: url(png) no-repeat;*/
     background-position: 0 -32px;
     line-height: 24px;
     cursor: pointer;
@@ -20,10 +37,5 @@ input:checked + label[for="done"] {
     color: #ce1010;
 }
 
-input[type="checkbox"] {
-    opacity: 100;
-    resize: both;
-    height: 15px;
-    width: 15px;
-    margin: 10px;
-}
+
+

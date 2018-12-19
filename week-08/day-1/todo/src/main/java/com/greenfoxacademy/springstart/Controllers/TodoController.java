@@ -34,10 +34,15 @@ public class TodoController {
   @GetMapping({"/list", "/"})
   public String list(Model model,
                      @RequestParam(required = false) String activeSelect,
+                     @RequestParam(required = false) String searchString,
                      @ModelAttribute Todo newTodo) {
     model.addAttribute("newTodo", newTodo);
 
-    if (activeSelect != null) {
+    if (searchString != null) {
+      model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));
+    }
+
+    if (searchString == null && activeSelect != null) {
       if (activeSelect.equalsIgnoreCase("active")) {
         model.addAttribute("todos", todoService.getActive());
       } else if (activeSelect.equalsIgnoreCase("sort by id")){
@@ -45,7 +50,7 @@ public class TodoController {
       } else {
         model.addAttribute("todos", todoRepository.findAll());
       }
-    } else {
+    } else if (searchString == null) {
       model.addAttribute("todos", todoRepository.findAll());
     }
 
@@ -88,5 +93,6 @@ public class TodoController {
 //    todoService.deleteTodo(id);
 //    return "redirect:/todo/list";
 //  }
+
 
 }
