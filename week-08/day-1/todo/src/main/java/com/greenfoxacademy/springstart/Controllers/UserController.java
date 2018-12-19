@@ -5,11 +5,10 @@ import com.greenfoxacademy.springstart.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller("/todo")
+@Controller
+@RequestMapping("/todo")
 public class UserController {
 
   UserService userService;
@@ -19,14 +18,13 @@ public class UserController {
     this.userService = userService;
   }
 
-
-  @GetMapping("/register")
-  public String register(Model model, @ModelAttribute User newUser) {
-    model.addAttribute("newUser", newUser);
+  @GetMapping("/{id}/register")
+  public String register(Model model, @ModelAttribute User newUser, @PathVariable long id) {
+    model.addAttribute("newUser", userService.getUserById(id));
     return "register";
   }
 
-  @PostMapping("/register")
+  @PostMapping("/{id}/register")
   public String register(@ModelAttribute User newUser) {
     userService.addUser(newUser);
     return "redirect:/todo/";

@@ -6,6 +6,8 @@ import com.greenfoxacademy.springstart.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.parser.Entity;
+
 @Service
 public class UserService {
 
@@ -22,6 +24,17 @@ public class UserService {
     if(newUser != null) {
       userRepository.save(newUser);
     }
-
   }
+
+  public User getUserById(long id) {
+    return userRepository.findById(id).get();
+  }
+
+//  public User addUser(User newUser) {
+//    if(newUser != null) {
+//      return userRepository.save(newUser);
+//    }
+//    return null;
+//  }
+
 }

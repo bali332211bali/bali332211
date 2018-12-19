@@ -11,5 +11,6 @@ import java.util.List;
 public interface TodoRepository extends CrudRepository<Todo, Long> {
 
   List<Todo> findAllByTitleContaining(String searchString);
+  List<Todo> findAllByUserEquals(Long userId);
 
 }

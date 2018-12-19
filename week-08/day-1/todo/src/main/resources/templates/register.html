@@ -12,7 +12,7 @@
 </div>
 <div align="center">
 
-    <form action="#" th:action="@{/todo/register}" th:object="${newUser}" method="post" id="edit">
+    <form action="#" th:action="@{|/todo/${newUser.getId()}/register|}" th:object="${newUser}" method="post" id="edit">
 
         <label for="username">Username</label>
         <input type="text" name="username" id="username" th:field="*{username}">

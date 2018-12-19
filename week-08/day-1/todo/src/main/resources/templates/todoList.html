@@ -20,7 +20,7 @@
     </nav>
 
 
-    <h1>Todos</h1>
+    <h1 th:text="'Todos of ' + ${newUser}"></h1>
     </br>
 
     <form th:action="@{/todo/list}" action="/todo/list" id="activeForm">

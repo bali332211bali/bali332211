@@ -36,8 +36,11 @@ public class TodoController {
   public String list(Model model,
                      @RequestParam(required = false) String activeSelect,
                      @RequestParam(required = false) String searchString,
+                     @ModelAttribute User newUser,
                      @ModelAttribute Todo newTodo) {
     model.addAttribute("newTodo", newTodo);
+
+    model.addAttribute("newUser", newUser.getUsername());
 
     if (searchString != null) {
       model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));

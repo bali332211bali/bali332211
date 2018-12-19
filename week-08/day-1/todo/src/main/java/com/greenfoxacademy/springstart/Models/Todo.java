@@ -18,7 +18,9 @@ public class Todo {
   private boolean urgent;
   private boolean done;
 
-
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id")
+  private User user;
 
   public Todo() {
 
@@ -29,8 +31,6 @@ public class Todo {
     this.urgent = isUrgent;
     this.done = isDone;
   }
-
-
 
   public long getId() {
     return id;
@@ -62,6 +62,14 @@ public class Todo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 
 //  public Date getDate() {
