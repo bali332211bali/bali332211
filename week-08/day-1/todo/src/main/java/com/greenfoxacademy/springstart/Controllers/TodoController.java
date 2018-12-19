@@ -4,6 +4,7 @@ import com.greenfoxacademy.springstart.Models.Todo;
 import com.greenfoxacademy.springstart.Models.User;
 import com.greenfoxacademy.springstart.Repositories.TodoRepository;
 import com.greenfoxacademy.springstart.Services.TodoService;
+import com.greenfoxacademy.springstart.Services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +18,12 @@ public class TodoController {
 
   TodoRepository todoRepository;
   TodoService todoService;
+  UserService userService;
 
-  TodoController(TodoRepository todoRepository, TodoService todoService) {
+  TodoController(TodoRepository todoRepository, TodoService todoService, UserService userService) {
     this.todoRepository = todoRepository;
     this.todoService = todoService;
+    this.userService = userService;
   }
 
 //  @GetMapping
@@ -31,7 +34,6 @@ public class TodoController {
 //  }
 
 
-
   @GetMapping({"/list", "/"})
   public String list(Model model,
                      @RequestParam(required = false) String activeSelect,
@@ -39,8 +41,7 @@ public class TodoController {
                      @ModelAttribute User newUser,
                      @ModelAttribute Todo newTodo) {
     model.addAttribute("newTodo", newTodo);
-
-    model.addAttribute("newUser", newUser.getUsername());
+    model.addAttribute("newUser", userService.getLastUser().getUsername());
 
     if (searchString != null) {
       model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));
@@ -49,7 +50,7 @@ public class TodoController {
     if (searchString == null && activeSelect != null) {
       if (activeSelect.equalsIgnoreCase("active")) {
         model.addAttribute("todos", todoService.getActive());
-      } else if (activeSelect.equalsIgnoreCase("sort by id")){
+      } else if (activeSelect.equalsIgnoreCase("sort by id")) {
         model.addAttribute("todos", todoService.getSortById());
       } else {
         model.addAttribute("todos", todoRepository.findAll());
@@ -76,7 +77,7 @@ public class TodoController {
 
   @GetMapping("/{id}/edit")
   public String edit(Model model, @PathVariable long id) {
-      model.addAttribute("editedTodo", todoService.getTodoById(id));
+    model.addAttribute("editedTodo", todoService.getTodoById(id));
     return "edit";
   }
 
@@ -98,5 +99,13 @@ public class TodoController {
 //    return "redirect:/todo/list";
 //  }
 
+
+//  @GetMapping("/{id}")
+//  public String todosId(Model model, @ModelAttribute User newUser, @PathVariable long id) {
+//    model.addAttribute("newUser", userService.getUserById(id));
+//    System.out.println(newUser.getUsername());
+//    System.out.println("todoid");
+//    return "redirect:/todo/list";
+//  }
 
 }

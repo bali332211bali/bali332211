@@ -6,27 +6,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @RequestMapping("/todo")
 public class UserController {
 
-  UserService userService;
+  private UserService userService;
 
   @Autowired
   UserController(UserService userService) {
     this.userService = userService;
   }
 
-  @GetMapping("/{id}/register")
-  public String register(Model model, @ModelAttribute User newUser, @PathVariable long id) {
-    model.addAttribute("newUser", userService.getUserById(id));
+  @GetMapping("/register")
+  public String register(Model model, @ModelAttribute User newUser) {
+    model.addAttribute("newUser", newUser);
     return "register";
   }
 
-  @PostMapping("/{id}/register")
+  @PostMapping("/register")
   public String register(@ModelAttribute User newUser) {
     userService.addUser(newUser);
     return "redirect:/todo/";
   }
+
+//  @PostMapping("/{id}/register")
+//  public String register(@ModelAttribute User newUser, @PathVariable long id) {
+//    userService.addUser(newUser);
+////    model.addAttribute("idUser", newUser.getId());
+//    System.out.println(newUser.getUsername());
+//    System.out.println(newUser.getId());
+//    RedirectView rv = new RedirectView();
+//    rv.setContextRelative(true);
+//    rv.setUrl("/todo/" + id);
+//    return rv;
+//  }
 }

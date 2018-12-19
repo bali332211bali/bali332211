@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.parser.Entity;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -28,6 +29,16 @@ public class UserService {
 
   public User getUserById(long id) {
     return userRepository.findById(id).get();
+  }
+
+  public User getLastUser() {
+    List<User> users = (List<User>) userRepository.findAll();
+    return users.get(users.size()-1);
+  }
+
+  public List<User> getAllUsers() {
+    List<User> users = (List<User>) userRepository.findAll();
+    return users;
   }
 
 //  public User addUser(User newUser) {
