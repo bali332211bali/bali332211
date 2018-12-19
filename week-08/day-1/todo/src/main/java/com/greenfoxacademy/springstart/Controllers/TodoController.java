@@ -1,6 +1,7 @@
 package com.greenfoxacademy.springstart.Controllers;
 
 import com.greenfoxacademy.springstart.Models.Todo;
+import com.greenfoxacademy.springstart.Models.User;
 import com.greenfoxacademy.springstart.Repositories.TodoRepository;
 import com.greenfoxacademy.springstart.Services.TodoService;
 import org.springframework.stereotype.Controller;
