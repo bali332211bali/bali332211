@@ -1,6 +1,7 @@
 package com.greenfoxacademy.springstart.Models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -8,10 +9,16 @@ public class Todo {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
+//  @Temporal(TemporalType.DATE)
+//  private Date date = new Date();
+
   @Column(name = "nameOfTodo")
   private String title;
   private boolean urgent;
   private boolean done;
+
+
 
   public Todo() {
 
@@ -56,4 +63,12 @@ public class Todo {
   public void setDone(boolean done) {
     this.done = done;
   }
+
+//  public Date getDate() {
+//    return date;
+//  }
+//
+//  public void setDate(Date date) {
+//    this.date = date;
+//  }
 }
