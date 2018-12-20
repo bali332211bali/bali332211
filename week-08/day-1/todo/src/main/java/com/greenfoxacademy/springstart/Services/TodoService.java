@@ -27,7 +27,7 @@ public class TodoService {
   }
 
   public List<Todo> getActive() {
-    List<Todo> todos = (ArrayList) todoRepository.findAll();
+    List<Todo> todos = todoRepository.findAll();
     List<Todo> todosActive = new ArrayList<>();
 
     for (int i = 0; i < todos.size(); i++) {
@@ -43,7 +43,7 @@ public class TodoService {
   }
 
   public List<Todo> getSortById() {
-    List<Todo> todos = (ArrayList) todoRepository.findAll();
+    List<Todo> todos = todoRepository.findAll();
     Collections.sort(todos, new SortById());
     return todos;
   }
@@ -64,7 +64,18 @@ public class TodoService {
   }
 
   public List<Todo> getAllTodos() {
-    return (ArrayList) todoRepository.findAll();
+    return todoRepository.findAll();
+  }
+
+  public List<Todo> getAllTodosOfUser(User user) {
+    List<Todo> todos = new ArrayList<>();
+
+    for(Todo todoCurrent : todoRepository.findAll()) {
+      if(todoCurrent.getUser() == user) {
+        todos.add(todoCurrent);
+      }
+    }
+    return todos;
   }
 
 

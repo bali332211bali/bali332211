@@ -38,25 +38,17 @@ public class TodoController {
   public String list(Model model,
                      @RequestParam(required = false) String activeSelect,
                      @RequestParam(required = false) String searchString,
-                     @ModelAttribute User newUser,
                      @ModelAttribute Todo newTodo) {
     User userLast = userService.getLastUser();
 
     model.addAttribute("newTodo", newTodo);
     model.addAttribute("newUser", userLast.getUsername());
 
-    List<Todo> todosForUser = new ArrayList<>();
-    for (int i = 0; i < todoService.getAllTodos().size(); i++) {
-      if (newTodo.getUser() == userLast) {
-        todosForUser.add(todoService.getAllTodos().get(i));
-        System.out.println(todoService.getAllTodos().get(i).getTitle());
-      }
+    model.addAttribute("todos", todoService.getAllTodosOfUser(userLast));
+
+    for (int i = 0; i < todoService.getAllTodosOfUser(userLast).size(); i++) {
+      System.out.println(todoService.getAllTodosOfUser(userLast).get(i).getTitle());
     }
-
-    model.addAttribute("todos", todoRepository.findAllByUserEquals(userLast));
-
-
-
 
 //    if (searchString != null) {
 //      model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));
@@ -82,7 +74,8 @@ public class TodoController {
   public String add(@ModelAttribute Todo newTodo) {
     todoService.addTodo(newTodo);
     newTodo.setUser(userService.getLastUser());
-//    userService.getLastUser().getTodos().add(newTodo);
+    System.out.println("user of newtodo");
+    System.out.println(newTodo.getUser().getUsername());
     return "redirect:/todo/list";
   }
 
