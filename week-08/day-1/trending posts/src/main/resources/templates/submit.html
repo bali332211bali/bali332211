@@ -11,7 +11,19 @@
 <body>
 <div class="container">
 
-    <h1>New post <button type="button" class="btn btn-danger btn-lg">Done</button></h1>
+    <form action="#" th:action="@{/posts/submit}" method="post" th:object="${postNew}">
+        <h1>New post
+            <button type="submit" class="btn btn-primary btn-lg">Done</button>
+        </h1>
+        </br>
+        </br>
+        </br>
+        <h3><label for="title" class="badge badge-warning">Title</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="title" th:field="*{title}" id="title">
+        </br>
+        <h3><label for="text" class="badge badge-warning">Text</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="text" th:field="*{text}" id="text">
+    </form>
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
