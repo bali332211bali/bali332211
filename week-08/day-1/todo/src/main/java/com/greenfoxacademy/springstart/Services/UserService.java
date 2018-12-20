@@ -1,6 +1,7 @@
 package com.greenfoxacademy.springstart.Services;
 
 
+import com.greenfoxacademy.springstart.Models.Todo;
 import com.greenfoxacademy.springstart.Models.User;
 import com.greenfoxacademy.springstart.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,10 @@ public class UserService {
   public List<User> getAllUsers() {
     List<User> users = (List<User>) userRepository.findAll();
     return users;
+  }
+
+  public void addToTodos(Todo todo, User user) {
+    user.getTodos().add(todo);
   }
 
 //  public User addUser(User newUser) {

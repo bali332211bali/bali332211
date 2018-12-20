@@ -1,6 +1,7 @@
 package com.greenfoxacademy.springstart.Services;
 
 import com.greenfoxacademy.springstart.Models.Todo;
+import com.greenfoxacademy.springstart.Models.User;
 import com.greenfoxacademy.springstart.Repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,6 +58,15 @@ public class TodoService {
   public Todo getTodoById(long id) {
     return todoRepository.findById(id).get();
   }
+
+  public void setUser(Todo todo, User user) {
+    todo.setUser(user);
+  }
+
+  public List<Todo> getAllTodos() {
+    return (ArrayList) todoRepository.findAll();
+  }
+
 
 
 }

@@ -40,24 +40,39 @@ public class TodoController {
                      @RequestParam(required = false) String searchString,
                      @ModelAttribute User newUser,
                      @ModelAttribute Todo newTodo) {
+    User userLast = userService.getLastUser();
+
     model.addAttribute("newTodo", newTodo);
-    model.addAttribute("newUser", userService.getLastUser().getUsername());
+    model.addAttribute("newUser", userLast.getUsername());
 
-    if (searchString != null) {
-      model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));
-    }
-
-    if (searchString == null && activeSelect != null) {
-      if (activeSelect.equalsIgnoreCase("active")) {
-        model.addAttribute("todos", todoService.getActive());
-      } else if (activeSelect.equalsIgnoreCase("sort by id")) {
-        model.addAttribute("todos", todoService.getSortById());
-      } else {
-        model.addAttribute("todos", todoRepository.findAll());
+    List<Todo> todosForUser = new ArrayList<>();
+    for (int i = 0; i < todoService.getAllTodos().size(); i++) {
+      if (newTodo.getUser() == userLast) {
+        todosForUser.add(todoService.getAllTodos().get(i));
+        System.out.println(todoService.getAllTodos().get(i).getTitle());
       }
-    } else if (searchString == null) {
-      model.addAttribute("todos", todoRepository.findAll());
     }
+
+    model.addAttribute("todos", todoRepository.findAllByUserEquals(userLast));
+
+
+
+
+//    if (searchString != null) {
+//      model.addAttribute("todos", todoRepository.findAllByTitleContaining(searchString));
+//    }
+//
+//    if (searchString == null && activeSelect != null) {
+//      if (activeSelect.equalsIgnoreCase("active")) {
+//        model.addAttribute("todos", todoService.getActive());
+//      } else if (activeSelect.equalsIgnoreCase("sort by id")) {
+//        model.addAttribute("todos", todoService.getSortById());
+//      } else {
+//        model.addAttribute("todos", todoRepository.findAll());
+//      }
+//    } else if (searchString == null) {
+//      model.addAttribute("todos", todoRepository.findAll());
+//    }
 
 
     return "todoList";
@@ -66,6 +81,8 @@ public class TodoController {
   @PostMapping("/add")
   public String add(@ModelAttribute Todo newTodo) {
     todoService.addTodo(newTodo);
+    newTodo.setUser(userService.getLastUser());
+//    userService.getLastUser().getTodos().add(newTodo);
     return "redirect:/todo/list";
   }
 
