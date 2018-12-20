@@ -33,7 +33,7 @@ public class UserService {
   }
 
   public User getLastUser() {
-    List<User> users = (List<User>) userRepository.findAll();
+    List<User> users = userRepository.findAll();
     return users.get(users.size()-1);
   }
 
