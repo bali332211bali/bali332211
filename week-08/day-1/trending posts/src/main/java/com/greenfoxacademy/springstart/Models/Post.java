@@ -14,6 +14,8 @@ public class Post {
 
   private String title;
   private String text;
+  private long upvote;
+  private long downvote;
 
 
   public Post() {
@@ -42,5 +44,21 @@ public class Post {
 
   public void setText(String text) {
     this.text = text;
+  }
+
+  public long getUpvote() {
+    return upvote;
+  }
+
+  public void setUpvote(long upvote) {
+    this.upvote = upvote;
+  }
+
+  public long getDownvote() {
+    return downvote;
+  }
+
+  public void setDownvote(long downvote) {
+    this.downvote = downvote;
   }
 }

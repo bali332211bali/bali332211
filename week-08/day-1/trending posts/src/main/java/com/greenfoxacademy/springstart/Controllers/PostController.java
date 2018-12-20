@@ -23,7 +23,8 @@ public class PostController {
 
 
   @GetMapping("")
-  public String trendingPosts() {
+  public String trendingPosts(Model model) {
+    model.addAttribute("posts", postService.getPosts());
     return "trending";
   }
 
@@ -38,6 +39,8 @@ public class PostController {
     postService.addPost(postNew);
     return "redirect:/posts";
   }
+
+
 
 
 

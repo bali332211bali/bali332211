@@ -24,21 +24,22 @@
     <h1>Trending posts
         <a th:href="@{/posts/submit}" class="btn btn-lg btn-danger">Submit new</a>
         <!--<form  th:href="@{/posts/submit}">-->
-            <!--<button type="button" class="btn btn-danger btn-lg">Submit new</button>-->
+        <!--<button type="button" class="btn btn-danger btn-lg">Submit new</button>-->
         <!--</form>-->
     </h1>
 
-    <!--<table class="table table-striped">-->
-    <!--<div th:each="post : ${posts}">-->
-    <!--<tr>-->
-    <!--<td th:text="${post.getUpvotes()}" class="badge"></td>-->
-    <!--<td th:text="${post.getDownvotes()}" class="badge"></td>-->
-    <!--<td><a th:href="|/todo/delete?id=${todo.getId()}|"-->
-    <!--class="btn btn-lg btn-warning fa fa-check"></a></td>-->
-    <!--<td th:text="${post.getId()}" class="badge"></td>-->
-    <!--</tr>-->
-    <!--</div>-->
-    <!--</table>-->
+    <table class="table table-striped">
+        <div th:each="post : ${posts}">
+            <tr>
+                <td th:text="${post.getUpvotes()}" class="badge"></td>
+                <td th:text="${post.getDownvotes()}" class="badge"></td>
+                <!--<td><a th:href="|/todo/delete?id=${todo.getId()}|"-->
+                       <!--class="btn btn-lg btn-warning fa fa-check"></a></td>-->
+                <td th:text="${post.getTitle()}" class="badge"></td>
+                <td th:text="${post.getText()}" class="badge"></td>
+            </tr>
+        </div>
+    </table>
 
 
     <nav aria-label="Page navigation example">
