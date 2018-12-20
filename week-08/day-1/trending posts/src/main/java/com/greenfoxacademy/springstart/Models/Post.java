@@ -1,9 +1,11 @@
 package com.greenfoxacademy.springstart.Models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Post {
 
   @Id
@@ -12,6 +14,7 @@ public class Post {
 
   private String title;
   private String text;
+
 
   public Post() {
 
