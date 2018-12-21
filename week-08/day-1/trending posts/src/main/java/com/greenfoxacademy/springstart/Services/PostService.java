@@ -29,4 +29,23 @@ public class PostService {
     postRepository.deleteAll();
   }
 
+  public void addUpvote(long id) {
+    Post post = postRepository.findById(id).orElse(null);
+    long upvotes;
+    if (post != null) {
+      upvotes = post.getUpvotes();
+      post.setUpvotes(upvotes + 1);
+      addPost(post);
+    }
+  }
+
+  public void addDownvote(long id) {
+    Post post = postRepository.findById(id).orElse(null);
+    long downvotes;
+    if (post != null) {
+      downvotes = post.getDownvotes();
+      post.setDownvotes(downvotes + 1);
+      addPost(post);
+    }
+  }
 }

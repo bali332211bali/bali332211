@@ -1,5 +1,8 @@
 package com.greenfoxacademy.springstart.Models;
 
+import org.hibernate.annotations.Type;
+import sun.plugin.dom.core.Text;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +17,8 @@ public class Post {
 
   private String title;
   private String text;
-  private long upvote;
-  private long downvote;
+  private long upvotes;
+  private long downvotes;
 
 
   public Post() {
@@ -46,19 +49,19 @@ public class Post {
     this.text = text;
   }
 
-  public long getUpvote() {
-    return upvote;
+  public long getUpvotes() {
+    return upvotes;
   }
 
-  public void setUpvote(long upvote) {
-    this.upvote = upvote;
+  public void setUpvotes(long upvotes) {
+    this.upvotes = upvotes;
   }
 
-  public long getDownvote() {
-    return downvote;
+  public long getDownvotes() {
+    return downvotes;
   }
 
-  public void setDownvote(long downvote) {
-    this.downvote = downvote;
+  public void setDownvotes(long downvotes) {
+    this.downvotes = downvotes;
   }
 }

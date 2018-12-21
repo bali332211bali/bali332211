@@ -29,18 +29,26 @@
         <a th:href="@{/posts/delete}" class="btn btn-lg btn-warning">delete all</a>
     </h2>
 
-    <!--<table class="table table-striped">-->
-        <!--<div th:each="post : ${posts}">-->
-            <!--<tr>-->
-                <!--<td th:text="${post.getUpvotes()}" class="badge"></td>-->
-                <!--<td th:text="${post.getDownvotes()}" class="badge"></td>-->
-                <!--&lt;!&ndash;<td><a th:href="|/todo/delete?id=${todo.getId()}|"&ndash;&gt;-->
-                       <!--&lt;!&ndash;class="btn btn-lg btn-warning fa fa-check"></a></td>&ndash;&gt;-->
-                <!--<td th:text="${post.getTitle()}" class="badge"></td>-->
-                <!--<td th:text="${post.getText()}" class="badge"></td>-->
-            <!--</tr>-->
-        <!--</div>-->
-    <!--</table>-->
+    <table class="table table-borderless">
+        <div th:each="post : ${posts}">
+            <tr class="card card-body">
+                <td class="card-title">
+                    <h2>
+                        <div th:text="'Upvotes ' + ${post.getUpvotes()}" class="badge badge-light"></div>
+                        <a th:href="@{|/posts/addUpvote?postId=${post.getId()}|}"
+                           class="btn btn-sm btn-outline-info fa fa-plus"></a>
+                        <div th:text="'Downvotes ' + ${post.getDownvotes()}" class="badge badge-light"></div>
+                        <a th:href="@{|/posts/addDownvote?postId=${post.getId()}|}"
+                           class="btn btn-sm btn-outline-info fa fa-plus card-link"></a>
+                    </h2>
+                </td>
+                <!--<td><a th:href="@{|/posts/addUpvote?postId=${post.getId()}|}"-->
+                <!--class="btn btn-sm btn-outline-info fa fa-plus align-content-center"></a></td>-->
+                <td th:text="${post.getTitle()}" class="badge card-footer"></td>
+                <td th:text="${post.getText()}" class="badge card-deck"></td>
+            </tr>
+        </div>
+    </table>
 
 
     <nav aria-label="Page navigation example">

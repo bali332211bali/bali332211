@@ -5,10 +5,7 @@ import com.greenfoxacademy.springstart.Services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/posts")
@@ -30,6 +27,8 @@ public class PostController {
   @GetMapping("/submit")
   public String submit(Model model, @ModelAttribute Post postNew) {
     model.addAttribute("postNew", postNew);
+    model.addAttribute("upvoteStart", 0);
+    model.addAttribute("downvoteStart", 0);
     return "submit";
   }
 
@@ -44,6 +43,20 @@ public class PostController {
     postService.deleteAll();
     return "redirect:";
   }
+
+  @GetMapping("/addUpvote")
+  public String addUpvote(@RequestParam long postId) {
+    postService.addUpvote(postId);
+    return "redirect:";
+  }
+
+  @GetMapping("/addDownvote")
+  public String addDownvote(@RequestParam long postId) {
+    postService.addDownvote(postId);
+    return "redirect:";
+  }
+
+
 
 
 

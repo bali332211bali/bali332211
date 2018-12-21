@@ -23,6 +23,8 @@
         </br>
         <h3><label for="text" class="badge badge-warning">Text</label></h3>
         <input class="form-control mr-sm-2" type="text" placeholder="text" th:field="*{text}" id="text">
+        <input type="hidden" th:field="*{upvotes}" th:value="0" id="upvotes">
+        <input type="hidden" th:field="*{downvotes}" th:value="0" id="downvotes">
     </form>
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
