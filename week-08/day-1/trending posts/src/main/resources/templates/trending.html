@@ -15,7 +15,7 @@
         <a class="navbar-brand">Search</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
 
@@ -23,23 +23,24 @@
 
     <h1>Trending posts
         <a th:href="@{/posts/submit}" class="btn btn-lg btn-danger">Submit new</a>
-        <!--<form  th:href="@{/posts/submit}">-->
-        <!--<button type="button" class="btn btn-danger btn-lg">Submit new</button>-->
-        <!--</form>-->
     </h1>
 
-    <table class="table table-striped">
-        <div th:each="post : ${posts}">
-            <tr>
-                <td th:text="${post.getUpvotes()}" class="badge"></td>
-                <td th:text="${post.getDownvotes()}" class="badge"></td>
-                <!--<td><a th:href="|/todo/delete?id=${todo.getId()}|"-->
-                       <!--class="btn btn-lg btn-warning fa fa-check"></a></td>-->
-                <td th:text="${post.getTitle()}" class="badge"></td>
-                <td th:text="${post.getText()}" class="badge"></td>
-            </tr>
-        </div>
-    </table>
+    <h2>
+        <a th:href="@{/posts/delete}" class="btn btn-lg btn-warning">delete all</a>
+    </h2>
+
+    <!--<table class="table table-striped">-->
+        <!--<div th:each="post : ${posts}">-->
+            <!--<tr>-->
+                <!--<td th:text="${post.getUpvotes()}" class="badge"></td>-->
+                <!--<td th:text="${post.getDownvotes()}" class="badge"></td>-->
+                <!--&lt;!&ndash;<td><a th:href="|/todo/delete?id=${todo.getId()}|"&ndash;&gt;-->
+                       <!--&lt;!&ndash;class="btn btn-lg btn-warning fa fa-check"></a></td>&ndash;&gt;-->
+                <!--<td th:text="${post.getTitle()}" class="badge"></td>-->
+                <!--<td th:text="${post.getText()}" class="badge"></td>-->
+            <!--</tr>-->
+        <!--</div>-->
+    <!--</table>-->
 
 
     <nav aria-label="Page navigation example">

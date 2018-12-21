@@ -21,7 +21,6 @@ public class PostController {
     this.postService = postService;
   }
 
-
   @GetMapping("")
   public String trendingPosts(Model model) {
     model.addAttribute("posts", postService.getPosts());
@@ -40,7 +39,11 @@ public class PostController {
     return "redirect:/posts";
   }
 
-
+  @GetMapping("/delete")
+  public String deleteAll() {
+    postService.deleteAll();
+    return "redirect:";
+  }
 
 
 
