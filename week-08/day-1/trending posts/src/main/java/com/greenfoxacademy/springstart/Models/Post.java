@@ -20,7 +20,6 @@ public class Post {
   private long upvotes;
   private long downvotes;
 
-
   public Post() {
 
   }

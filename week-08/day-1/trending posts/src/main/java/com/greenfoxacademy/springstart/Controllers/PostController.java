@@ -20,7 +20,7 @@ public class PostController {
 
   @GetMapping("")
   public String trendingPosts(Model model) {
-    model.addAttribute("posts", postService.getPosts());
+    model.addAttribute("posts", postService.getPostsSortByScore());
     return "trending";
   }
 
@@ -47,13 +47,13 @@ public class PostController {
   @GetMapping("/addUpvote")
   public String addUpvote(@RequestParam long postId) {
     postService.addUpvote(postId);
-    return "redirect:";
+    return "redirect:/posts";
   }
 
   @GetMapping("/addDownvote")
   public String addDownvote(@RequestParam long postId) {
     postService.addDownvote(postId);
-    return "redirect:";
+    return "redirect:/posts";
   }
 
 

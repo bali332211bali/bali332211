@@ -5,6 +5,7 @@ import com.greenfoxacademy.springstart.Repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -48,4 +49,14 @@ public class PostService {
       addPost(post);
     }
   }
+
+  public List<Post> getPostsSortByScore() {
+    List<Post> posts = postRepository.findAll();
+    Collections.sort(posts, new SortByScore());
+    return posts;
+  }
+
+
+
+
 }
