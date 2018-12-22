@@ -34,7 +34,8 @@ public class UserService {
 
   public User getLastUser() {
     List<User> users = userRepository.findAll();
-    return users.get(users.size()-1);
+
+    return users.size() >= 1 ? users.get(users.size()-1) : new User();
   }
 
   public List<User> getAllUsers() {
