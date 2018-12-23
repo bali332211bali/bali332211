@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/posts/url")
 public class UrlController {
@@ -21,14 +23,27 @@ public class UrlController {
     }
 
     @GetMapping("")
-    public String url(Model model, @ModelAttribute("urlNew") Url urlNew) {
+    public String url(Model model, @ModelAttribute("urlNew") Url urlNew, HttpSession session) {
         model.addAttribute("urlNew", urlNew);
         model.addAttribute("urls", urlService.getAllUrls());
+
+        if (session.getAttribute("nameUrl") != null) {
+            model.addAttribute("valueUrl", session.getAttribute("nameUrl"));
+            model.addAttribute("valueAlias", session.getAttribute("nameAlias"));
+            System.out.println(session.getAttribute("nameUrl"));
+            session.setAttribute("nameUrl", "");
+            session.setAttribute("nameAlias", "");
+        }
+
+
         return "url";
     }
 
     @PostMapping("")
-    public String url(@ModelAttribute("urlNew") Url urlNew, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String url(@ModelAttribute("urlNew") Url urlNew,
+                      RedirectAttributes redirectAttributes,
+                      Model model,
+                      HttpSession session) {
         urlNew.setHitCount(0);
         urlService.setSecretCode(urlNew);
 
@@ -42,6 +57,8 @@ public class UrlController {
         }
         redirectAttributes.addFlashAttribute("message", "Failed");
         redirectAttributes.addFlashAttribute("alertClass", "alert-danger");
+        session.setAttribute("nameUrl", urlNew.getUrl());
+        session.setAttribute("nameAlias", urlNew.getAlias());
         return "redirect:/posts/url";
     }
 

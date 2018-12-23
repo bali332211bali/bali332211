@@ -14,7 +14,7 @@ public class Url {
 
     private String url;
     private String alias;
-    private int secretCode;
+    private String secretCode;
     private int hitCount;
 
     public Url() {}
@@ -43,11 +43,11 @@ public class Url {
         this.alias = alias;
     }
 
-    public int getSecretCode() {
+    public String getSecretCode() {
         return secretCode;
     }
 
-    public void setSecretCode(int secretCode) {
+    public void setSecretCode(String secretCode) {
         this.secretCode = secretCode;
     }
 

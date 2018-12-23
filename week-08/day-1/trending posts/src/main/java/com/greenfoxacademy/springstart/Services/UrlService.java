@@ -28,7 +28,7 @@ public class UrlService {
         for (int i = 0; i < 4; i++) {
             secretCode += (int) (Math.random() * 10);
         }
-        urlNew.setSecretCode(Integer.parseInt(secretCode));
+        urlNew.setSecretCode(secretCode);
     }
 
     public List<Url> getAllUrls() {

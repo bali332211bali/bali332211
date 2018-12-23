@@ -19,23 +19,23 @@
         </h1>
         <div th:switch="${message}">
             <div th:case="'Success'" class="alert alert-primary">
-                <span th:text="'Your URL is aliased to '" />
-                <b th:text="${aliasNew}" />
-                <span th:text="' and your secret code is '" />
-                <b th:text="${secretCodeNew}" />
+                <span th:text="'Your URL is aliased to '"></span>
+                <b th:text="${aliasNew}"></b>
+                <span th:text="' and your secret code is '"></span>
+                <b th:text="${secretCodeNew}"></b>
             </div>
             <div th:case="'Failed'" class="alert alert-danger">
                 Alias already taken.
             </div>
         </div>
         <h3><label for="url" class="badge badge-warning">Url</label></h3>
-        <input class="form-control mr-sm-2" type="text" placeholder="url" th:field="*{url}" id="url">
+
+        <input class="form-control mr-sm-2" type="text" placeholder="url" th:field="*{url}" id="url" name="nameUrl">
+
         </br>
         <h3><label for="alias" class="badge badge-warning">Alias</label></h3>
-        <input class="form-control mr-sm-2" type="text" placeholder="alias" th:field="*{alias}" id="alias">
-
+        <input class="form-control mr-sm-2" type="text" placeholder="alias" th:value="${valueAlias}" th:field="*{alias}" id="alias" name="nameAlias">
     </form>
-
 
     </br>
 

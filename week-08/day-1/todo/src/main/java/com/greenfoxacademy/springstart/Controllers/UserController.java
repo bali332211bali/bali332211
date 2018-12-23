@@ -29,6 +29,7 @@ public class UserController {
 
   @PostMapping("/register")
   public String register(@ModelAttribute User newUser) {
+
     userService.addUser(newUser);
     return "redirect:/todo/";
   }
