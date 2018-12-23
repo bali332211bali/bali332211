@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/posts/url")
@@ -22,19 +25,26 @@ public class UrlController {
         this.urlService = urlService;
     }
 
+    @GetMapping(value = "/api/list", produces = "application/json")
+    @ResponseBody
+    public List<MyClass> x() {
+        MyClass result = new MyClass();
+        result.setA("A1");
+        result.setB("B2");
+        return Arrays.asList(result);
+    }
+
     @GetMapping("")
     public String url(Model model, @ModelAttribute("urlNew") Url urlNew, HttpSession session) {
         model.addAttribute("urlNew", urlNew);
         model.addAttribute("urls", urlService.getAllUrls());
 
         if (session.getAttribute("nameUrl") != null) {
-            model.addAttribute("valueUrl", session.getAttribute("nameUrl"));
-            model.addAttribute("valueAlias", session.getAttribute("nameAlias"));
-            System.out.println(session.getAttribute("nameUrl"));
-            session.setAttribute("nameUrl", "");
-            session.setAttribute("nameAlias", "");
+            urlNew.setUrl(Objects.toString(session.getAttribute("nameUrl")));
+            urlNew.setAlias(Objects.toString(session.getAttribute("nameAlias")));
+            session.removeAttribute("nameUrl");
+            session.removeAttribute("nameAlias");
         }
-
 
         return "url";
     }
