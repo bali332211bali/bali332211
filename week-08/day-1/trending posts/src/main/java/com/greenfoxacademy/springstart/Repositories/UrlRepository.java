@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface UrlRepository extends CrudRepository<Url, Long> {
 
-
     List<Url> findAll();
 
 }

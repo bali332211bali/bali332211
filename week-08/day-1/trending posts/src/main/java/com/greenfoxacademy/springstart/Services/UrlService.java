@@ -13,7 +13,7 @@ public class UrlService {
 
     private UrlRepository urlRepository;
 
-    public UrlService() {}
+
 
     @Autowired
     public UrlService(UrlRepository urlRepository) {

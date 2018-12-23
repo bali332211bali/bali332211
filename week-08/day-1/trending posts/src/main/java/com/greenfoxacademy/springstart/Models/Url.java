@@ -17,6 +17,7 @@ public class Url {
     private int secretCode;
     private int hitCount;
 
+    public Url() {}
 
     public long getId() {
         return id;
