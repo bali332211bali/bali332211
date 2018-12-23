@@ -11,17 +11,37 @@
 <body>
 <div class="container">
 
+
+    </br>
     <form action="#" th:action="@{/posts/url}" method="post" th:object="${urlNew}">
         <h1>Url alias
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
-        </br>
+        <div th:switch="${message}">
+            <div th:case="'Success'" class="alert alert-primary">
+                <span th:text="'Your URL is aliased to '" />
+                <b th:text="${aliasNew}" />
+                <span th:text="' and your secret code is '" />
+                <b th:text="${secretCodeNew}" />
+            </div>
+            <div th:case="'Failed'" class="alert alert-danger">
+                Alias already taken.
+            </div>
+        </div>
         <h3><label for="url" class="badge badge-warning">Url</label></h3>
         <input class="form-control mr-sm-2" type="text" placeholder="url" th:field="*{url}" id="url">
         </br>
         <h3><label for="alias" class="badge badge-warning">Alias</label></h3>
         <input class="form-control mr-sm-2" type="text" placeholder="alias" th:field="*{alias}" id="alias">
+
     </form>
+
+
+    </br>
+
+    <h2>
+        <a th:href="@{/posts//url/delete}" class="btn btn-lg btn-warning">delete all</a>
+    </h2>
 
     </br>
     </br>

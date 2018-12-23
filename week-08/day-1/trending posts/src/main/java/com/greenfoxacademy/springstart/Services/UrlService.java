@@ -14,7 +14,6 @@ public class UrlService {
     private UrlRepository urlRepository;
 
 
-
     @Autowired
     public UrlService(UrlRepository urlRepository) {
         this.urlRepository = urlRepository;
@@ -34,6 +33,20 @@ public class UrlService {
 
     public List<Url> getAllUrls() {
         return urlRepository.findAll();
+    }
+
+
+    public void deleteAll() {
+        urlRepository.deleteAll();
+    }
+
+    public boolean ifUrlAllowed(Url url) {
+        for (Url urlCurrent : urlRepository.findAll()) {
+            if(urlCurrent.getAlias().equals(url.getAlias())) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
