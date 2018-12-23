@@ -19,7 +19,7 @@ public class UrlController {
     }
 
     @GetMapping("")
-    public String url(Model model, @ModelAttribute Url urlNew) {
+    public String url(Model model, @ModelAttribute("urlNew") Url urlNew) {
         model.addAttribute("urlNew", urlNew);
         model.addAttribute("urls", urlService.getAllUrls());
         System.out.println("get");
@@ -27,7 +27,7 @@ public class UrlController {
     }
 
     @PostMapping("")
-    public String url(@ModelAttribute Url urlNew) {
+    public String url(@ModelAttribute("urlNew") Url urlNew) {
         System.out.println("post");
         urlNew.setHitCount(0);
         urlService.setSecretCode(urlNew);

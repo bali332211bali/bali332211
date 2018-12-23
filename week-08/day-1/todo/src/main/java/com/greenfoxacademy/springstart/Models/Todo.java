@@ -10,8 +10,8 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-//  @Temporal(TemporalType.DATE)
-//  private Date date = new Date();
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date date = new Date();
 
   @Column(name = "nameOfTodo")
   private String title;
