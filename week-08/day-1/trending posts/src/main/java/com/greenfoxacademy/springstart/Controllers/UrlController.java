@@ -1,5 +1,8 @@
 package com.greenfoxacademy.springstart.Controllers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.greenfoxacademy.springstart.Models.Url;
 import com.greenfoxacademy.springstart.Services.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,15 +27,6 @@ public class UrlController {
         this.urlService = urlService;
     }
 
-    @GetMapping(value = "/api/list", produces = "application/json")
-    @ResponseBody
-    public List<MyClass> x() {
-        MyClass result = new MyClass();
-        result.setA("A1");
-        result.setB("B2");
-        return Arrays.asList(result);
-    }
-
     @GetMapping("")
     public String url(Model model, @ModelAttribute("urlNew") Url urlNew, HttpSession session) {
         model.addAttribute("urlNew", urlNew);
@@ -45,7 +38,6 @@ public class UrlController {
             session.removeAttribute("nameUrl");
             session.removeAttribute("nameAlias");
         }
-
         return "url";
     }
 
@@ -59,14 +51,12 @@ public class UrlController {
 
         if (urlService.ifUrlAllowed(urlNew)) {
             urlService.addUrl(urlNew);
-            redirectAttributes.addFlashAttribute("message", "Success");
-            redirectAttributes.addFlashAttribute("alertClass", "alert-success");
+            redirectAttributes.addFlashAttribute("takenAlias", "not");
             redirectAttributes.addFlashAttribute("aliasNew", urlNew.getAlias());
             redirectAttributes.addFlashAttribute("secretCodeNew", urlNew.getSecretCode());
             return "redirect:/posts/url";
         }
-        redirectAttributes.addFlashAttribute("message", "Failed");
-        redirectAttributes.addFlashAttribute("alertClass", "alert-danger");
+        redirectAttributes.addFlashAttribute("takenAlias", "taken");
         session.setAttribute("nameUrl", urlNew.getUrl());
         session.setAttribute("nameAlias", urlNew.getAlias());
         return "redirect:/posts/url";
@@ -78,6 +68,20 @@ public class UrlController {
         return "redirect:";
     }
 
+    @GetMapping(value = "/api/links", produces = "application/json")
+    @ResponseBody
+    @JsonProperty(value = "secretCode")
+//    @JsonIgnoreProperties({"secretCode"})
+    public List<Url> links() {
+        return urlService.getAllUrls();
+    }
+
+//    @DeleteMapping(value = "/api/links/{id}", produces = "application/json")
+//    @ResponseBody
+//    @JsonProperty(value = "secretCode")
+//    public List<Url> links() {
+//        return
+//    }
 
 //    @GetMapping("/suggest-event")
 //    public String suggestEvent() {
