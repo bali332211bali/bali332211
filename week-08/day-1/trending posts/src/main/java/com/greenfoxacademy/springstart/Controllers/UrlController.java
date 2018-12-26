@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -42,9 +43,8 @@ public class UrlController {
     }
 
     @PostMapping("")
-    public String url(@ModelAttribute("urlNew") Url urlNew,
+    public String url2(@ModelAttribute("urlNew") Url urlNew,
                       RedirectAttributes redirectAttributes,
-                      Model model,
                       HttpSession session) {
         urlNew.setHitCount(0);
         urlService.setSecretCode(urlNew);
@@ -74,6 +74,13 @@ public class UrlController {
 //    @JsonIgnoreProperties({"secretCode"})
     public List<Url> links() {
         return urlService.getAllUrls();
+    }
+
+    @GetMapping("/a/{alias}")
+    public String alias(@PathVariable String alias) {
+        urlService.addHitCount(urlService.findByAlias(alias));
+        urlService.addUrl(urlService.findByAlias(alias));
+        return "redirect:http://google.com";
     }
 
 //    @DeleteMapping(value = "/api/links/{id}", produces = "application/json")

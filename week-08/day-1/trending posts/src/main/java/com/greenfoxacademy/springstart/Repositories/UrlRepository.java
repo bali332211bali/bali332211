@@ -10,5 +10,6 @@ import java.util.List;
 public interface UrlRepository extends CrudRepository<Url, Long> {
 
     List<Url> findAll();
+    Url findByAlias(String alias);
 
 }

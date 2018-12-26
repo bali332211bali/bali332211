@@ -49,6 +49,16 @@ public class UrlService {
         return true;
     }
 
+    public Url findByAlias(String alias) {
+       return urlRepository.findByAlias(alias);
+    }
+
+    public void addHitCount(Url url) {
+        url.setHitCount(url.getHitCount() + 1);
+    }
+
+
+
 
 
 
