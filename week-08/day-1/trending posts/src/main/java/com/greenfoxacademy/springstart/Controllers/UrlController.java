@@ -8,9 +8,7 @@ import com.greenfoxacademy.springstart.Services.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -43,7 +41,7 @@ public class UrlController {
     }
 
     @PostMapping("")
-    public String url2(@ModelAttribute("urlNew") Url urlNew,
+    public String url(@ModelAttribute("urlNew") Url urlNew,
                       RedirectAttributes redirectAttributes,
                       HttpSession session) {
         urlNew.setHitCount(0);
@@ -70,17 +68,18 @@ public class UrlController {
 
     @GetMapping(value = "/api/links", produces = "application/json")
     @ResponseBody
-    @JsonProperty(value = "secretCode")
+//    @JsonProperty(value = "secretCode")
 //    @JsonIgnoreProperties({"secretCode"})
     public List<Url> links() {
         return urlService.getAllUrls();
     }
 
     @GetMapping("/a/{alias}")
-    public String alias(@PathVariable String alias) {
+    public String alias(@PathVariable String alias, RedirectAttributes redirectAttributes) {
         urlService.addHitCount(urlService.findByAlias(alias));
         urlService.addUrl(urlService.findByAlias(alias));
-        return "redirect:http://google.com";
+        redirectAttributes.addAttribute("url", urlService.findByAlias(alias).getUrl());
+        return "redirect:{url}";
     }
 
 //    @DeleteMapping(value = "/api/links/{id}", produces = "application/json")
