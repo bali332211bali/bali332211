@@ -28,4 +28,8 @@ public class UserService {
     public User getUserUrlById(int id) {
         return userUrlRepository.findById(id);
     }
+
+    public void deleteUsers() {
+        userUrlRepository.deleteAll();
+    }
 }

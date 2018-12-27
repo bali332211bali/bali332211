@@ -25,17 +25,22 @@ public class UserController {
     }
 
     @GetMapping("/register")
-    public String register(Model model, @ModelAttribute(value = "userNew") User newUser) {
+    public String register(@ModelAttribute(value = "userNew") User userNew) {
         return "register";
     }
 
     @PostMapping("/register")
-    public String registerAddUserUrl(Model model,
-                                     @ModelAttribute(value = "userNew") User userNew,
-                                     HttpSession session) {
+    public String register(@ModelAttribute(value = "userNew") User userNew,
+                           HttpSession session) {
         userService.addUserUrl(userNew);
         session.setAttribute("userNew", userNew);
         return "redirect:/posts/url";
+    }
+
+    @GetMapping("/deleteUsers")
+    public String deleteUsers() {
+        userService.deleteUsers();
+        return "redirect:/posts/url/register";
     }
 
 
