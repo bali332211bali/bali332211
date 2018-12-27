@@ -14,7 +14,7 @@
 </div>
 <div align="center">
 
-    <form action="#" th:action="@{|/posts/url/register|}" th:object="${newUser}" method="post" id="register">
+    <form action="#" th:action="@{|/posts/url/register|}" th:object="${userNew}" method="post" id="register">
 
         <label for="username">Username</label>
         <input type="text" name="username" id="username" th:field="*{username}">

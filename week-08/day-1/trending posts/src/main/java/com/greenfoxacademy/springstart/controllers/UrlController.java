@@ -1,6 +1,7 @@
 package com.greenfoxacademy.springstart.controllers;
 
 import com.greenfoxacademy.springstart.models.Url;
+import com.greenfoxacademy.springstart.models.User;
 import com.greenfoxacademy.springstart.services.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,10 @@ public class UrlController {
 
     @GetMapping("")
     public String url(Model model, @ModelAttribute("urlNew") Url urlNew, HttpSession session) {
+        User userCurrent = (User) session.getAttribute("userNew");
+        model.addAttribute("userNew", userCurrent.getUsername());
         model.addAttribute("urlNew", urlNew);
-        model.addAttribute("urls", urlService.getAllUrls());
+        model.addAttribute("urls", urlService.getAllUrlsByUser(userCurrent));
 
         if (session.getAttribute("nameUrl") != null) {
             urlNew.setUrl(Objects.toString(session.getAttribute("nameUrl")));
@@ -45,7 +48,7 @@ public class UrlController {
         urlService.setSecretCode(urlNew);
 
         if (urlService.ifUrlAllowed(urlNew)) {
-            urlService.setUser(session.getAttribute("newUser"));
+            urlService.setUser(urlNew, (User) session.getAttribute("userNew"));
             urlService.addUrl(urlNew);
             redirectAttributes.addFlashAttribute("takenAlias", "not");
             redirectAttributes.addFlashAttribute("aliasNew", urlNew.getAlias());

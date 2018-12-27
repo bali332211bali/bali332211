@@ -2,6 +2,7 @@ package com.greenfoxacademy.springstart.services;
 
 
 import com.greenfoxacademy.springstart.models.Url;
+import com.greenfoxacademy.springstart.models.User;
 import com.greenfoxacademy.springstart.repositories.UrlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,7 +59,11 @@ public class UrlService {
     }
 
 
-    public void setUser(Object newUserUrl) {
+    public void setUser(Url url, User user) {
+        url.setUser(user);
+    }
 
+    public List<Url> getAllUrlsByUser(User user) {
+        return urlRepository.findAllByUser(user);
     }
 }
