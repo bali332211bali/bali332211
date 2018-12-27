@@ -1,6 +1,6 @@
-package com.greenfoxacademy.springstart.Repositories;
+package com.greenfoxacademy.springstart.repositories;
 
-import com.greenfoxacademy.springstart.Models.Post;
+import com.greenfoxacademy.springstart.models.Post;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

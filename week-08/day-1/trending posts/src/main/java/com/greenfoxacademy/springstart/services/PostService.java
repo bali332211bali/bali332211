@@ -1,7 +1,7 @@
-package com.greenfoxacademy.springstart.Services;
+package com.greenfoxacademy.springstart.services;
 
-import com.greenfoxacademy.springstart.Models.Post;
-import com.greenfoxacademy.springstart.Repositories.PostRepository;
+import com.greenfoxacademy.springstart.models.Post;
+import com.greenfoxacademy.springstart.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

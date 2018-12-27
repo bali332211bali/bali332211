@@ -1,10 +1,7 @@
-package com.greenfoxacademy.springstart.Controllers;
+package com.greenfoxacademy.springstart.controllers;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.greenfoxacademy.springstart.Models.Url;
-import com.greenfoxacademy.springstart.Services.UrlService;
+import com.greenfoxacademy.springstart.models.Url;
+import com.greenfoxacademy.springstart.services.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +45,7 @@ public class UrlController {
         urlService.setSecretCode(urlNew);
 
         if (urlService.ifUrlAllowed(urlNew)) {
+            urlService.setUser(session.getAttribute("newUser"));
             urlService.addUrl(urlNew);
             redirectAttributes.addFlashAttribute("takenAlias", "not");
             redirectAttributes.addFlashAttribute("aliasNew", urlNew.getAlias());
@@ -81,6 +79,8 @@ public class UrlController {
         redirectAttributes.addAttribute("url", urlService.findByAlias(alias).getUrl());
         return "redirect:{url}";
     }
+
+
 
 //    @DeleteMapping(value = "/api/links/{id}", produces = "application/json")
 //    @ResponseBody

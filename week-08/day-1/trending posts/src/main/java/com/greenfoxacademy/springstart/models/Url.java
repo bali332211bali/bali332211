@@ -1,13 +1,8 @@
-package com.greenfoxacademy.springstart.Models;
+package com.greenfoxacademy.springstart.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Url {
@@ -23,6 +18,10 @@ public class Url {
     private String secretCode;
 
     private int hitCount;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Url() {}
 
@@ -65,5 +64,13 @@ public class Url {
 
     public void setHitCount(int hitCount) {
         this.hitCount = hitCount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

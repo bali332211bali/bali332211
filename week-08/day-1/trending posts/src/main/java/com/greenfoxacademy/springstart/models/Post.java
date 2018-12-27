@@ -1,7 +1,4 @@
-package com.greenfoxacademy.springstart.Models;
-
-import org.hibernate.annotations.Type;
-import sun.plugin.dom.core.Text;
+package com.greenfoxacademy.springstart.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

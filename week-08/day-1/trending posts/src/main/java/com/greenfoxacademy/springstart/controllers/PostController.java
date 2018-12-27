@@ -1,7 +1,7 @@
-package com.greenfoxacademy.springstart.Controllers;
+package com.greenfoxacademy.springstart.controllers;
 
-import com.greenfoxacademy.springstart.Models.Post;
-import com.greenfoxacademy.springstart.Services.PostService;
+import com.greenfoxacademy.springstart.models.Post;
+import com.greenfoxacademy.springstart.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

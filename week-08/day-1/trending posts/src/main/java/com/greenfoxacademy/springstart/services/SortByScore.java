@@ -1,6 +1,6 @@
-package com.greenfoxacademy.springstart.Services;
+package com.greenfoxacademy.springstart.services;
 
-import com.greenfoxacademy.springstart.Models.Post;
+import com.greenfoxacademy.springstart.models.Post;
 import java.util.Comparator;
 
 public class SortByScore implements Comparator<Post> {
