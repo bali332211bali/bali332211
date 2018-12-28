@@ -27,10 +27,19 @@ public class XController {
 
     @GetMapping("")
     public String xs(HttpSession session,
-                     Model model) {
+                     Model model,
+                     @ModelAttribute(value = "xNew") X xNew) {
 
         User userCurrent = (User) session.getAttribute("userCurrent");
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
+        model.addAttribute("xs", xService.getAllXsByUser(userCurrent));
+
+        if (session.getAttribute("xLast") != null) {
+            X xLast = (X) session.getAttribute("xLast");
+            xNew.setName(xLast.getName());
+            xNew.setAmount(xLast.getAmount());
+            session.removeAttribute("xLast");
+        }
         return "xs";
     }
 
@@ -39,19 +48,23 @@ public class XController {
                      RedirectAttributes redirectAttributes,
                      HttpSession session) {
 
-        if (xService.isXNameAllowed(xNew.getName())) {
-            xService.setUser(xNew, (User) session.getAttribute("userCurrent"));
-            xService.addX(xNew);
-            redirectAttributes.addFlashAttribute("takenAlias", "not");
-            redirectAttributes.addFlashAttribute("aliasNew", urlNew.getAlias());
-            redirectAttributes.addFlashAttribute("secretCodeNew", urlNew.getSecretCode());
-            return "redirect:/posts/url";
+        if (!xService.isXNameAllowed(xNew.getName())) {
+            redirectAttributes.addFlashAttribute("isXNameTaken", true);
+            session.setAttribute("xLast", xNew);
+            return "redirect:/xs";
         }
-        redirectAttributes.addFlashAttribute("takenAlias", "taken");
-        session.setAttribute("nameUrl", urlNew.getUrl());
-        session.setAttribute("nameAlias", urlNew.getAlias());
+        xService.setUser(xNew, (User) session.getAttribute("userCurrent"));
+        xService.addX(xNew);
+        redirectAttributes.addFlashAttribute("isXNameTaken", false);
+        redirectAttributes.addFlashAttribute("nameXNew", xNew.getName());
+        redirectAttributes.addFlashAttribute("amountXNew", xNew.getAmount());
+        return "redirect:/xs";
+    }
 
-        return "xs";
+    @GetMapping("/delete")
+    public String deleteAll() {
+        xService.deleteAll();
+        return "redirect:";
     }
 
 

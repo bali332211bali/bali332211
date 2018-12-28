@@ -12,7 +12,7 @@
 <div class="container">
 
     <!------------------------search------------------------------>
-    <nav class="navbar fixed-top navbar-light bg-light navbar ">
+    <nav class="navbar navbar-light bg-light navbar ">
         <a class="navbar-brand">Search</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,12 +28,12 @@
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
         <!----------------------------taken---------------------------------->
-        <div th:switch="${isNameTaken}">
+        <div th:switch="${isXNameTaken}">
             <div th:case="false" class="alert alert-primary">
-                <span th:text="'Your URL is aliased to '"></span>
-                <b th:text="${aliasNew}"></b>
-                <span th:text="' and your secret code is '"></span>
-                <b th:text="${secretCodeNew}"></b>
+                <span th:text="'X name is '"></span>
+                <b th:text="${nameXNew}"></b>
+                <span th:text="' and X amount is '"></span>
+                <b th:text="${amountXNew}"></b>
             </div>
             <div th:case="true" class="alert alert-danger">
                 Name already taken.
@@ -52,7 +52,7 @@
 
     <!-------------------------------delete all------------------------------>
     <h2>
-        <a th:href="@{/posts//url/delete}" class="btn btn-lg btn-warning">delete all</a>
+        <a th:href="@{/xs/delete}" class="btn btn-lg btn-warning">delete all</a>
     </h2>
 
     </br>
@@ -67,24 +67,24 @@
 
     <!------------------------------------all Xs---------------------------------------->
     <table class="table table-borderless">
-        <div th:each="url : ${urls}">
+        <div th:each="x : ${xs}">
             <tr class="card bg-light mb-3">
                 <td class="card-title">
                     <h2>
-                        <div th:text="'Hit count ' + ${url.getHitCount()}" class="badge badge-info"></div>
+                        <div th:text="'Name ' + ${x.getName()}" class="badge badge-info"></div>
                     </h2>
                     <h4>
-                        <div th:text="'Secret code ' + ${url.getSecretCode()}" class="badge badge-light"></div>
+                        <div th:text="'Amount ' + ${x.getAmount()}" class="badge badge-light"></div>
                     </h4>
                 </td>
                 <td class="badge card-footer">
                     <h2>
-                        <div class="font-weight-bold" th:text="${url.getUrl()}"></div>
+                        <div class="font-weight-bold" th:text="${x.getName()}"></div>
                     </h2>
                 </td>
                 <td class="badge card-deck">
                     <h3>
-                        <div th:text="${url.getAlias()}"></div>
+                        <div th:text="${x.getAmount()}"></div>
                     </h3>
                 </td>
             </tr>

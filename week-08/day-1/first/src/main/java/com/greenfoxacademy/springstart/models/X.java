@@ -21,7 +21,19 @@ public class X {
         return name;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

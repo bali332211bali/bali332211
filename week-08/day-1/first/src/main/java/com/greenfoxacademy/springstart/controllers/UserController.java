@@ -44,6 +44,7 @@ public class UserController {
                       RedirectAttributes redirectAttributes,
                       HttpSession session) {
 
+        System.out.println(userService.isUsernameAllowed(userNew.getUsername()));
         if (!userService.isUsernameAllowed(userNew.getUsername())) {
             redirectAttributes.addFlashAttribute("isUsernameTaken", true);
             session.setAttribute("userLast", userNew.getUsername());

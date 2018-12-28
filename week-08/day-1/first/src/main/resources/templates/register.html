@@ -16,7 +16,7 @@
     <div align="center">
 
         <!-------------------------------register---------------------------------->
-        <form action="#" th:action="@{/register}" th:object="${userNew}" method="post" id="register">
+        <form action="#" th:action="@{/xs/register}" th:object="${userNew}" method="post" id="register">
             <!------------------------taken----------------------------->
             <div th:if="${isUsernameTaken}" class="alert alert-danger">
                 Username already taken.
@@ -32,7 +32,7 @@
         </form>
         <!---------------------------------delete all------------------------------->
         <h2>
-            <a th:href="@{/posts//url/deleteUsers}" class="btn btn-lg btn-warning">delete all users</a>
+            <a th:href="@{/xs/deleteUsers}" class="btn btn-lg btn-warning">delete all users</a>
         </h2>
     </div>
 
