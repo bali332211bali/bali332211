@@ -36,7 +36,6 @@ public class UrlService {
         return urlRepository.findAll();
     }
 
-
     public void deleteAll() {
         urlRepository.deleteAll();
     }
@@ -57,7 +56,6 @@ public class UrlService {
     public void addHitCount(Url url) {
         url.setHitCount(url.getHitCount() + 1);
     }
-
 
     public void setUser(Url url, User user) {
         url.setUser(user);

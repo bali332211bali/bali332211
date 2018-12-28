@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping("/register")
     public String register(@ModelAttribute(value = "userNew") User userNew,
                            HttpSession session) {
-        userService.addUserUrl(userNew);
+        userService.addUser(userNew);
         session.setAttribute("userNew", userNew);
         return "redirect:/posts/url";
     }
