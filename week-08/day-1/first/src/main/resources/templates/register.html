@@ -10,15 +10,16 @@
 </head>
 <body>
 <div class="container">
+
     <h1>
         <label for="register">Register</label>
     </h1>
-    <div align="center">
 
+    <div align="center">
         <!-------------------------------register---------------------------------->
         <form action="#" th:action="@{/xs/register}" th:object="${userNew}" method="post" id="register">
             <!------------------------taken----------------------------->
-            <div th:if="${isUsernameTaken}" class="alert alert-danger">
+            <div th:if="${usernameTaken}" class="alert alert-danger">
                 Username already taken.
             </div>
             <!-------------------------input----------------------------->
@@ -34,6 +35,33 @@
         <h2>
             <a th:href="@{/xs/deleteUsers}" class="btn btn-lg btn-warning">delete all users</a>
         </h2>
+    </div>
+    </br>
+    </br>
+
+    <h1>
+        <label for="register">Login</label>
+    </h1>
+
+    <div align="center">
+        <!-------------------------------login---------------------------------->
+        <form action="#" th:action="@{/xs/login}" th:object="${userLogin}" method="post" id="login">
+            <!------------------------found----------------------------->
+            <div th:if="${userNotFound}" class="alert alert-danger">
+                User not found.
+            </div>
+            <!--<div th:if="${passwordIncorrect}" class="alert alert-danger">-->
+            <!--Username not found.-->
+            <!--</div>-->
+            <!-------------------------input----------------------------->
+            <label for="usernameLogin">Username</label>
+            <input type="text" name="usernameLogin" id="usernameLogin" th:field="*{username}">
+            <label for="passwordLogin">Password</label>
+            <input type="password" name="passwordLogin" id="passwordLogin" th:field="*{password}">
+
+            <button type="submit" class="btn btn-primary">Login<span class="badge badge-light"></span>
+            </button>
+        </form>
     </div>
 
 </div>

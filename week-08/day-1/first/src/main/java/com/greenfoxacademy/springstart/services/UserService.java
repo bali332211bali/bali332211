@@ -49,4 +49,11 @@ public class UserService {
         return true;
     }
 
+    public boolean userFound(User user) {
+        if(userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword()) != null) {
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -28,6 +28,7 @@ public class UserController {
 
     @GetMapping("/register")
     public String register(@ModelAttribute(value = "userNew") User userNew,
+                           @ModelAttribute(value = "userLogin") User userLogin,
                            HttpSession session) {
 
         if (session.getAttribute("userTaken") != null) {
@@ -45,11 +46,11 @@ public class UserController {
                       HttpSession session) {
 
         if (!userService.isUsernameAllowed(userNew.getUsername())) {
-            redirectAttributes.addFlashAttribute("isUsernameTaken", true);
+            redirectAttributes.addFlashAttribute("usernameTaken", true);
             session.setAttribute("userTaken", userNew);
             return "redirect:/xs/register";
         }
-        redirectAttributes.addFlashAttribute("isUsernameTaken", false);
+        redirectAttributes.addFlashAttribute("usernameTaken", false);
         userService.addUser(userNew);
         session.setAttribute("userCurrent", userNew);
         return "redirect:/xs";
@@ -61,5 +62,17 @@ public class UserController {
         return "redirect:/xs/register";
     }
 
+    @PostMapping("/login")
+    public String login(@ModelAttribute(value = "userLogin") User userLogin,
+                        HttpSession session,
+                        RedirectAttributes redirectAttributes) {
+        if (!userService.userFound(userLogin)) {
+            redirectAttributes.addFlashAttribute("userNotFound", true);
+//            redirectAttributes.addFlashAttribute("passwordIncorrect", true);
+            return "redirect:/xs/register";
+        }
+        session.setAttribute("userCurrent", userService.getUserByUsername(userLogin.getUsername()));
+        return "redirect:/xs";
+    }
 
 }

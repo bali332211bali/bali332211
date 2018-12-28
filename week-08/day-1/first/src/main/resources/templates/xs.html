@@ -12,7 +12,7 @@
 <div class="container">
 
     <!------------------------search------------------------------>
-    <nav class="navbar navbar-light bg-light navbar ">
+    <nav class="navbar fixed-top navbar-light bg-light navbar ">
         <a class="navbar-brand"><h4><b>Search in name</b></h4></a>
         <form class="form-inline" th:action="@{/xs}">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
@@ -24,7 +24,7 @@
     </br>
 
     <!---------------------------------------new X--------------------------------------->
-    <form action="#" th:action="@{/xs}" method="post" th:object="${xNew}">
+    <form action="#" th:action="@{/xs}" method="post" th:object="${xNew}" class="mt-5">
         <h1>New X
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
