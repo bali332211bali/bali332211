@@ -7,7 +7,9 @@ import com.greenfoxacademy.springstart.repositories.XRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,12 +38,15 @@ public class XService {
         x.setUser(user);
     }
 
-    public List<X> getAllXsByUser(User user) {
+    public List<X> getAllByUser(User user) {
         return xRepository.findAllByUser(user);
     }
 
-    public List<X> getAllXsByNameContaining(String search) {
-        return xRepository.findAllByNameContaining(search);
+    public List<X> getAllByUserAndNameContaining(User user, String search) {
+        if(search == null || search.equals("")) {
+            return xRepository.findAllByUser(user);
+        }
+        return xRepository.findAllByUserAndNameContaining(user, search);
     }
 
     public boolean isXNameAllowed(String name) {
@@ -52,6 +57,8 @@ public class XService {
         }
         return true;
     }
+
+
 
 
 

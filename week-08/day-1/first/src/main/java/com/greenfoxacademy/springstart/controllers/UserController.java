@@ -30,11 +30,11 @@ public class UserController {
     public String register(@ModelAttribute(value = "userNew") User userNew,
                            HttpSession session) {
 
-        if (session.getAttribute("userLast") != null) {
-            User userLast = (User) session.getAttribute("userLast");
-            userNew.setUsername(userLast.getUsername());
-            userNew.setPassword(userLast.getPassword());
-            session.removeAttribute("userLast");
+        if (session.getAttribute("userTaken") != null) {
+            User userTaken = (User) session.getAttribute("userTaken");
+            userNew.setUsername(userTaken.getUsername());
+            userNew.setPassword(userTaken.getPassword());
+            session.removeAttribute("userTaken");
         }
         return "register";
     }
@@ -44,13 +44,11 @@ public class UserController {
                       RedirectAttributes redirectAttributes,
                       HttpSession session) {
 
-        System.out.println(userService.isUsernameAllowed(userNew.getUsername()));
         if (!userService.isUsernameAllowed(userNew.getUsername())) {
             redirectAttributes.addFlashAttribute("isUsernameTaken", true);
-            session.setAttribute("userLast", userNew.getUsername());
+            session.setAttribute("userTaken", userNew);
             return "redirect:/xs/register";
         }
-
         redirectAttributes.addFlashAttribute("isUsernameTaken", false);
         userService.addUser(userNew);
         session.setAttribute("userCurrent", userNew);

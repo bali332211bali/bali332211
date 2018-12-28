@@ -6,10 +6,7 @@ import com.greenfoxacademy.springstart.services.XService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -28,11 +25,12 @@ public class XController {
     @GetMapping("")
     public String xs(HttpSession session,
                      Model model,
-                     @ModelAttribute(value = "xNew") X xNew) {
+                     @ModelAttribute(value = "xNew") X xNew,
+                     @RequestParam(value = "searchString", required = false) String search) {
 
         User userCurrent = (User) session.getAttribute("userCurrent");
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
-        model.addAttribute("xs", xService.getAllXsByUser(userCurrent));
+        model.addAttribute("xs", xService.getAllByUserAndNameContaining(userCurrent, search));
 
         if (session.getAttribute("xLast") != null) {
             X xLast = (X) session.getAttribute("xLast");

@@ -13,6 +13,7 @@ public interface XRepository extends CrudRepository<X, Long> {
     List<X> findAll();
     List<X> findAllByUser(User user);
     List<X> findAllByNameContaining(String search);
+    List<X> findAllByUserAndNameContaining(User user, String search);
 
 
 
