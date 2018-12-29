@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class XService {
 
-    XRepository xRepository;
+    private XRepository xRepository;
 
     @Autowired
     public XService(XRepository xRepository) {

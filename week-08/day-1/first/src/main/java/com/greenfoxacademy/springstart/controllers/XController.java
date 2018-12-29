@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/xs")
 public class XController {
 
-    XService xService;
+    private XService xService;
 
     @Autowired
     public XController(XService xService) {
@@ -33,16 +33,16 @@ public class XController {
         model.addAttribute("xs", xService.getAllByUserAndNameContaining(userCurrent, search));
 
         if (session.getAttribute("xTaken") != null) {
-            X xLast = (X) session.getAttribute("xTaken");
-            xNew.setName(xLast.getName());
-            xNew.setAmount(xLast.getAmount());
+            X xTaken = (X) session.getAttribute("xTaken");
+            xNew.setName(xTaken.getName());
+            xNew.setAmount(xTaken.getAmount());
             session.removeAttribute("xTaken");
         }
         return "xs";
     }
 
     @PostMapping("")
-    public String xs(@ModelAttribute("urlNew") X xNew,
+    public String xs(@ModelAttribute("xNew") X xNew,
                      RedirectAttributes redirectAttributes,
                      HttpSession session) {
 

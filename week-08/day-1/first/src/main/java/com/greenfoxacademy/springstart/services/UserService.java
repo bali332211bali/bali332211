@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public class UserService {
 
-    public UserService() {}
-
     private UserRepository userRepository;
+
+    public UserService() {}
 
     @Autowired
     public UserService(UserRepository userRepository) {
