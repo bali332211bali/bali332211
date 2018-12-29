@@ -32,11 +32,11 @@ public class XController {
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
         model.addAttribute("xs", xService.getAllByUserAndNameContaining(userCurrent, search));
 
-        if (session.getAttribute("xLast") != null) {
-            X xLast = (X) session.getAttribute("xLast");
+        if (session.getAttribute("xTaken") != null) {
+            X xLast = (X) session.getAttribute("xTaken");
             xNew.setName(xLast.getName());
             xNew.setAmount(xLast.getAmount());
-            session.removeAttribute("xLast");
+            session.removeAttribute("xTaken");
         }
         return "xs";
     }
@@ -47,15 +47,15 @@ public class XController {
                      HttpSession session) {
 
         if (!xService.isXNameAllowed(xNew.getName())) {
-            redirectAttributes.addFlashAttribute("isXNameTaken", true);
-            session.setAttribute("xLast", xNew);
+            redirectAttributes.addFlashAttribute("xNameTaken", true);
+            session.setAttribute("xTaken", xNew);
             return "redirect:/xs";
         }
         xService.setUser(xNew, (User) session.getAttribute("userCurrent"));
         xService.addX(xNew);
-        redirectAttributes.addFlashAttribute("isXNameTaken", false);
-        redirectAttributes.addFlashAttribute("nameXNew", xNew.getName());
-        redirectAttributes.addFlashAttribute("amountXNew", xNew.getAmount());
+        redirectAttributes.addFlashAttribute("xNameTaken", false);
+        redirectAttributes.addFlashAttribute("xNewName", xNew.getName());
+        redirectAttributes.addFlashAttribute("xNewAmount", xNew.getAmount());
         return "redirect:/xs";
     }
 
