@@ -26,11 +26,16 @@ public class XController {
     public String xs(HttpSession session,
                      Model model,
                      @ModelAttribute(value = "xNew") X xNew,
-                     @RequestParam(value = "searchString", required = false) String search) {
+                     @RequestParam(value = "searchString", required = false) String search,
+                     @RequestParam(value = "page", required = false) Integer pageNumber) {
 
         User userCurrent = (User) session.getAttribute("userCurrent");
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
         model.addAttribute("xs", xService.getAllByUserAndNameContaining(userCurrent, search));
+
+//        model.addAttribute("xs", xService.getAllByUserAndNameContainingOnPage(userCurrent, search, pageNumber));
+//        model.addAttribute("pages", xService.getPagesByUser(userCurrent));
+
 
         if (session.getAttribute("xTaken") != null) {
             X xTaken = (X) session.getAttribute("xTaken");
