@@ -26,8 +26,8 @@ public class XController {
     public String xs(HttpSession session,
                      Model model,
                      @ModelAttribute(value = "xNew") X xNew,
-                     @RequestParam(value = "searchString", required = false) String search,
-                     @RequestParam(value = "page", required = false) Integer pageNumber) {
+                     @RequestParam(value = "searchString", required = false) String search) {
+//                     @RequestParam(value = "page", required = false) Integer pageNumber) {
 
         User userCurrent = (User) session.getAttribute("userCurrent");
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
@@ -67,7 +67,7 @@ public class XController {
     @GetMapping("/delete")
     public String deleteAll() {
         xService.deleteAll();
-        return "redirect:";
+        return "redirect:/xs";
     }
 
 

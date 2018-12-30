@@ -59,39 +59,34 @@ public class XService {
         return true;
     }
 
+
 //    public List<X> getAllByUserAndNameContainingOnPage(User user, String search, Integer pageNumber) {
+//
 //        int xsOnPage = 3;
+//        int xsOnPageCurrent = xRepository.findAllByUser(user).size() % getPagesByUser(user).size();
+//
+//        if(xsOnPageCurrent != 0 && pageNumber == getPagesByUser(user).size()) {
+//            xsOnPage = xsOnPageCurrent;
+//        }
+//
 //        List<X> xs = new ArrayList<>();
-//        int xsOnPageCurrent = xsOnPage;
 //
-//        if (xRepository.findAllByUser(user).size() == 0) {
-//            return Collections.emptyList();
-//        }
-//
-//        if (xsOnPage > xRepository.findAllByUser(user).size()) {
-//            xsOnPageCurrent = xRepository.findAllByUser(user).size() % xsOnPage;
-//        }
-//
-//        if (pageNumber != null) {
-//            if (pageNumber * xsOnPage > xRepository.findAllByUser(user).size()) {
-//                xsOnPageCurrent = xRepository.findAllByUser(user).size() % xsOnPage;
+//        if (search == null || search.equals("")) {
+//            if (xsOnPage > xRepository.findAllByUser(user).size()) {
+//                return xRepository.findAllByUser(user);
 //            }
-//
-//            if (search == null || search.equals("")) {
-//                for (int i = 0; i < xsOnPageCurrent; i++) {
-//                    xs.add(xRepository.findAllByUser(user).get(xsOnPage * (pageNumber - 1) + i));
-//                }
-//                return xs;
+//            for (int i = 0; i < xsOnPage; i++) {
+//                xs.add(xRepository.findAllByUser(user).get(i + (pageNumber - 1) * xsOnPage));
 //            }
+//            return xs;
 //        }
-//
-//        for (int i = 0; i < xsOnPageCurrent; i++) {
-//            xs.add(xRepository.findAllByUser(user).get(i));
+//        if (xsOnPage > xRepository.findAllByUserAndNameContaining(user, search).size()) {
+//            return xRepository.findAllByUserAndNameContaining(user, search);
+//        }
+//        for (int i = 0; i < xsOnPage; i++) {
+//            xs.add(xRepository.findAllByUserAndNameContaining(user, search).get(i + (pageNumber - 1) * xsOnPage));
 //        }
 //        return xs;
-//
-//
-////        return xRepository.findAllByUserAndNameContaining(user, search);
 //    }
 //
 //    public List<Integer> getPagesByUser(User user) {
