@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>New X</title>
+</head>
+<body>
+<div class="container">
+
+    <!------------------------search------------------------------>
+    <nav class="navbar fixed-top navbar-light bg-light navbar ">
+        <a class="navbar-brand"><h4><b>Search in name</b></h4></a>
+        <form class="form-inline" th:action="@{/ys}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                   name="searchString">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    </br>
+
+    <!---------------------------------------new Y--------------------------------------->
+    <form action="#" th:action="@{/ys}" method="post" th:object="${yNew}" class="mt-5">
+        <h1>New Y
+            <button type="submit" class="btn btn-primary btn-lg">Done</button>
+        </h1>
+        <!----------------------------taken---------------------------------->
+        <div th:switch="${yNameTaken}">
+            <div th:case="false" class="alert alert-primary">
+                <span th:text="'Y name is '"></span>
+                <b th:text="${yNewName}"></b>
+                <span th:text="' and y amount is '"></span>
+                <b th:text="${yNewAmount}"></b>
+            </div>
+            <div th:case="true" class="alert alert-danger">
+                Name already taken.
+            </div>
+        </div>
+        <!--------------------------------------input---------------------------------->
+        <h3><label for="nameY" class="badge badge-warning">Name</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="name" th:field="*{name}" id="nameY"
+               name="nameNameY" autofocus="autofocus">
+        </br>
+        <h3><label for="amountY" class="badge badge-warning">Amount</label></h3>
+        <input class="form-control mr-sm-2" type="number" placeholder="amount" th:field="*{amount}" id="amountY"
+               name="nameAmountY" required>
+    </form>
+
+    </br>
+
+    <!-------------------------------delete all------------------------------>
+    <h2>
+        <a th:href="@{/ys/delete}" class="btn btn-lg btn-warning">delete all</a>
+    </h2>
+
+    </br>
+
+    <h1>
+        <div class="badge badge-light">
+            <p th:text="|Ys of ${userCurrentUsername}|"></p>
+        </div>
+    </h1>
+
+    </br>
+
+    <!------------------------------------all Xs---------------------------------------->
+    <table class="table table-borderless">
+        <div th:each="y : ${ys}">
+            <tr class="card bg-light mb-3">
+                <td class="card-title">
+                    <h2>
+                        <div th:text="'Name ' + ${y.getName()}" class="badge badge-info"></div>
+                    </h2>
+                    <h4>
+                        <div th:text="'Amount ' + ${y.getAmount()}" class="badge badge-light"></div>
+                    </h4>
+                </td>
+                <td class="badge card-footer">
+                    <h2>
+                        <div class="font-weight-bold" th:text="${y.getName()}"></div>
+                    </h2>
+                </td>
+                <td class="badge card-deck">
+                    <h3>
+                        <div th:text="${y.getAmount()}"></div>
+                    </h3>
+                </td>
+            </tr>
+        </div>
+    </table>
+
+    <!--<table class="table table-borderless">-->
+    <!--<tr>-->
+    <!--<th>Name</th>-->
+    <!--<th>Amount</th>-->
+    <!--<th>Name</th>-->
+    <!--<th>Amount</th>-->
+    <!--</tr>-->
+    <!--<div th:each="x : ${xs}">-->
+    <!--<tr class="bg-light mb-3">-->
+    <!--<td>-->
+    <!--<h2>-->
+    <!--<div th:text="${x.getName()}" class="badge badge-info"></div>-->
+    <!--</h2>-->
+    <!--</td>-->
+    <!--<td>-->
+    <!--<h2>-->
+    <!--<div th:text="${x.getAmount()}" class="badge badge-light"></div>-->
+    <!--</h2>-->
+    <!--</td>-->
+    <!--<td>-->
+    <!--<h2>-->
+    <!--<div class="font-weight-bold" th:text="${x.getName()}"></div>-->
+    <!--</h2>-->
+    <!--</td>-->
+    <!--<td>-->
+    <!--<h2>-->
+    <!--<div th:text="${x.getAmount()}"></div>-->
+    <!--</h2>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--</div>-->
+    <!--</table>-->
+
+    <!--<nav aria-label="Page navigation example">-->
+        <!--<ul class="pagination justify-content-end fixed-bottom">-->
+            <!--<li class="page-item disabled">-->
+                <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+            <!--</li>-->
+            <!--<div th:each="pageCurrent : ${pages}">-->
+            <!--<li class="page-item"><a class="page-link" th:href="@{|/xs?page=${pageCurrent}|}" th:value="${pageCurrent}" name="page"><div th:text="${pageCurrent}"></div></a></li>-->
+            <!--</div>-->
+            <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</nav>-->
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
