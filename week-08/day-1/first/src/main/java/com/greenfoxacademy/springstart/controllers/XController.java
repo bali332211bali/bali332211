@@ -64,11 +64,34 @@ public class XController {
         return "redirect:/xs";
     }
 
-    @GetMapping("/delete")
+    @GetMapping("/deleteAll")
     public String deleteAll() {
         xService.deleteAll();
         return "redirect:/xs";
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam(value = "id") long xId) {
+        xService.deleteById(xId);
+        return "redirect:/xs";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(@PathVariable(value = "id") long xId, Model model) {
+        model.addAttribute("xEdit", xService.getById(xId));
+        return "edit";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String edit(@ModelAttribute(value = "xEdit") X xDone, HttpSession session) {
+        xService.setUser(xDone, (User) session.getAttribute("userCurrent"));
+        xService.addX(xDone);
+        return "redirect:/xs";
+    }
+
+
+
+
 
 
 }

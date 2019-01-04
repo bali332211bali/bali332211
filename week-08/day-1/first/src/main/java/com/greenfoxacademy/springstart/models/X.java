@@ -36,4 +36,16 @@ public class X {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

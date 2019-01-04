@@ -27,6 +27,10 @@ public class XService {
         xRepository.save(x);
     }
 
+    public void addById(long id) {
+        xRepository.save(xRepository.findById(id));
+    }
+
     public List<X> getAllXs() {
         return xRepository.findAll();
     }
@@ -34,6 +38,15 @@ public class XService {
     public void deleteAll() {
         xRepository.deleteAll();
     }
+
+    public void deleteById(long id) {
+        xRepository.deleteById(id);
+    }
+
+    public X getById(long id) {
+        return xRepository.findById(id);
+    }
+
 
     public void setUser(X x, User user) {
         x.setUser(user);

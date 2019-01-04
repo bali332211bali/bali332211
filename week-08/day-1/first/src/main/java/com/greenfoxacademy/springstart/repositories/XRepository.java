@@ -11,6 +11,7 @@ import java.util.List;
 public interface XRepository extends CrudRepository<X, Long> {
 
     List<X> findAll();
+    X findById(long id);
     List<X> findAllByUser(User user);
     List<X> findAllByNameContaining(String search);
     List<X> findAllByUserAndNameContaining(User user, String search);

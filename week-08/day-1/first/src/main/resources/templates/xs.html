@@ -54,7 +54,7 @@
 
     <!-------------------------------delete all------------------------------>
     <h2>
-        <a th:href="@{/xs/delete}" class="btn btn-lg btn-warning">delete all</a>
+        <a th:href="@{/xs/deleteAll}" class="btn btn-lg btn-warning">delete all</a>
     </h2>
 
     </br>
@@ -78,6 +78,8 @@
                     <h4>
                         <div th:text="'Amount ' + ${x.getAmount()}" class="badge badge-light"></div>
                     </h4>
+                    <a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times " name="delete"></a>
+                    <a th:href="@{|/xs/${x.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
                 </td>
                 <td class="badge card-footer">
                     <h2>
@@ -89,6 +91,7 @@
                         <div th:text="${x.getAmount()}"></div>
                     </h3>
                 </td>
+
             </tr>
         </div>
     </table>
@@ -127,16 +130,16 @@
     <!--</table>-->
 
     <!--<nav aria-label="Page navigation example">-->
-        <!--<ul class="pagination justify-content-end fixed-bottom">-->
-            <!--<li class="page-item disabled">-->
-                <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
-            <!--</li>-->
-            <!--<div th:each="pageCurrent : ${pages}">-->
-            <!--<li class="page-item"><a class="page-link" th:href="@{|/xs?page=${pageCurrent}|}" th:value="${pageCurrent}" name="page"><div th:text="${pageCurrent}"></div></a></li>-->
-            <!--</div>-->
-            <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
-            <!--</li>-->
-        <!--</ul>-->
+    <!--<ul class="pagination justify-content-end fixed-bottom">-->
+    <!--<li class="page-item disabled">-->
+    <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+    <!--</li>-->
+    <!--<div th:each="pageCurrent : ${pages}">-->
+    <!--<li class="page-item"><a class="page-link" th:href="@{|/xs?page=${pageCurrent}|}" th:value="${pageCurrent}" name="page"><div th:text="${pageCurrent}"></div></a></li>-->
+    <!--</div>-->
+    <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
+    <!--</li>-->
+    <!--</ul>-->
     <!--</nav>-->
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
