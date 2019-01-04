@@ -11,9 +11,11 @@
 <body>
 <div class="container">
 
-    <label for="edit">Edit X</label>
+    <h1>
+        <label for="edit2">Edit X</label>
+    </h1>
 </div>
-<div align="center">
+<div align="center" id="edit2">
     <form action="#" th:action="@{|/xs/${xEdit.getId()}/edit|}" th:object="${xEdit}" method="post"
           id="edit">
         <label for="name">Name</label>
