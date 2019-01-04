@@ -96,38 +96,42 @@
         </div>
     </table>
 
-    <!--<table class="table table-borderless">-->
-    <!--<tr>-->
-    <!--<th>Name</th>-->
-    <!--<th>Amount</th>-->
-    <!--<th>Name</th>-->
-    <!--<th>Amount</th>-->
-    <!--</tr>-->
-    <!--<div th:each="x : ${xs}">-->
-    <!--<tr class="bg-light mb-3">-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getName()}" class="badge badge-info"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getAmount()}" class="badge badge-light"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div class="font-weight-bold" th:text="${x.getName()}"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getAmount()}"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--</tr>-->
-    <!--</div>-->
-    <!--</table>-->
+    <table class="table table-borderless">
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        <div th:each="x : ${xs}">
+            <tr class="bg-light mb-3">
+                <td>
+                    <h2>
+                        <div th:text="${x.getName()}" class="badge badge-info"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div th:text="${x.getAmount()}" class="badge badge-light"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div class="font-weight-bold" th:text="${x.getName()}"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div th:text="${x.getAmount()}"></div>
+                    </h2>
+                </td>
+                <td><a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times " name="delete"></a></td>
+                <td><a th:href="@{|/xs/${x.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a></td>
+            </tr>
+        </div>
+    </table>
 
     <!--<nav aria-label="Page navigation example">-->
     <!--<ul class="pagination justify-content-end fixed-bottom">-->

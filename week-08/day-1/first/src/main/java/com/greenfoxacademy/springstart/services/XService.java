@@ -27,10 +27,6 @@ public class XService {
         xRepository.save(x);
     }
 
-    public void addById(long id) {
-        xRepository.save(xRepository.findById(id));
-    }
-
     public List<X> getAllXs() {
         return xRepository.findAll();
     }
