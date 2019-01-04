@@ -21,8 +21,6 @@
         </form>
     </nav>
 
-    </br>
-
     <!---------------------------------------new X--------------------------------------->
     <form action="#" th:action="@{/xs}" method="post" th:object="${xNew}" class="mt-5">
         <h1>New X
@@ -57,12 +55,13 @@
         <a th:href="@{/xs/deleteAll}" class="btn btn-lg btn-warning">delete all</a>
     </h2>
 
-    </br>
 
+    </br>
     <h1>
         <div class="badge badge-light">
             <p th:text="|Xs of ${userCurrentUsername}|"></p>
         </div>
+        <a th:href="@{/xs/register}" class="btn btn-lg btn-light" name="delete">Change user</a>
     </h1>
 
     </br>
@@ -78,7 +77,8 @@
                     <h4>
                         <div th:text="'Amount ' + ${x.getAmount()}" class="badge badge-light"></div>
                     </h4>
-                    <a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times " name="delete"></a>
+                    <a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times "
+                       name="delete"></a>
                     <a th:href="@{|/xs/${x.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
                 </td>
                 <td class="badge card-footer">
@@ -127,7 +127,8 @@
                         <div th:text="${x.getAmount()}"></div>
                     </h2>
                 </td>
-                <td><a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times " name="delete"></a></td>
+                <td><a th:href="|/xs/delete?id=${x.getId()}|" class="btn btn-lg btn-warning fa fa-times "
+                       name="delete"></a></td>
                 <td><a th:href="@{|/xs/${x.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a></td>
             </tr>
         </div>

@@ -77,8 +77,8 @@ public class XController {
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(@PathVariable(value = "id") long xId, Model model) {
-        model.addAttribute("xEdit", xService.getById(xId));
+    public String edit(@PathVariable(value = "id") long id, Model model) {
+        model.addAttribute("xEdit", xService.getById(id));
         return "edit";
     }
 
