@@ -78,11 +78,11 @@ public class UrlController {
     }
 
     @GetMapping("/a/{alias}")
-    public String alias(@PathVariable String alias, RedirectAttributes redirectAttributes) {
+    public String alias(@PathVariable String alias) {
         urlService.addHitCount(urlService.findByAlias(alias));
         urlService.addUrl(urlService.findByAlias(alias));
-        redirectAttributes.addAttribute("url", urlService.findByAlias(alias).getUrl());
-        return "redirect:{url}";
+        String url = urlService.findByAlias(alias).getUrl();
+        return "redirect:" + url;
     }
 
 //    @DeleteMapping(value = "/api/links/{id}", produces = "application/json")
