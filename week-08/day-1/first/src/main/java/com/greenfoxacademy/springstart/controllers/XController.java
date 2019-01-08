@@ -2,7 +2,7 @@ package com.greenfoxacademy.springstart.controllers;
 
 import com.greenfoxacademy.springstart.models.User;
 import com.greenfoxacademy.springstart.models.X;
-import com.greenfoxacademy.springstart.services.XService;
+import com.greenfoxacademy.springstart.services.XServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +15,11 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/xs")
 public class XController {
 
-    private XService xService;
+    private XServiceImpl xServiceImpl;
 
     @Autowired
-    public XController(XService xService) {
-        this.xService = xService;
+    public XController(XServiceImpl xServiceImpl) {
+        this.xServiceImpl = xServiceImpl;
     }
 
     @GetMapping("")
@@ -31,7 +31,7 @@ public class XController {
 
         User userCurrent = (User) session.getAttribute("userCurrent");
         model.addAttribute("userCurrentUsername", userCurrent.getUsername());
-        model.addAttribute("xs", xService.getAllByUserAndNameContaining(userCurrent, search));
+        model.addAttribute("xs", xServiceImpl.getAllByUserAndNameContaining(userCurrent, search));
 
 //        model.addAttribute("xs", xService.getAllByUserAndNameContainingOnPage(userCurrent, search, pageNumber));
 //        model.addAttribute("pages", xService.getPagesByUser(userCurrent));
@@ -51,13 +51,13 @@ public class XController {
                      RedirectAttributes redirectAttributes,
                      HttpSession session) {
 
-        if (!xService.isXNameAllowed(xNew.getName())) {
+        if (!xServiceImpl.isXNameAllowed(xNew.getName())) {
             redirectAttributes.addFlashAttribute("xNameTaken", true);
             session.setAttribute("xTaken", xNew);
             return "redirect:/xs";
         }
-        xService.setUser(xNew, (User) session.getAttribute("userCurrent"));
-        xService.addX(xNew);
+        xServiceImpl.setUser(xNew, (User) session.getAttribute("userCurrent"));
+        xServiceImpl.addX(xNew);
         redirectAttributes.addFlashAttribute("xNameTaken", false);
         redirectAttributes.addFlashAttribute("xNewName", xNew.getName());
         redirectAttributes.addFlashAttribute("xNewAmount", xNew.getAmount());
@@ -66,26 +66,26 @@ public class XController {
 
     @GetMapping("/deleteAll")
     public String deleteAll() {
-        xService.deleteAll();
+        xServiceImpl.deleteAll();
         return "redirect:/xs";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam(value = "id") long xId) {
-        xService.deleteById(xId);
+        xServiceImpl.deleteById(xId);
         return "redirect:/xs";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable(value = "id") long id, Model model) {
-        model.addAttribute("xEdit", xService.getById(id));
+        model.addAttribute("xEdit", xServiceImpl.getById(id));
         return "edit";
     }
 
     @PostMapping("/{id}/edit")
     public String edit(@ModelAttribute(value = "xEdit") X xDone, HttpSession session) {
-        xService.setUser(xDone, (User) session.getAttribute("userCurrent"));
-        xService.addX(xDone);
+        xServiceImpl.setUser(xDone, (User) session.getAttribute("userCurrent"));
+        xServiceImpl.addX(xDone);
         return "redirect:/xs";
     }
 
