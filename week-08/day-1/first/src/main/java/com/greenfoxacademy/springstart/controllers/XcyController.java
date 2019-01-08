@@ -29,6 +29,10 @@ public class XcyController {
                    @RequestParam(value = "searchString", required = false) String search) {
 //                     @RequestParam(value = "page", required = false) Integer pageNumber) {
 
+    if(session.getAttribute("userCurrent") == null) {
+      return "redirect:/xcys/register";
+    }
+
     User userCurrent = (User) session.getAttribute("userCurrent");
     model.addAttribute("userCurrentUsername", userCurrent.getUsername());
     model.addAttribute("xcys", xcyServiceImpl.getAllByUserAndNameContaining(userCurrent, search));
@@ -52,7 +56,7 @@ public class XcyController {
 
     if (!xcyServiceImpl.isXcyNameAllowed(xcyNew.getName())) {
       redirectAttributes.addFlashAttribute("xcyNameTaken", true);
-      session.setAttribute("xTaken", xcyNew);
+      session.setAttribute("xcyTaken", xcyNew);
       return "redirect:/xcys";
     }
     xcyServiceImpl.setUser(xcyNew, (User) session.getAttribute("userCurrent"));
