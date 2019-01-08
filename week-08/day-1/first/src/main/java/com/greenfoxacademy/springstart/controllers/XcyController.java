@@ -50,7 +50,7 @@ public class XcyController {
   }
 
   @PostMapping("")
-  public String xs(@ModelAttribute("xNew") Xcy xcyNew,
+  public String xs(@ModelAttribute("xcyNew") Xcy xcyNew,
                    RedirectAttributes redirectAttributes,
                    HttpSession session) {
 
