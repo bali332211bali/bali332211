@@ -10,12 +10,15 @@ import java.util.List;
 @Repository
 public interface XRepository extends CrudRepository<X, Long> {
 
-    List<X> findAll();
-    X findById(long id);
-    List<X> findAllByUser(User user);
-    List<X> findAllByNameContaining(String search);
-    List<X> findAllByUserAndNameContaining(User user, String search);
+  List<X> findAll();
 
+  X findById(long id);
+
+  List<X> findAllByUser(User user);
+
+  List<X> findAllByNameContaining(String search);
+
+  List<X> findAllByUserAndNameContaining(User user, String search);
 
 
 }

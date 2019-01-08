@@ -13,57 +13,56 @@ import java.util.List;
 @Service
 public class XServiceImpl implements XService {
 
-    private XRepository xRepository;
+  private XRepository xRepository;
 
-    @Autowired
-    public XServiceImpl(XRepository xRepository) {
-        this.xRepository = xRepository;
+  @Autowired
+  public XServiceImpl(XRepository xRepository) {
+    this.xRepository = xRepository;
+  }
+
+  public void addX(X x) {
+    xRepository.save(x);
+  }
+
+  public List<X> getAllXs() {
+    return xRepository.findAll();
+  }
+
+  public void deleteAll() {
+    xRepository.deleteAll();
+  }
+
+  public void deleteById(long id) {
+    xRepository.deleteById(id);
+  }
+
+  public X getById(long id) {
+    return xRepository.findById(id);
+  }
+
+  public void setUser(X x, User user) {
+    x.setUser(user);
+  }
+
+  public List<X> getAllByUser(User user) {
+    return xRepository.findAllByUser(user);
+  }
+
+  public List<X> getAllByUserAndNameContaining(User user, String search) {
+    if (search == null || search.equals("")) {
+      return xRepository.findAllByUser(user);
     }
+    return xRepository.findAllByUserAndNameContaining(user, search);
+  }
 
-    public void addX(X x) {
-        xRepository.save(x);
+  public boolean isXNameAllowed(String name) {
+    for (X xCurrent : xRepository.findAll()) {
+      if (xCurrent.getName().equals(name)) {
+        return false;
+      }
     }
-
-    public List<X> getAllXs() {
-        return xRepository.findAll();
-    }
-
-    public void deleteAll() {
-        xRepository.deleteAll();
-    }
-
-    public void deleteById(long id) {
-        xRepository.deleteById(id);
-    }
-
-    public X getById(long id) {
-        return xRepository.findById(id);
-    }
-
-
-    public void setUser(X x, User user) {
-        x.setUser(user);
-    }
-
-    public List<X> getAllByUser(User user) {
-        return xRepository.findAllByUser(user);
-    }
-
-    public List<X> getAllByUserAndNameContaining(User user, String search) {
-        if (search == null || search.equals("")) {
-            return xRepository.findAllByUser(user);
-        }
-        return xRepository.findAllByUserAndNameContaining(user, search);
-    }
-
-    public boolean isXNameAllowed(String name) {
-        for (X xCurrent : xRepository.findAll()) {
-            if (xCurrent.getName().equals(name)) {
-                return false;
-            }
-        }
-        return true;
-    }
+    return true;
+  }
 
 
 //    public List<X> getAllByUserAndNameContainingOnPage(User user, String search, Integer pageNumber) {

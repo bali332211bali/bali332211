@@ -11,49 +11,50 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository;
+  private UserRepository userRepository;
 
-    public UserServiceImpl() {}
+  public UserServiceImpl() {
+  }
 
-    @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+  @Autowired
+  public UserServiceImpl(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
 
-    public void addUser(User user) {
-        userRepository.save(user);
-    }
+  public void addUser(User user) {
+    userRepository.save(user);
+  }
 
-    public List<User> getAllUser() {
-        return userRepository.findAll();
-    }
+  public List<User> getAllUser() {
+    return userRepository.findAll();
+  }
 
-    public User getUserById(long id) {
-        return userRepository.findById(id);
-    }
+  public User getUserById(long id) {
+    return userRepository.findById(id);
+  }
 
-    public void deleteAllUsers() {
-        userRepository.deleteAll();
-    }
+  public void deleteAllUsers() {
+    userRepository.deleteAll();
+  }
 
-    public User getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
-    }
+  public User getUserByUsername(String username) {
+    return userRepository.findByUsername(username);
+  }
 
-    public boolean isUsernameAllowed(String username) {
-        for (User userCurrent : userRepository.findAll()) {
-            if(userCurrent.getUsername().equals(username)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public boolean userFound(User user) {
-        if(userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword()) != null) {
-            return true;
-        }
+  public boolean isUsernameAllowed(String username) {
+    for (User userCurrent : userRepository.findAll()) {
+      if (userCurrent.getUsername().equals(username)) {
         return false;
+      }
     }
+    return true;
+  }
+
+  public boolean userFound(User user) {
+    if (userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword()) != null) {
+      return true;
+    }
+    return false;
+  }
 
 }

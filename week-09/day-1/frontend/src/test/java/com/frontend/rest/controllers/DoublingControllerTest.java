@@ -16,11 +16,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 
+import java.nio.charset.Charset;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(DoublingController.class)
 public class DoublingControllerTest {
+
+  private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
+      MediaType.APPLICATION_JSON.getSubtype(),
+      Charset.forName("utf8"));
 
   @Autowired
   private MockMvc mockMvc;
@@ -30,6 +36,7 @@ public class DoublingControllerTest {
     mockMvc.perform(post("/arrays")
         .contentType(MediaType.APPLICATION_JSON)
         .content("{\"what\": \"sum\", \"numbers\": [1, 2, 3, 4, 5]}"))
+        .andExpect(content().contentType(contentType))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.result", is(15)));
   }

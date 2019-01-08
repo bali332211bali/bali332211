@@ -15,79 +15,79 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/xs")
 public class XController {
 
-    private XServiceImpl xServiceImpl;
+  private XServiceImpl xServiceImpl;
 
-    @Autowired
-    public XController(XServiceImpl xServiceImpl) {
-        this.xServiceImpl = xServiceImpl;
-    }
+  @Autowired
+  public XController(XServiceImpl xServiceImpl) {
+    this.xServiceImpl = xServiceImpl;
+  }
 
-    @GetMapping("")
-    public String xs(HttpSession session,
-                     Model model,
-                     @ModelAttribute(value = "xNew") X xNew,
-                     @RequestParam(value = "searchString", required = false) String search) {
+  @GetMapping("")
+  public String xs(HttpSession session,
+                   Model model,
+                   @ModelAttribute(value = "xNew") X xNew,
+                   @RequestParam(value = "searchString", required = false) String search) {
 //                     @RequestParam(value = "page", required = false) Integer pageNumber) {
 
-        User userCurrent = (User) session.getAttribute("userCurrent");
-        model.addAttribute("userCurrentUsername", userCurrent.getUsername());
-        model.addAttribute("xs", xServiceImpl.getAllByUserAndNameContaining(userCurrent, search));
+    User userCurrent = (User) session.getAttribute("userCurrent");
+    model.addAttribute("userCurrentUsername", userCurrent.getUsername());
+    model.addAttribute("xs", xServiceImpl.getAllByUserAndNameContaining(userCurrent, search));
 
 //        model.addAttribute("xs", xService.getAllByUserAndNameContainingOnPage(userCurrent, search, pageNumber));
 //        model.addAttribute("pages", xService.getPagesByUser(userCurrent));
 
 
-        if (session.getAttribute("xTaken") != null) {
-            X xTaken = (X) session.getAttribute("xTaken");
-            xNew.setName(xTaken.getName());
-            xNew.setAmount(xTaken.getAmount());
-            session.removeAttribute("xTaken");
-        }
-        return "xs";
+    if (session.getAttribute("xTaken") != null) {
+      X xTaken = (X) session.getAttribute("xTaken");
+      xNew.setName(xTaken.getName());
+      xNew.setAmount(xTaken.getAmount());
+      session.removeAttribute("xTaken");
     }
+    return "xs";
+  }
 
-    @PostMapping("")
-    public String xs(@ModelAttribute("xNew") X xNew,
-                     RedirectAttributes redirectAttributes,
-                     HttpSession session) {
+  @PostMapping("")
+  public String xs(@ModelAttribute("xNew") X xNew,
+                   RedirectAttributes redirectAttributes,
+                   HttpSession session) {
 
-        if (!xServiceImpl.isXNameAllowed(xNew.getName())) {
-            redirectAttributes.addFlashAttribute("xNameTaken", true);
-            session.setAttribute("xTaken", xNew);
-            return "redirect:/xs";
-        }
-        xServiceImpl.setUser(xNew, (User) session.getAttribute("userCurrent"));
-        xServiceImpl.addX(xNew);
-        redirectAttributes.addFlashAttribute("xNameTaken", false);
-        redirectAttributes.addFlashAttribute("xNewName", xNew.getName());
-        redirectAttributes.addFlashAttribute("xNewAmount", xNew.getAmount());
-        return "redirect:/xs";
+    if (!xServiceImpl.isXNameAllowed(xNew.getName())) {
+      redirectAttributes.addFlashAttribute("xNameTaken", true);
+      session.setAttribute("xTaken", xNew);
+      return "redirect:/xs";
     }
+    xServiceImpl.setUser(xNew, (User) session.getAttribute("userCurrent"));
+    xServiceImpl.addX(xNew);
+    redirectAttributes.addFlashAttribute("xNameTaken", false);
+    redirectAttributes.addFlashAttribute("xNewName", xNew.getName());
+    redirectAttributes.addFlashAttribute("xNewAmount", xNew.getAmount());
+    return "redirect:/xs";
+  }
 
-    @GetMapping("/deleteAll")
-    public String deleteAll() {
-        xServiceImpl.deleteAll();
-        return "redirect:/xs";
-    }
+  @GetMapping("/deleteAll")
+  public String deleteAll() {
+    xServiceImpl.deleteAll();
+    return "redirect:/xs";
+  }
 
-    @GetMapping("/delete")
-    public String delete(@RequestParam(value = "id") long xId) {
-        xServiceImpl.deleteById(xId);
-        return "redirect:/xs";
-    }
+  @GetMapping("/delete")
+  public String delete(@RequestParam(value = "id") long xId) {
+    xServiceImpl.deleteById(xId);
+    return "redirect:/xs";
+  }
 
-    @GetMapping("/{id}/edit")
-    public String edit(@PathVariable(value = "id") long id, Model model) {
-        model.addAttribute("xEdit", xServiceImpl.getById(id));
-        return "edit";
-    }
+  @GetMapping("/{id}/edit")
+  public String edit(@PathVariable(value = "id") long id, Model model) {
+    model.addAttribute("xEdit", xServiceImpl.getById(id));
+    return "edit";
+  }
 
-    @PostMapping("/{id}/edit")
-    public String edit(@ModelAttribute(value = "xEdit") X xDone, HttpSession session) {
-        xServiceImpl.setUser(xDone, (User) session.getAttribute("userCurrent"));
-        xServiceImpl.addX(xDone);
-        return "redirect:/xs";
-    }
+  @PostMapping("/{id}/edit")
+  public String edit(@ModelAttribute(value = "xEdit") X xDone, HttpSession session) {
+    xServiceImpl.setUser(xDone, (User) session.getAttribute("userCurrent"));
+    xServiceImpl.addX(xDone);
+    return "redirect:/xs";
+  }
 
 
 }

@@ -6,7 +6,7 @@
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
     <meta charset="UTF-8">
-    <title>New X</title>
+    <title>New y</title>
 </head>
 <body>
 <div class="container">
@@ -24,7 +24,7 @@
     </br>
 
     <!---------------------------------------new Y--------------------------------------->
-    <form action="#" th:action="@{/ys}" method="post" th:object="${yNew}" class="mt-5">
+    <form action="#" th:action="@{/ys}" method="post" th:object="${yNew}" class="mt-lg-5">
         <h1>New Y
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
@@ -93,38 +93,38 @@
         </div>
     </table>
 
-    <!--<table class="table table-borderless">-->
-    <!--<tr>-->
-    <!--<th>Name</th>-->
-    <!--<th>Amount</th>-->
-    <!--<th>Name</th>-->
-    <!--<th>Amount</th>-->
-    <!--</tr>-->
-    <!--<div th:each="x : ${xs}">-->
-    <!--<tr class="bg-light mb-3">-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getName()}" class="badge badge-info"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getAmount()}" class="badge badge-light"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div class="font-weight-bold" th:text="${x.getName()}"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--<td>-->
-    <!--<h2>-->
-    <!--<div th:text="${x.getAmount()}"></div>-->
-    <!--</h2>-->
-    <!--</td>-->
-    <!--</tr>-->
-    <!--</div>-->
-    <!--</table>-->
+    <table class="table table-borderless">
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Name</th>
+            <th>Amount</th>
+        </tr>
+        <div th:each="y : ${ys}">
+            <tr class="bg-light mb-3">
+                <td>
+                    <h2>
+                        <div th:text="${y.getName()}" class="badge badge-info"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div th:text="${y.getAmount()}" class="badge badge-light"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div class="font-weight-bold" th:text="${y.getName()}"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div th:text="${y.getAmount()}"></div>
+                    </h2>
+                </td>
+            </tr>
+        </div>
+    </table>
 
     <!--<nav aria-label="Page navigation example">-->
         <!--<ul class="pagination justify-content-end fixed-bottom">-->

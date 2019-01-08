@@ -7,46 +7,46 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    private String username;
-    private String password;
+  private String username;
+  private String password;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "todo_id")
-    private List<X> xs;
+  @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "x_id")
+  private List<X> xs;
 
-    public String getUsername() {
-        return username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public List<X> getXs() {
-        return xs;
-    }
+  public List<X> getXs() {
+    return xs;
+  }
 
-    public void setXs(List<X> xs) {
-        this.xs = xs;
-    }
+  public void setXs(List<X> xs) {
+    this.xs = xs;
+  }
 }
