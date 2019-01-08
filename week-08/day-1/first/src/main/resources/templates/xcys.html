@@ -129,25 +129,26 @@
                 </td>
                 <td><a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "
                        name="delete"></a></td>
-                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a></td>
+                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
+                </td>
             </tr>
         </div>
     </table>
 
     <!--<nav aria-label="Page navigation example">-->
-        <!--<ul class="pagination justify-content-end fixed-bottom">-->
-            <!--<li class="page-item disabled">-->
-                <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
-            <!--</li>-->
-            <!--<div th:each="pageCurrent : ${pages}">-->
-                <!--<li class="page-item"><a class="page-link" th:href="@{|/xcys?page=${pageCurrent}|}"-->
-                                         <!--th:value="${pageCurrent}" name="page">-->
-                    <!--<div th:text="${pageCurrent}"></div>-->
-                <!--</a></li>-->
-            <!--</div>-->
-            <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
-            <!--</li>-->
-        <!--</ul>-->
+    <!--<ul class="pagination justify-content-end fixed-bottom">-->
+    <!--<li class="page-item disabled">-->
+    <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+    <!--</li>-->
+    <!--<div th:each="pageCurrent : ${pages}">-->
+    <!--<li class="page-item"><a class="page-link" th:href="@{|/xcys?page=${pageCurrent}|}"-->
+    <!--th:value="${pageCurrent}" name="page">-->
+    <!--<div th:text="${pageCurrent}"></div>-->
+    <!--</a></li>-->
+    <!--</div>-->
+    <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
+    <!--</li>-->
+    <!--</ul>-->
     <!--</nav>-->
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
