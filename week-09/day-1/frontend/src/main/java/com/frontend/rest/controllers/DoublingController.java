@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class DoublingController {
 
-
   @GetMapping("/doubling")
   public Object doubling(@RequestParam(value = "input", required = false) Integer number) {
     if (number == null) {
@@ -49,5 +48,6 @@ public class DoublingController {
     }
     return new ArraysSum(arraysParam.numbers);
   }
+
 
 }
