@@ -2,8 +2,8 @@ package com.greenfoxacademy.springstart.services;
 
 
 import com.greenfoxacademy.springstart.models.User;
-import com.greenfoxacademy.springstart.models.X;
-import com.greenfoxacademy.springstart.repositories.XRepository;
+import com.greenfoxacademy.springstart.models.Xcy;
+import com.greenfoxacademy.springstart.repositories.XcyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,53 +11,53 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class XServiceImpl implements XService {
+public class XcyServiceImpl implements XcyService {
 
-  private XRepository xRepository;
+  private XcyRepository xcyRepository;
 
   @Autowired
-  public XServiceImpl(XRepository xRepository) {
-    this.xRepository = xRepository;
+  public XcyServiceImpl(XcyRepository xcyRepository) {
+    this.xcyRepository = xcyRepository;
   }
 
-  public void addX(X x) {
-    xRepository.save(x);
+  public void addXcy(Xcy xcy) {
+    xcyRepository.save(xcy);
   }
 
-  public List<X> getAllXs() {
-    return xRepository.findAll();
+  public List<Xcy> getAllXcys() {
+    return xcyRepository.findAll();
   }
 
   public void deleteAll() {
-    xRepository.deleteAll();
+    xcyRepository.deleteAll();
   }
 
   public void deleteById(long id) {
-    xRepository.deleteById(id);
+    xcyRepository.deleteById(id);
   }
 
-  public X getById(long id) {
-    return xRepository.findById(id);
+  public Xcy getById(long id) {
+    return xcyRepository.findById(id);
   }
 
-  public void setUser(X x, User user) {
-    x.setUser(user);
+  public void setUser(Xcy xcy, User user) {
+    xcy.setUser(user);
   }
 
-  public List<X> getAllByUser(User user) {
-    return xRepository.findAllByUser(user);
+  public List<Xcy> getAllByUser(User user) {
+    return xcyRepository.findAllByUser(user);
   }
 
-  public List<X> getAllByUserAndNameContaining(User user, String search) {
+  public List<Xcy> getAllByUserAndNameContaining(User user, String search) {
     if (search == null || search.equals("")) {
-      return xRepository.findAllByUser(user);
+      return xcyRepository.findAllByUser(user);
     }
-    return xRepository.findAllByUserAndNameContaining(user, search);
+    return xcyRepository.findAllByUserAndNameContaining(user, search);
   }
 
-  public boolean isXNameAllowed(String name) {
-    for (X xCurrent : xRepository.findAll()) {
-      if (xCurrent.getName().equals(name)) {
+  public boolean isXcyNameAllowed(String name) {
+    for (Xcy xcyCurrent : xcyRepository.findAll()) {
+      if (xcyCurrent.getName().equals(name)) {
         return false;
       }
     }
@@ -65,7 +65,7 @@ public class XServiceImpl implements XService {
   }
 
 
-//    public List<X> getAllByUserAndNameContainingOnPage(User user, String search, Integer pageNumber) {
+//    public List<Xcy> getAllByUserAndNameContainingOnPage(User user, String search, Integer pageNumber) {
 //
 //        int xsOnPage = 3;
 //        int xsOnPageCurrent = xRepository.findAllByUser(user).size() % getPagesByUser(user).size();
@@ -74,7 +74,7 @@ public class XServiceImpl implements XService {
 //            xsOnPage = xsOnPageCurrent;
 //        }
 //
-//        List<X> xs = new ArrayList<>();
+//        List<Xcy> xs = new ArrayList<>();
 //
 //        if (search == null || search.equals("")) {
 //            if (xsOnPage > xRepository.findAllByUser(user).size()) {

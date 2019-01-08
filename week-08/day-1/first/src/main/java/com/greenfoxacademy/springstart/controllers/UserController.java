@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/xs")
+@RequestMapping("/xcys")
 public class UserController {
 
   private UserServiceImpl userServiceImpl;
@@ -43,18 +43,18 @@ public class UserController {
     if (!userServiceImpl.isUsernameAllowed(userNew.getUsername())) {
       redirectAttributes.addFlashAttribute("usernameTaken", true);
       session.setAttribute("userTaken", userNew);
-      return "redirect:/xs/register";
+      return "redirect:/xcys/register";
     }
     redirectAttributes.addFlashAttribute("usernameTaken", false);
     userServiceImpl.addUser(userNew);
     session.setAttribute("userCurrent", userNew);
-    return "redirect:/xs";
+    return "redirect:/xcys";
   }
 
   @GetMapping("/deleteUsers")
   public String deleteUsers() {
     userServiceImpl.deleteAllUsers();
-    return "redirect:/xs/register";
+    return "redirect:/xcys/register";
   }
 
   @PostMapping("/login")
@@ -64,10 +64,10 @@ public class UserController {
     if (!userServiceImpl.userFound(userLogin)) {
       redirectAttributes.addFlashAttribute("userNotFound", true);
 //            redirectAttributes.addFlashAttribute("passwordIncorrect", true);
-      return "redirect:/xs/register";
+      return "redirect:/xcys/register";
     }
     session.setAttribute("userCurrent", userServiceImpl.getUserByUsername(userLogin.getUsername()));
-    return "redirect:/xs";
+    return "redirect:/xcys";
   }
 
 }

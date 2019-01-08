@@ -3,8 +3,8 @@ package com.greenfoxacademy.springstart.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Xs")
-public class X {
+@Table(name = "Xcys")
+public class Xcy {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
