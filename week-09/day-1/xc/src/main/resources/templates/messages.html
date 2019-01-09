@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>New Message</title>
+</head>
+<body>
+<div class="container">
+
+    <!------------------------search------------------------------>
+    <nav class="navbar fixed-top navbar-light bg-light navbar">
+        <a class="navbar-brand"><h4><b>Search in name</b></h4></a>
+        <form class="form-inline" th:action="@{/messages}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                   name="searchString">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <div class="pb-5"></div>
+    <!---------------------------------------new Message--------------------------------------->
+    <form action="#" th:action="@{/messages}" method="post" th:object="${messageNew}" class="pt-5">
+        <h1>New Message
+            <button type="submit" class="btn btn-primary btn-lg">Done</button>
+        </h1>
+        <!----------------------------taken---------------------------------->
+        <div th:switch="${messageNameTaken}">
+            <div th:case="false" class="alert alert-primary">
+                <span th:text="'Username is '"></span>
+                <b th:text="${messageNewName}"></b>
+                <span th:text="' and Message text is '"></span>
+                <b th:text="${messageNewText}"></b>
+            </div>
+            <div th:case="true" class="alert alert-danger">
+                Name already taken.
+            </div>
+        </div>
+        <!--------------------------------------input---------------------------------->
+        <h3><label for="nameMessage" class="badge badge-warning">Name</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="name" th:field="*{name}" id="nameMessage"
+               name="nameNameMessage">
+        </br>
+        <h3><label for="textMessage" class="badge badge-warning">Text</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="text" th:field="*{text}" id="textMessage"
+               name="nameTextMessage" autofocus="autofocus">
+    </form>
+
+    </br>
+
+    <!-------------------------------delete all------------------------------>
+    <h2>
+        <a th:href="@{/messages/deleteAll}" class="btn btn-lg btn-warning">delete all messages</a>
+    </h2>
+
+
+    <!-------------------------------edit user------------------------------>
+    <a th:href="@{|/messages/${userCurrentId}/editUser|}" class="btn btn-lg btn-info" name="edit">Edit user</a>
+
+    </br>
+
+    <!-------------------------------username------------------------------>
+    <h1>
+        <div class="badge badge-light">
+            <p th:text="|Messages of ${userCurrentUsername}|"></p>
+        </div>
+        <a th:href="@{/messages/register}" class="btn btn-lg btn-light" name="delete">Change user</a>
+    </h1>
+
+    </br>
+
+    <!------------------------------------all Messages---------------------------------------->
+    <table class="table table-borderless">
+        <div th:each="message : ${messages}">
+            <tr class="card bg-light mb-3">
+                <td class="card-title">
+                    <a th:href="|/messages/delete?id=${message.getId()}|" class="btn btn-lg btn-warning fa fa-times "
+                       name="delete"></a>
+                    <a th:href="@{|/messages/${message.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
+                </td>
+                <td class="badge card-footer">
+                    <h2>
+                        <div class="font-weight-bold" th:text="${userCurrentUsername}"></div>
+                    </h2>
+                </td>
+                <td class="badge card-deck">
+                    <h3>
+                        <div th:text="${message.getText()}"></div>
+                    </h3>
+                </td>
+
+            </tr>
+        </div>
+    </table>
+
+    <table class="table table-borderless">
+        <tr>
+            <th>Name</th>
+            <th>Text</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        <div th:each="message : ${messages}">
+            <tr class="bg-light mb-3">
+                <td>
+                    <h2>
+                        <div th:text="${message.getName()}" class="badge badge-info"></div>
+                    </h2>
+                </td>
+                <td>
+                    <h2>
+                        <div th:text="${message.getText()}" class="badge badge-light"></div>
+                    </h2>
+                </td>
+                <td><a th:href="|/messages/delete?id=${message.getId()}|" class="btn btn-lg btn-warning fa fa-times "
+                       name="delete"></a></td>
+                <td><a th:href="@{|/messages/${message.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
+                </td>
+            </tr>
+        </div>
+    </table>
+
+    <!--<nav aria-label="Page navigation example">-->
+    <!--<ul class="pagination justify-content-end fixed-bottom">-->
+    <!--<li class="page-item disabled">-->
+    <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+    <!--</li>-->
+    <!--<div th:each="pageCurrent : ${pages}">-->
+    <!--<li class="page-item"><a class="page-link" th:href="@{|/messages?page=${pageCurrent}|}"-->
+    <!--th:value="${pageCurrent}" name="page">-->
+    <!--<div th:text="${pageCurrent}"></div>-->
+    <!--</a></li>-->
+    <!--</div>-->
+    <!--<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
