@@ -16,9 +16,9 @@ public interface XcyRepository extends CrudRepository<Xcy, Long> {
 
   List<Xcy> findAllByUser(User user);
 
-  List<Xcy> findAllByNameContaining(String search);
+  List<Xcy> findAllByNamexcyContaining(String search);
 
-  List<Xcy> findAllByUserAndNameContaining(User user, String search);
+  List<Xcy> findAllByUserAndNamexcyContaining(User user, String search);
 
 
 }

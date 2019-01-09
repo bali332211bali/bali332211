@@ -48,16 +48,16 @@ public class XcyServiceImpl implements XcyService {
     return xcyRepository.findAllByUser(user);
   }
 
-  public List<Xcy> getAllByUserAndNameContaining(User user, String search) {
+  public List<Xcy> getAllByUserAndNamexcyContaining(User user, String search) {
     if (search == null || search.equals("")) {
       return xcyRepository.findAllByUser(user);
     }
-    return xcyRepository.findAllByUserAndNameContaining(user, search);
+    return xcyRepository.findAllByUserAndNamexcyContaining(user, search);
   }
 
-  public boolean isXcyNameAllowed(String name) {
+  public boolean isXcyNamexcyAllowed(String name) {
     for (Xcy xcyCurrent : xcyRepository.findAll()) {
-      if (xcyCurrent.getName().equals(name)) {
+      if (xcyCurrent.getNamexcy().equals(name)) {
         return false;
       }
     }

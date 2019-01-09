@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface MessageRepository extends CrudRepository<Message, Long> {
 
-  List<Message> findAllOrder();
+  List<Message> findAll();
 
   Message findById(long id);
 

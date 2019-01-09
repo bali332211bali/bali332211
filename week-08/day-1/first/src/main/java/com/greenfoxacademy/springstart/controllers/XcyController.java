@@ -35,15 +35,15 @@ public class XcyController {
 
     User userCurrent = (User) session.getAttribute("userCurrent");
     model.addAttribute("userCurrentUsername", userCurrent.getUsername());
-    model.addAttribute("xcys", xcyServiceImpl.getAllByUserAndNameContaining(userCurrent, search));
+    model.addAttribute("xcys", xcyServiceImpl.getAllByUserAndNamexcyContaining(userCurrent, search));
 
 //        model.addAttribute("xcys", xcyServiceImpl.getAllByUserAndNameContainingOnPage(userCurrent, search, pageNumber));
 //        model.addAttribute("pages", xcyServiceImpl.getPagesByUser(userCurrent));
 
     if (session.getAttribute("xcyTaken") != null) {
       Xcy xcyTaken = (Xcy) session.getAttribute("xcyTaken");
-      xcyNew.setName(xcyTaken.getName());
-      xcyNew.setAmount(xcyTaken.getAmount());
+      xcyNew.setNamexcy(xcyTaken.getNamexcy());
+      xcyNew.setAmountxcy(xcyTaken.getAmountxcy());
       session.removeAttribute("xcyTaken");
     }
     return "xcys";
@@ -54,7 +54,7 @@ public class XcyController {
                    RedirectAttributes redirectAttributes,
                    HttpSession session) {
 
-    if (!xcyServiceImpl.isXcyNameAllowed(xcyNew.getName())) {
+    if (!xcyServiceImpl.isXcyNamexcyAllowed(xcyNew.getNamexcy())) {
       redirectAttributes.addFlashAttribute("xcyNameTaken", true);
       session.setAttribute("xcyTaken", xcyNew);
       return "redirect:/xcys";
@@ -62,8 +62,8 @@ public class XcyController {
     xcyServiceImpl.setUser(xcyNew, (User) session.getAttribute("userCurrent"));
     xcyServiceImpl.addXcy(xcyNew);
     redirectAttributes.addFlashAttribute("xcyNameTaken", false);
-    redirectAttributes.addFlashAttribute("xcyNewName", xcyNew.getName());
-    redirectAttributes.addFlashAttribute("xcyNewAmount", xcyNew.getAmount());
+    redirectAttributes.addFlashAttribute("xcyNewName", xcyNew.getNamexcy());
+    redirectAttributes.addFlashAttribute("xcyNewAmount", xcyNew.getAmountxcy());
     return "redirect:/xcys";
   }
 

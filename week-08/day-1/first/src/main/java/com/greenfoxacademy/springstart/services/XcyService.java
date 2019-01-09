@@ -21,8 +21,8 @@ public interface XcyService {
 
   List<Xcy> getAllByUser(User user);
 
-  List<Xcy> getAllByUserAndNameContaining(User user, String search);
+  List<Xcy> getAllByUserAndNamexcyContaining(User user, String search);
 
-  boolean isXcyNameAllowed(String name);
+  boolean isXcyNamexcyAllowed(String name);
 
 }

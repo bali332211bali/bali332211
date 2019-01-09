@@ -10,31 +10,31 @@ public class Xcy {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  private String name;
-  private int amount;
+  private String namexcy;
+  private int amountxcy;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
 
-  public String getName() {
-    return name;
+  public String getNamexcy() {
+    return namexcy;
   }
 
-  public int getAmount() {
-    return amount;
+  public int getAmountxcy() {
+    return amountxcy;
   }
 
   public void setUser(User user) {
     this.user = user;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setNamexcy(String namexcy) {
+    this.namexcy = namexcy;
   }
 
-  public void setAmount(int amount) {
-    this.amount = amount;
+  public void setAmountxcy(int amountxcy) {
+    this.amountxcy = amountxcy;
   }
 
   public long getId() {

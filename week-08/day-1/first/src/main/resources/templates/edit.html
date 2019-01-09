@@ -18,10 +18,10 @@
 <div align="center" id="edit2">
     <form action="#" th:action="@{|/xcys/${xcyEdit.getId()}/edit|}" th:object="${xcyEdit}" method="post"
           id="edit">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" th:field="*{name}">
-        <label for="amount">Amount</label>
-        <input type="number" name="amount" id="amount" th:field="*{amount}">
+        <label for="namexcy">Name</label>
+        <input type="text" namexcy="namexcy" id="namexcy" th:field="*{namexcy}">
+        <label for="amountxcy">Amount</label>
+        <input type="number" namexcy="amountxcy" id="amountxcy" th:field="*{amountxcy}">
         <button type="submit" class="btn btn-primary">Done <span class="badge badge-light">editing</span></button>
     </form>
 </div>

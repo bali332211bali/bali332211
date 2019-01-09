@@ -21,31 +21,33 @@
         </form>
     </nav>
 
+    <div class="pb-5"></div>
+
     <!---------------------------------------new Xcy--------------------------------------->
     <form action="#" th:action="@{/xcys}" method="post" th:object="${xcyNew}" class="mt-5">
         <h1>New Xcy
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
         <!----------------------------taken---------------------------------->
-        <div th:switch="${xcyNameTaken}">
+        <div th:switch="${xcyNamexcyTaken}">
             <div th:case="false" class="alert alert-primary">
-                <span th:text="'Xcy name is '"></span>
-                <b th:text="${xcyNewName}"></b>
-                <span th:text="' and Xcy amount is '"></span>
-                <b th:text="${xcyNewAmount}"></b>
+                <span th:text="'Xcy namexcy is '"></span>
+                <b th:text="${xcyNewNamexcy}"></b>
+                <span th:text="' and Xcy amountxcy is '"></span>
+                <b th:text="${xcyNewAmountxcy}"></b>
             </div>
             <div th:case="true" class="alert alert-danger">
-                Name already taken.
+                Namexcy already taken.
             </div>
         </div>
         <!--------------------------------------input---------------------------------->
-        <h3><label for="nameXcy" class="badge badge-warning">Name</label></h3>
-        <input class="form-control mr-sm-2" type="text" placeholder="name" th:field="*{name}" id="nameXcy"
-               name="nameNameXcy" autofocus="autofocus">
+        <h3><label for="nameXcy" class="badge badge-warning">Namexcy</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="namexcy" th:field="*{namexcy}" id="nameXcy"
+               namexcy="nameNamexcyXcy" autofocus="autofocus">
         </br>
-        <h3><label for="amountXcy" class="badge badge-warning">Amount</label></h3>
-        <input class="form-control mr-sm-2" type="number" placeholder="amount" th:field="*{amount}" id="amountXcy"
-               name="nameAmountXcy" required>
+        <h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>
+        <input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"
+               namexcy="nameAmountxcyXcy" required>
     </form>
 
     </br>
@@ -61,7 +63,7 @@
         <div class="badge badge-light">
             <p th:text="|Xcys of ${userCurrentUsername}|"></p>
         </div>
-        <a th:href="@{/xcys/register}" class="btn btn-lg btn-light" name="delete">Change user</a>
+        <a th:href="@{/xcys/register}" class="btn btn-lg btn-light" namexcy="delete">Change user</a>
     </h1>
 
     </br>
@@ -72,23 +74,23 @@
             <tr class="card bg-light mb-3">
                 <td class="card-title">
                     <h2>
-                        <div th:text="'Name ' + ${xcy.getName()}" class="badge badge-info"></div>
+                        <div th:text="'Namexcy ' + ${xcy.getNamexcy()}" class="badge badge-info"></div>
                     </h2>
                     <h4>
-                        <div th:text="'Amount ' + ${xcy.getAmount()}" class="badge badge-light"></div>
+                        <div th:text="'Amountxcy ' + ${xcy.getAmountxcy()}" class="badge badge-light"></div>
                     </h4>
                     <a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "
-                       name="delete"></a>
-                    <a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
+                       namexcy="delete"></a>
+                    <a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" namexcy="edit"></a>
                 </td>
                 <td class="badge card-footer">
                     <h2>
-                        <div class="font-weight-bold" th:text="${xcy.getName()}"></div>
+                        <div class="font-weight-bold" th:text="${xcy.getNamexcy()}"></div>
                     </h2>
                 </td>
                 <td class="badge card-deck">
                     <h3>
-                        <div th:text="${xcy.getAmount()}"></div>
+                        <div th:text="${xcy.getAmountxcy()}"></div>
                     </h3>
                 </td>
 
@@ -98,10 +100,10 @@
 
     <table class="table table-borderless">
         <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Name</th>
-            <th>Amount</th>
+            <th>Namexcy</th>
+            <th>Amountxcy</th>
+            <th>Namexcy</th>
+            <th>Amountxcy</th>
             <th>Delete</th>
             <th>Edit</th>
         </tr>
@@ -109,27 +111,27 @@
             <tr class="bg-light mb-3">
                 <td>
                     <h2>
-                        <div th:text="${xcy.getName()}" class="badge badge-info"></div>
+                        <div th:text="${xcy.getNamexcy()}" class="badge badge-info"></div>
                     </h2>
                 </td>
                 <td>
                     <h2>
-                        <div th:text="${xcy.getAmount()}" class="badge badge-light"></div>
+                        <div th:text="${xcy.getAmountxcy()}" class="badge badge-light"></div>
                     </h2>
                 </td>
                 <td>
                     <h2>
-                        <div class="font-weight-bold" th:text="${xcy.getName()}"></div>
+                        <div class="font-weight-bold" th:text="${xcy.getNamexcy()}"></div>
                     </h2>
                 </td>
                 <td>
                     <h2>
-                        <div th:text="${xcy.getAmount()}"></div>
+                        <div th:text="${xcy.getAmountxcy()}"></div>
                     </h2>
                 </td>
                 <td><a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "
-                       name="delete"></a></td>
-                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
+                       namexcy="delete"></a></td>
+                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" namexcy="edit"></a>
                 </td>
             </tr>
         </div>
@@ -142,7 +144,7 @@
     <!--</li>-->
     <!--<div th:each="pageCurrent : ${pages}">-->
     <!--<li class="page-item"><a class="page-link" th:href="@{|/xcys?page=${pageCurrent}|}"-->
-    <!--th:value="${pageCurrent}" name="page">-->
+    <!--th:value="${pageCurrent}" namexcy="page">-->
     <!--<div th:text="${pageCurrent}"></div>-->
     <!--</a></li>-->
     <!--</div>-->
