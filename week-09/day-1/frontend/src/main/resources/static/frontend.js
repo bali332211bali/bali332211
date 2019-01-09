@@ -24,7 +24,7 @@ $("#doubling").on("click", function () {
     }).error(function (err) {
         handle("#doubling_response", "not ok - without data", "Doubling", err);
     });
-    $.get(window.baseUrl + "/doubling", { input: 5 }).done(function (data) {
+    $.get(window.baseUrl + "/doubling", {input: 5}).done(function (data) {
         if ("received" in data && "result" in data && data["received"] == 5 && data["result"] == 10) {
             handle("#doubling_response", "OK - with input=5");
         } else {
@@ -45,7 +45,7 @@ $("#greeter").on("click", function () {
     }).error(function (err) {
         handle("#greeter_response", "not ok - without name and a title", "Greeter", err);
     });
-    $.get(window.baseUrl + "/greeter", { title: "student" }).done(function (data) {
+    $.get(window.baseUrl + "/greeter", {title: "student"}).done(function (data) {
         if ("error" in data && data["error"] == "Please provide a name!") {
             handle("#greeter_response", "OK - without name");
         } else {
@@ -54,7 +54,7 @@ $("#greeter").on("click", function () {
     }).error(function (err) {
         handle("#greeter_response", "not ok - without name", "Greeter", err);
     });
-    $.get(window.baseUrl + "/greeter", { name: "petike" }).done(function (data) {
+    $.get(window.baseUrl + "/greeter", {name: "petike"}).done(function (data) {
         if ("error" in data && data["error"] == "Please provide a title!") {
             handle("#greeter_response", "OK - without title");
         } else {
@@ -63,7 +63,7 @@ $("#greeter").on("click", function () {
     }).error(function (err) {
         handle("#greeter_response", "not ok - without title", "Greeter", err);
     });
-    $.get(window.baseUrl + "/greeter", { name: "petike", title: "student" }).done(function (data) {
+    $.get(window.baseUrl + "/greeter", {name: "petike", title: "student"}).done(function (data) {
         if ("welcome_message" in data && data["welcome_message"] == "Oh, hi there petike, my dear student!") {
             handle("#greeter_response", "OK - with petike and student");
         } else {
@@ -92,7 +92,11 @@ $("#appenda").on("click", function () {
 });
 
 $("#dountil").on("click", function () {
-    $.post({ url: window.baseUrl + "/dountil/sum", data: JSON.stringify({ until: 7 }), contentType: 'application/json; charset=utf-8' }).done(function (data) {
+    $.post({
+        url: window.baseUrl + "/dountil/sum",
+        data: JSON.stringify({until: 7}),
+        contentType: 'application/json; charset=utf-8'
+    }).done(function (data) {
         if ("result" in data && data["result"] == 28) {
             handle("#dountil_response", "OK - with /sum until=7");
         } else {
@@ -101,7 +105,11 @@ $("#dountil").on("click", function () {
     }).error(function (err) {
         handle("#dountil_response", "not ok - with /sum until=7", "Dountil", err);
     });
-    $.post({ url: window.baseUrl + "/dountil/factor", data: JSON.stringify({ until: 4 }), contentType: 'application/json; charset=utf-8' }).done(function (data) {
+    $.post({
+        url: window.baseUrl + "/dountil/factor",
+        data: JSON.stringify({until: 4}),
+        contentType: 'application/json; charset=utf-8'
+    }).done(function (data) {
         if ("result" in data && data["result"] == 24) {
             handle("#dountil_response", "OK - with /factor until=4");
         } else {

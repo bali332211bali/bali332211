@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:href="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>
+        <label for="edit2">Edit Message</label>
+    </h1>
+</div>
+<div align="center" id="edit2">
+    <form action="#" th:action="@{|/messages/${userEdit.getId()}/editUser|}" th:object="${userEdit}" method="post"
+          id="edit">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" th:field="*{username}">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" th:field="*{password}">
+        <button type="submit" class="btn btn-primary">Done <span class="badge badge-light">editing</span></button>
+    </form>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
