@@ -43,11 +43,11 @@
         <!--------------------------------------input---------------------------------->
         <h3><label for="nameXcy" class="badge badge-warning">Namexcy</label></h3>
         <input class="form-control mr-sm-2" type="text" placeholder="namexcy" th:field="*{namexcy}" id="nameXcy"
-               namexcy="nameNamexcyXcy" autofocus="autofocus">
+               name="nameNamexcyXcy" autofocus="autofocus">
         </br>
         <h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>
         <input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"
-               namexcy="nameAmountxcyXcy" required>
+               name="nameAmountxcyXcy" required>
     </form>
 
     </br>
@@ -81,7 +81,7 @@
                     </h4>
                     <a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "
                        namexcy="delete"></a>
-                    <a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" namexcy="edit"></a>
+                    <a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
                 </td>
                 <td class="badge card-footer">
                     <h2>
@@ -130,8 +130,8 @@
                     </h2>
                 </td>
                 <td><a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "
-                       namexcy="delete"></a></td>
-                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" namexcy="edit"></a>
+                       name="delete"></a></td>
+                <td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>
                 </td>
             </tr>
         </div>

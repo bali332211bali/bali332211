@@ -17,23 +17,23 @@
 
     <div align="center">
         <!-------------------------------register---------------------------------->
-        <form action="#" th:action="@{/xcys/register}" th:object="${userNew}" method="post" id="register">
+        <form action="#" th:action="@{/messages/register}" th:object="${userNew}" method="post" id="register">
             <!------------------------taken----------------------------->
             <div th:if="${usernameTaken}" class="alert alert-danger">
                 Username already taken.
             </div>
             <!-------------------------input----------------------------->
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" th:field="*{username}">
+            <input type="text" namexcy="username" id="username" th:field="*{username}">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" th:field="*{password}">
+            <input type="password" namexcy="password" id="password" th:field="*{password}">
 
             <button type="submit" class="btn btn-primary">Done <span class="badge badge-light">registering</span>
             </button>
         </form>
         <!---------------------------------delete all------------------------------->
         <h2>
-            <a th:href="@{/xcys/deleteUsers}" class="btn btn-lg btn-warning">delete all users</a>
+            <a th:href="@{/messages/deleteUsers}" class="btn btn-lg btn-warning">delete all users</a>
         </h2>
     </div>
     </br>
@@ -45,7 +45,7 @@
 
     <div align="center">
         <!-------------------------------login---------------------------------->
-        <form action="#" th:action="@{/xcys/login}" th:object="${userLogin}" method="post" id="login">
+        <form action="#" th:action="@{/messages/login}" th:object="${userLogin}" method="post" id="login">
             <!------------------------found----------------------------->
             <div th:if="${userNotFound}" class="alert alert-danger">
                 User not found.
@@ -55,9 +55,9 @@
             <!--</div>-->
             <!-------------------------input----------------------------->
             <label for="usernameLogin">Username</label>
-            <input type="text" name="usernameLogin" id="usernameLogin" th:field="*{username}">
+            <input type="text" namexcy="usernameLogin" id="usernameLogin" th:field="*{username}">
             <label for="passwordLogin">Password</label>
-            <input type="password" name="passwordLogin" id="passwordLogin" th:field="*{password}">
+            <input type="password" namexcy="passwordLogin" id="passwordLogin" th:field="*{password}">
 
             <button type="submit" class="btn btn-primary">Login<span class="badge badge-light"></span>
             </button>
