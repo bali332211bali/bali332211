@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>New Xcy</title>
+</head>
+<body>
+<div class="container">
+    <div th:text="|User is ${userCurrentName}|"></div>
+
+    <!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;search&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--<nav class="navbar fixed-top navbar-light bg-light navbar">-->
+        <!--<a class="navbar-brand"><h4><b>Search in name</b></h4></a>-->
+        <!--<form class="form-inline" th:action="@{/xcys}">-->
+            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"-->
+                   <!--name="searchString">-->
+            <!--<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>-->
+        <!--</form>-->
+    <!--</nav>-->
+
+    <!--<div class="pb-5"></div>-->
+
+    <!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;new Xcy-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--<form action="#" th:action="@{/xcys}" method="post" th:object="${xcyNew}" class="mt-5">-->
+        <!--<h1>New Xcy-->
+            <!--<button type="submit" class="btn btn-primary btn-lg">Done</button>-->
+        <!--</h1>-->
+        <!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;taken&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+        <!--<div th:switch="${xcyNamexcyTaken}">-->
+            <!--<div th:case="false" class="alert alert-primary">-->
+                <!--<span th:text="'Xcy namexcy is '"></span>-->
+                <!--<b th:text="${xcyNewNamexcy}"></b>-->
+                <!--<span th:text="' and Xcy amountxcy is '"></span>-->
+                <!--<b th:text="${xcyNewAmountxcy} "></b>-->
+            <!--</div>-->
+            <!--<div th:case="true" class="alert alert-danger">-->
+                <!--Namexcy already taken.-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;input&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+        <!--<h3><label for="nameXcy" class="badge badge-warning">Namexcy</label></h3>-->
+        <!--<input class="form-control mr-sm-2" type="text" placeholder="namexcy" th:field="*{namexcy}" id="nameXcy"-->
+               <!--name="nameNamexcyXcy" autofocus="autofocus">-->
+        <!--</br>-->
+        <!--<h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>-->
+        <!--<input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"-->
+               <!--name="nameAmountxcyXcy" required>-->
+    <!--</form>-->
+
+    <!--</br>-->
+
+    <!--&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;delete all&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--<h2>-->
+        <!--<a th:href="@{/xcys/deleteAll}" class="btn btn-lg btn-warning">delete all</a>-->
+    <!--</h2>-->
+
+
+    <!--</br>-->
+    <!--<h1>-->
+        <!--<div class="badge badge-light">-->
+            <!--<p th:text="|Xcys of ${userCurrentUsername}|"></p>-->
+        <!--</div>-->
+        <!--<a th:href="@{/xcys/register}" class="btn btn-lg btn-light" namexcy="delete">Change username</a>-->
+    <!--</h1>-->
+
+    <!--</br>-->
+
+    <!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;all Xcys&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--<table class="table table-borderless">-->
+        <!--<div th:each="xcy : ${xcys}">-->
+            <!--<tr class="card bg-light mb-3">-->
+                <!--<td class="card-title">-->
+                    <!--<h2>-->
+                        <!--<div th:text="'Namexcy ' + ${xcy.getNamexcy()}" class="badge badge-info"></div>-->
+                    <!--</h2>-->
+                    <!--<h4>-->
+                        <!--<div th:text="'Amountxcy ' + ${xcy.getAmountxcy()}" class="badge badge-light"></div>-->
+                    <!--</h4>-->
+                    <!--<a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "-->
+                       <!--namexcy="delete"></a>-->
+                    <!--<a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>-->
+                <!--</td>-->
+                <!--<td class="badge card-footer">-->
+                    <!--<h2>-->
+                        <!--<div class="font-weight-bold" th:text="${xcy.getNamexcy()}"></div>-->
+                    <!--</h2>-->
+                <!--</td>-->
+                <!--<td class="badge card-deck">-->
+                    <!--<h3>-->
+                        <!--<div th:text="${xcy.getAmountxcy()}"></div>-->
+                    <!--</h3>-->
+                <!--</td>-->
+
+            <!--</tr>-->
+        <!--</div>-->
+    <!--</table>-->
+
+    <!--<table class="table table-borderless">-->
+        <!--<tr>-->
+            <!--<th>Namexcy</th>-->
+            <!--<th>Amountxcy</th>-->
+            <!--<th>Namexcy</th>-->
+            <!--<th>Amountxcy</th>-->
+            <!--<th>Delete</th>-->
+            <!--<th>Edit</th>-->
+        <!--</tr>-->
+        <!--<div th:each="xcy : ${xcys}">-->
+            <!--<tr class="bg-light mb-3">-->
+                <!--<td>-->
+                    <!--<h2>-->
+                        <!--<div th:text="${xcy.getNamexcy()}" class="badge badge-info"></div>-->
+                    <!--</h2>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<h2>-->
+                        <!--<div th:text="${xcy.getAmountxcy()}" class="badge badge-light"></div>-->
+                    <!--</h2>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<h2>-->
+                        <!--<div class="font-weight-bold" th:text="${xcy.getNamexcy()}"></div>-->
+                    <!--</h2>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<h2>-->
+                        <!--<div th:text="${xcy.getAmountxcy()}"></div>-->
+                    <!--</h2>-->
+                <!--</td>-->
+                <!--<td><a th:href="|/xcys/delete?id=${xcy.getId()}|" class="btn btn-lg btn-warning fa fa-times "-->
+                       <!--name="delete"></a></td>-->
+                <!--<td><a th:href="@{|/xcys/${xcy.getId()}/edit|}" class="btn btn-lg btn-info fa fa-edit" name="edit"></a>-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</div>-->
+    <!--</table>-->
+
+    <!--&lt;!&ndash;<nav aria-label="Page navigation example">&ndash;&gt;-->
+    <!--&lt;!&ndash;<ul class="pagination justify-content-end fixed-bottom">&ndash;&gt;-->
+    <!--&lt;!&ndash;<li class="page-item disabled">&ndash;&gt;-->
+    <!--&lt;!&ndash;<a class="page-link" href="#" tabindex="-1">Previous</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div th:each="pageCurrent : ${pages}">&ndash;&gt;-->
+    <!--&lt;!&ndash;<li class="page-item"><a class="page-link" th:href="@{|/xcys?page=${pageCurrent}|}"&ndash;&gt;-->
+    <!--&lt;!&ndash;th:value="${pageCurrent}" namexcy="page">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div th:text="${pageCurrent}"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li class="page-item"><a class="page-link" tabindex="+1" href="#">Next</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--&lt;!&ndash;</nav>&ndash;&gt;-->
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

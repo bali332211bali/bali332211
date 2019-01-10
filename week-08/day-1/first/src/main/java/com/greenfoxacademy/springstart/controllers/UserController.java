@@ -2,7 +2,7 @@ package com.greenfoxacademy.springstart.controllers;
 
 
 import com.greenfoxacademy.springstart.models.User;
-import com.greenfoxacademy.springstart.services.UserServiceImpl;
+import com.greenfoxacademy.springstart.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +14,11 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/xcys")
 public class UserController {
 
-  private UserServiceImpl userServiceImpl;
+  private UserService userService;
 
   @Autowired
-  public UserController(UserServiceImpl userServiceImpl) {
-    this.userServiceImpl = userServiceImpl;
+  public UserController(UserService userService) {
+    this.userService = userService;
   }
 
   @GetMapping("/register")
@@ -40,20 +40,20 @@ public class UserController {
                     RedirectAttributes redirectAttributes,
                     HttpSession session) {
 
-    if (!userServiceImpl.isUsernameAllowed(userNew.getUsername())) {
+    if (!userService.isUsernameAllowed(userNew.getUsername())) {
       redirectAttributes.addFlashAttribute("usernameTaken", true);
       session.setAttribute("userTaken", userNew);
       return "redirect:/xcys/register";
     }
     redirectAttributes.addFlashAttribute("usernameTaken", false);
-    userServiceImpl.addUser(userNew);
+    userService.addUser(userNew);
     session.setAttribute("userCurrent", userNew);
     return "redirect:/xcys";
   }
 
   @GetMapping("/deleteUsers")
   public String deleteUsers() {
-    userServiceImpl.deleteAllUsers();
+    userService.deleteAllUsers();
     return "redirect:/xcys/register";
   }
 
@@ -61,12 +61,12 @@ public class UserController {
   public String login(@ModelAttribute(value = "userLogin") User userLogin,
                       HttpSession session,
                       RedirectAttributes redirectAttributes) {
-    if (!userServiceImpl.userFound(userLogin)) {
+    if (!userService.userFound(userLogin)) {
       redirectAttributes.addFlashAttribute("userNotFound", true);
 //            redirectAttributes.addFlashAttribute("passwordIncorrect", true);
       return "redirect:/xcys/register";
     }
-    session.setAttribute("userCurrent", userServiceImpl.getUserByUsername(userLogin.getUsername()));
+    session.setAttribute("userCurrent", userService.getUserByUsername(userLogin.getUsername()));
     return "redirect:/xcys";
   }
 
