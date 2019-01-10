@@ -17,8 +17,10 @@ public class MessageController {
   @GetMapping("")
   public String messages(HttpSession session,
                          Model model) {
+
     User userCurrent = (User) session.getAttribute("userCurrent");
     model.addAttribute("userCurrentName", userCurrent.getUsername());
+
     return "messages";
   }
 
