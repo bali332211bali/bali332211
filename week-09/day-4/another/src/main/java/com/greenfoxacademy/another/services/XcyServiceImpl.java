@@ -42,7 +42,7 @@ public class XcyServiceImpl implements XcyService {
   @Override
   public List<Xcy> getAllWithTypeToppingxcyAndVariantStatusxcyForApi(String typeToppingxcy, String variantStatusxcy) {
     if (typeToppingxcy.equalsIgnoreCase("typeToppingxcyCase")) {
-      return xcyRepository.findAllByToppingxcyAndStatusxcy("typeToppingxcyCaseIncludes", variantStatusxcy);
+      return xcyRepository.findAllByToppingxcyAndStatusxcy("typeToppingxcyCaseInclusion", variantStatusxcy);
     } else if (typeToppingxcy.equalsIgnoreCase("typeToppingxcyCase2")) {
       return xcyRepository.findAllByStatusxcy(variantStatusxcy);
     }

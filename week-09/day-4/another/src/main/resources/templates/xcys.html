@@ -12,10 +12,11 @@
 <div class="container">
 
     <b>Welcome to Green Fox</b>
+    </br>
     <b>Please enter your info and choose</b>
 
     <!---------------------------------------new Xcy--------------------------------------->
-    <form action="#" th:action="@{/}" method="post" th:object="${xcyNew}" class="mt-5">
+    <form action="#" th:action="@{/xcy}" method="post" th:object="${xcyNew}" class="mt-5">
         <h1>New Xcy
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
         </h1>
@@ -29,9 +30,9 @@
                name="nameAmountxcyXcy" required>
         <!--------------------------------------input radio---------------------------------->
         </br>
-        <b>Choose base</b>
-        </br>
+        <h3><b>Choose base</b></h3>
         <div class="form-check form-check-inline">
+            <h4>
             <label for="riceNoodles">Rice noodles</label>
             <input class="form-check-input ml-2" type="radio" th:value="'Rice noodles'" th:field="*{basexcy}"
                    id="riceNoodles"
@@ -41,18 +42,29 @@
                    id="eggNoodles"
                    name="eggNoodles"/>
             <label for="whiteRice">White rice</label>
-            <input class="form-check-input ml-2" type="radio" th:value="'White rice'" th:field="*{basexcy}" id="whiteRice"
+            <input class="form-check-input ml-2" type="radio" th:value="'White rice'" th:field="*{basexcy}"
+                   id="whiteRice"
                    name="whiteRice"/>
+                </h4>
         </div>
         <!--------------------------------------input select---------------------------------->
         </br>
-        <b>Select topping</b>
-        <select th:field="*{toppingxcy}">
-            <option th:value="'Chicken'" th:field="*{toppingxcy}" name="toppingChicken">Chicken</option>
-            <option th:value="'Beef'" th:field="*{toppingxcy}" name="toppingBeef">Beef</option>
-            <option th:value="'Smoked tofu'" th:field="*{toppingxcy}" name="toppingSmokedTofu">Smoked tofu</option>
+        <h3><b>Select topping</b></h3>
+
+        <select th:field="*{toppingxcy}" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+            <div class="dropdown-menu">
+                <option class="dropdown-item" th:value="'Chicken'" th:field="*{toppingxcy}" name="toppingChicken">
+                    Chicken
+                </option>
+                <option class="dropdown-item" th:value="'Beef'" th:field="*{toppingxcy}" name="toppingBeef">Beef
+                </option>
+                <option class="dropdown-item" th:value="'Smoked tofu'" th:field="*{toppingxcy}"
+                        name="toppingSmokedTofu">Smoked tofu
+                </option>
+            </div>
         </select>
     </form>
+
 
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>

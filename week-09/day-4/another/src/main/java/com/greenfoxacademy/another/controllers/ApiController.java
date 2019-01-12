@@ -35,7 +35,7 @@ public class ApiController {
     if (!xcyService.existsById(xcyId)) {
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-    xcyService.getById(xcyId).setStatusxcy(statusxcyDto.getStatus());
+    xcyService.getById(xcyId).setStatusxcy(statusxcyDto.getStatusxcy());
     xcyService.addXcy(xcyService.getById(xcyId));
     return new ResponseEntity<>(HttpStatus.OK);
   }

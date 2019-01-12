@@ -23,20 +23,23 @@
             <tr class="card bg-light mb-3">
                 <td class="card-title">
                     <h2>
-                        <div th:text="'Name: ' + ${xcyById.getNamexcy()}" class="badge badge-info"></div>
+                        <div th:text="'Namexcy: ' + ${xcyById.getNamexcy()}" class="badge badge-info"></div>
                     </h2>
                     <h4>
-                        <div th:text="'Address: ' + ${xcyById.getAmountxcy()}" class="badge badge-light"></div>
+                        <div th:text="'Amountxcy: ' + ${xcyById.getAmountxcy()}" class="badge badge-light"></div>
                     </h4>
                 </td>
                 <td class="badge card-footer">
                     <h2>
-                        <div class="font-weight-bold" th:text="${xcyById.getBasexcy()} + ' base'"></div>
+                        <div class="font-weight-bold" th:text="${xcyById.getBasexcy()} + ' basexcy'"></div>
                     </h2>
                 </td>
                 <td class="badge card-deck">
                     <h3>
-                        <div th:text="${xcyById.getToppingxcy()} + ' topping'"></div>
+                        <div th:text="${xcyById.getToppingxcy()} + ' toppingxcy'"></div>
+                    </h3>
+                    <h3>
+                        <div th:text="${xcyById.getStatusxcy()} + ' statusxcy'"></div>
                     </h3>
                 </td>
 

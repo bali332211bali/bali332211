@@ -4,7 +4,11 @@ public class StatusxcyDto {
 
   private String statusxcy;
 
-  public String getStatus() {
+  public String getStatusxcy() {
     return statusxcy;
+  }
+
+  public void setStatusxcy(String statusxcy) {
+    this.statusxcy = statusxcy;
   }
 }
