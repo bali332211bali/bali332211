@@ -21,8 +21,8 @@ public class ApiController {
   }
 
   @GetMapping("/api/xcys")
-  public ResponseEntity<List<Xcy>> apiXcysByTypeAndVariant(@RequestParam(value = "typeToppingxcy") String typeToppingxcy,
-                                                           @RequestParam(value = "variantStatusxcy") String variantStatusxcy) {
+  public ResponseEntity<List<Xcy>> apiByTypeAndVariant(@RequestParam(value = "typeToppingxcy") String typeToppingxcy,
+                                                       @RequestParam(value = "variantStatusxcy") String variantStatusxcy) {
     if (typeToppingxcy == null || variantStatusxcy == null) {
       return new ResponseEntity<>(Collections.emptyList(), HttpStatus.BAD_REQUEST);
     }
@@ -31,11 +31,11 @@ public class ApiController {
 
   @PatchMapping("/api/xcys/{xcyId}")
   public ResponseEntity<Xcy> apiById(@PathVariable(value = "xcyId") long xcyId,
-                                     @RequestBody StatusxcyDto statusDto) {
+                                     @RequestBody StatusxcyDto statusxcyDto) {
     if (!xcyService.existsById(xcyId)) {
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-    xcyService.getById(xcyId).setStatusxcy(statusDto.getStatus());
+    xcyService.getById(xcyId).setStatusxcy(statusxcyDto.getStatus());
     xcyService.addXcy(xcyService.getById(xcyId));
     return new ResponseEntity<>(HttpStatus.OK);
   }

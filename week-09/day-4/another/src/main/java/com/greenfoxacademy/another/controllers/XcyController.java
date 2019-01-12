@@ -3,6 +3,8 @@ package com.greenfoxacademy.another.controllers;
 import com.greenfoxacademy.another.models.Xcy;
 import com.greenfoxacademy.another.services.XcyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,8 +35,11 @@ public class XcyController {
   }
 
   @GetMapping("/xcy/{xcyId}")
-  public String xcyById(@PathVariable(value = "xcyId") long id,
+  public String xcyById(@PathVariable(value = "xcyId", required = false) Long id,
                       Model model) {
+    if (id == null) {
+      return "errorNullId";
+    }
     model.addAttribute("xcyById", xcyService.getById(id));
     return "xcyId";
   }
