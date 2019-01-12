@@ -15,7 +15,6 @@ public class User {
   private String password;
 
   @OneToMany(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "x_id")
   private List<Xcy> xcys;
 
   public String getUsername() {
@@ -42,11 +41,11 @@ public class User {
     this.id = id;
   }
 
-  public List<Xcy> getXcies() {
+  public List<Xcy> getXcys() {
     return xcys;
   }
 
-  public void setXcies(List<Xcy> xcies) {
+  public void setXcys(List<Xcy> xcies) {
     this.xcys = xcies;
   }
 }

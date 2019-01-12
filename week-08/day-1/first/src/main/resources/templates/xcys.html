@@ -48,6 +48,31 @@
         <h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>
         <input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"
                name="nameAmountxcyXcy" required>
+        <!--------------------------------------input radio---------------------------------->
+        </br>
+        <b>Choose base</b>
+        </br>
+        <div class="form-check form-check-inline">
+            <label for="riceNoodles">Rice noodles</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'Rice noodles'" th:field="*{basexcy}"
+                   id="riceNoodles"
+                   name="riceNoodles"/>
+            <label for="eggNoodles">Egg noodles</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'Egg noodles'" th:field="*{basexcy}"
+                   id="eggNoodles"
+                   name="eggNoodles"/>
+            <label for="whiteRice">White rice</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'White rice'" th:field="*{basexcy}" id="whiteRice"
+                   name="whiteRice"/>
+        </div>
+        <!--------------------------------------input select---------------------------------->
+        </br>
+        <b>Select topping</b>
+        <select th:field="*{toppingxcy}">
+            <option th:value="'Chicken'" th:field="*{toppingxcy}" name="toppingChicken">Chicken</option>
+            <option th:value="'Beef'" th:field="*{toppingxcy}" name="toppingBeef">Beef</option>
+            <option th:value="'Smoked tofu'" th:field="*{toppingxcy}" name="toppingSmokedTofu">Smoked tofu</option>
+        </select>
     </form>
 
     </br>

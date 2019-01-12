@@ -12,6 +12,8 @@ public class Xcy {
 
   private String namexcy;
   private int amountxcy;
+  private String basexcy;
+  private String toppingxcy;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
@@ -47,5 +49,21 @@ public class Xcy {
 
   public User getUser() {
     return user;
+  }
+
+  public String getBasexcy() {
+    return basexcy;
+  }
+
+  public void setBasexcy(String basexcy) {
+    this.basexcy = basexcy;
+  }
+
+  public String getToppingxcy() {
+    return toppingxcy;
+  }
+
+  public void setToppingxcy(String toppingxcy) {
+    this.toppingxcy = toppingxcy;
   }
 }
