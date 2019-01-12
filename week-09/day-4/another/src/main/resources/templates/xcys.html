@@ -17,15 +17,12 @@
 
     <!---------------------------------------new Xcy--------------------------------------->
     <form action="#" th:action="@{/xcy}" method="post" th:object="${xcyNew}" class="mt-5">
-        <h1>New Xcy
-            <button type="submit" class="btn btn-primary btn-lg">Done</button>
-        </h1>
         <!--------------------------------------input---------------------------------->
-        <h3><label for="nameXcy" class="badge badge-warning">Namexcy</label></h3>
+        <h3><label for="nameXcy" class="badge badge-pill badge-warning">Namexcy</label></h3>
         <input class="form-control mr-sm-2" type="text" placeholder="namexcy" th:field="*{namexcy}" id="nameXcy"
                name="nameNamexcyXcy" autofocus="autofocus">
         </br>
-        <h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>
+        <h3><label for="amountXcy" class="badge badge-pill badge-warning">Amountxcy</label></h3>
         <input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"
                name="nameAmountxcyXcy" required>
         <!--------------------------------------input radio---------------------------------->
@@ -63,6 +60,13 @@
                 </option>
             </div>
         </select>
+        </br>
+        </br>
+        </br>
+        </br>
+        <h1>Make Xcy
+            <button type="submit" class="btn btn-primary btn-lg">Done</button>
+        </h1>
     </form>
 
 

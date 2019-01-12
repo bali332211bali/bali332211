@@ -14,7 +14,7 @@ public class Xcy {
   private int amountxcy;
   private String basexcy;
   private String toppingxcy;
-  private String statusxcy = "variantStatusxcy";
+  private String statusxcy = "variantStatusxcyFirst";
 
   public String getNamexcy() {
     return namexcy;
