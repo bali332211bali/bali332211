@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>New Xcy</title>
+</head>
+<body>
+<div class="container">
+
+    <b>Welcome to Green Fox</b>
+    <b>Please enter your info and choose</b>
+
+    <!---------------------------------------new Xcy--------------------------------------->
+    <form action="#" th:action="@{/}" method="post" th:object="${xcyNew}" class="mt-5">
+        <h1>New Xcy
+            <button type="submit" class="btn btn-primary btn-lg">Done</button>
+        </h1>
+        <!--------------------------------------input---------------------------------->
+        <h3><label for="nameXcy" class="badge badge-warning">Namexcy</label></h3>
+        <input class="form-control mr-sm-2" type="text" placeholder="namexcy" th:field="*{namexcy}" id="nameXcy"
+               name="nameNamexcyXcy" autofocus="autofocus">
+        </br>
+        <h3><label for="amountXcy" class="badge badge-warning">Amountxcy</label></h3>
+        <input class="form-control mr-sm-2" type="number" placeholder="amountxcy" th:field="*{amountxcy}" id="amountXcy"
+               name="nameAmountxcyXcy" required>
+        <!--------------------------------------input radio---------------------------------->
+        </br>
+        <b>Choose base</b>
+        </br>
+        <div class="form-check form-check-inline">
+            <label for="riceNoodles">Rice noodles</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'Rice noodles'" th:field="*{basexcy}"
+                   id="riceNoodles"
+                   name="riceNoodles"/>
+            <label for="eggNoodles">Egg noodles</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'Egg noodles'" th:field="*{basexcy}"
+                   id="eggNoodles"
+                   name="eggNoodles"/>
+            <label for="whiteRice">White rice</label>
+            <input class="form-check-input ml-2" type="radio" th:value="'White rice'" th:field="*{basexcy}" id="whiteRice"
+                   name="whiteRice"/>
+        </div>
+        <!--------------------------------------input select---------------------------------->
+        </br>
+        <b>Select topping</b>
+        <select th:field="*{toppingxcy}">
+            <option th:value="'Chicken'" th:field="*{toppingxcy}" name="toppingChicken">Chicken</option>
+            <option th:value="'Beef'" th:field="*{toppingxcy}" name="toppingBeef">Beef</option>
+            <option th:value="'Smoked tofu'" th:field="*{toppingxcy}" name="toppingSmokedTofu">Smoked tofu</option>
+        </select>
+    </form>
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
