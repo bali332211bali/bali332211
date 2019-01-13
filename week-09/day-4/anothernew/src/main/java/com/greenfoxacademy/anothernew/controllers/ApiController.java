@@ -29,7 +29,7 @@ public class ApiController {
     if (type == null || status == null || !validationService.statusAllowed(status)) {
       return new ResponseEntity<>(Collections.emptyList(), HttpStatus.BAD_REQUEST);
     }
-    return new ResponseEntity<>(orderService.getAllWithTypeAndStatusForApi(type, status), HttpStatus.OK);
+    return new ResponseEntity<>(orderService.getAllWithtypeAndstatusForApi(type, status), HttpStatus.OK);
   }
 
   @PatchMapping("/api/orders/{orderId}")

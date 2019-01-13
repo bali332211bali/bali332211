@@ -14,5 +14,5 @@ public interface OrderService {
 
   boolean existsById(long id);
 
-  List<Order> getAllWithTypeAndStatusForApi(String type, String status);
+  List<Order> getAllWithtypeAndstatusForApi(String type, String status);
 }

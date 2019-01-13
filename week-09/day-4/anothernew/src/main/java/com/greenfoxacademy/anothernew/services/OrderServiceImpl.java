@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  public List<Order> getAllWithTypeAndStatusForApi(String type, String status) {
+  public List<Order> getAllWithtypeAndstatusForApi(String type, String status) {
     if (type.equalsIgnoreCase("vegetarian")) {
       return orderRepository.findAllByToppingAndStatus("Smoked tofu", status);
     } else if (type.equalsIgnoreCase("all")) {
