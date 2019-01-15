@@ -4,7 +4,6 @@ package com.greenfoxacademy.springstart.services;
 import com.greenfoxacademy.springstart.models.User;
 import com.greenfoxacademy.springstart.models.Xcy;
 import com.greenfoxacademy.springstart.repositories.XcyRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
