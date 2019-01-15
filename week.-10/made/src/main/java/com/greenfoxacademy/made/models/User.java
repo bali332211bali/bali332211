@@ -14,7 +14,7 @@ public class User {
   private String username;
   private String password;
 
-  @OneToMany
+  @OneToMany(fetch = FetchType.LAZY)
   private List<Order> orders;
 
   public long getId() {

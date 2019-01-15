@@ -19,7 +19,7 @@ public class Order {
   private String topping;
   private String status = "ordered";
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   @JsonIgnore
   private User user;
