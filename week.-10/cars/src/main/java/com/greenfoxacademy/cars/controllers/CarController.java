@@ -20,7 +20,6 @@ public class CarController {
 
   @GetMapping("/")
   public String cars(Model model) {
-    model.addAttribute("searchValid", true);
     model.addAttribute("cars", carService.getCars());
     return "cars";
   }
@@ -31,10 +30,9 @@ public class CarController {
                        @RequestParam(value = "diplomat", required = false) String diplomatsOnly,
                        Model model) {
     if(search != null && !carService.isPlateSearchValid(search)) {
-      model.addAttribute("searchValid", false);
+      model.addAttribute("searchInvalid", true);
       return "cars";
     }
-    model.addAttribute("searchValid", true);
     model.addAttribute("cars", carService.getCarsByParam(search, policeOnly, diplomatsOnly));
     return "cars";
   }
@@ -42,7 +40,6 @@ public class CarController {
   @GetMapping("/search/{brand}")
   public String brand(@PathVariable(value = "brand") String brand,
                       Model model) {
-    model.addAttribute("searchValid", true);
     model.addAttribute("cars", carService.getCarsByBrand(brand));
     return "cars";
   }

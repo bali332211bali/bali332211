@@ -33,7 +33,7 @@
             <th>Color</th>
             <th>Year</th>
         </tr>
-        <div th:if="${searchValid}" th:each="car : ${cars}">
+        <div th:unless="${searchInvalid}" th:each="car : ${cars}">
             <tr class="bg-light mb-3">
                 <td>
                     <h2>
@@ -57,7 +57,8 @@
         </div>
     </table>
 
-    <div th:unless="${searchValid}">Can't search that licence plate</div>
+
+    <div th:if="${searchInvalid}">Can't search that licence plate</div>
 
 
 
