@@ -29,7 +29,8 @@ public class MatrixServiceImpl implements MatrixService {
     List<Integer> matrixNumbers = new ArrayList<>();
 
     for (int i = 0; i < splitNumbers.length; i++) {
-      Arrays.stream(splitNumbers[i].split(""))
+      Arrays.stream(splitNumbers[i].split(" "))
+          .map(String::trim)
           .mapToInt(Integer::parseInt)
           .forEach(matrixNumbers::add);
 
@@ -45,9 +46,14 @@ public class MatrixServiceImpl implements MatrixService {
   public boolean isMatrixAllowed(String numbers) {
 
     String[] splitNumbers = numbers.split("\n");
+    String[] splitRowsWithoutSpaces = new String[splitNumbers.length];
 
     for (int i = 0; i < splitNumbers.length; i++) {
-      if(splitNumbers[i].length() != splitNumbers.length) {
+      splitRowsWithoutSpaces[i] = splitNumbers[i].replaceAll(" ", "");
+    }
+
+    for (int i = 0; i < splitNumbers.length; i++) {
+      if(splitRowsWithoutSpaces[i].trim().length() != splitNumbers.length) {
         return false;
       }
     }
