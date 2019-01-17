@@ -21,6 +21,11 @@ public class MatrixServiceImpl implements MatrixService {
   }
 
   @Override
+  public List<Matrix> getAll() {
+    return matrixRepository.findAll();
+  }
+
+  @Override
   public int[][] getMatrixFromString(String numbers) {
 
     String[] splitNumbers = numbers.split("\n");
