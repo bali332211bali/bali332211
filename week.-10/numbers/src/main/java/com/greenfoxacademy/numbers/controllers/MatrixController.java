@@ -35,12 +35,12 @@ public class MatrixController {
                           @ModelAttribute(value = "matrixNew") Matrix matrixNew,
                           RedirectAttributes redirectAttributes) {
 
-    if(!matrixService.isMatrixSquareMatrix(matrixStringDto.getNumbers())) {
+    if (!matrixService.isMatrixSquareMatrix(matrixStringDto.getNumbers())) {
       redirectAttributes.addFlashAttribute("notSquareMatrix", true);
       return "redirect:/";
     }
 
-    if(!matrixService.isMatrixIncreasing(matrixStringDto.getNumbers())) {
+    if (!matrixService.isMatrixIncreasing(matrixStringDto.getNumbers())) {
       redirectAttributes.addFlashAttribute("notIncreasing", true);
       return "redirect:/";
     }
@@ -55,17 +55,13 @@ public class MatrixController {
   public String date(@PathVariable(value = "id") long id,
                      @PathVariable(value = "idAnother") long idAnother,
                      Model model) {
-    if(matrixService.getById(id).getDate().compareTo(matrixService.getById(idAnother).getDate()) > 0) {
+    if (matrixService.getById(id).getDate().compareTo(matrixService.getById(idAnother).getDate()) > 0) {
       model.addAttribute("first", idAnother);
     } else {
       model.addAttribute("first", id);
     }
-
     return "date";
   }
-
-
-
 
 
 }

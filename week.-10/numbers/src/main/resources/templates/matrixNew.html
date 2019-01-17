@@ -12,16 +12,15 @@
 <div class="container">
 
     <h1>
-        <label for="dtoNew">Enter your matrix</label>
+        <label for="numbers">Enter your matrix</label>
     </h1>
 
     <div align="center" id="dtoNew">
         <form action="#" th:action="@{/}" th:object="${matrixStringDtoNew}" method="post">
-            <label for="numbers">Enter your matrix</label>
             </br>
-            <textarea name="numbers" id="numbers" th:field="*{numbers}"></textarea>
+            <textarea class="form-control" placeholder="Enter increasing square matrix" rows="5" name="numbers" id="numbers" th:field="*{numbers}"></textarea>
             </br>
-            <button type="submit" class="btn btn-primary">Done <span class="badge badge-light"></span></button>
+            <button type="submit" class="btn btn-primary btn-lg">Done <span class="badge badge-light"></span></button>
         </form>
     </div>
 
@@ -42,7 +41,6 @@
             </div>
         </div>
 
-        </br>
         <div th:switch="${notIncreasing}">
             <div th:case="true">
                 <h3 th:text="'Result '"></h3>

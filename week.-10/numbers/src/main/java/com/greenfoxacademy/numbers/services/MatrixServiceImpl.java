@@ -28,12 +28,12 @@ public class MatrixServiceImpl implements MatrixService {
   @Override
   public int[][] getMatrixFromString(String numbers) {
 
-    String[] splitNumbers = numbers.split("\n");
+    String[] splitNumbers = numbers.trim().split("\n");
 
     List<Integer> matrixNumbers = new ArrayList<>();
     int[][] matrix = new int[splitNumbers.length][splitNumbers.length];
 
-      for (int i = 0; i < splitNumbers.length; i++) {
+    for (int i = 0; i < splitNumbers.length; i++) {
       Arrays.stream(splitNumbers[i].trim().split(" "))
           .map(String::trim)
           .mapToInt(Integer::parseInt)
@@ -52,7 +52,7 @@ public class MatrixServiceImpl implements MatrixService {
     String[] splitNumbers = numbers.trim().split("\n");
 
     for (int i = 0; i < splitNumbers.length; i++) {
-      if(splitNumbers.length != getCountOfCharInString(' ', splitNumbers[i]) + 1) {
+      if (splitNumbers.length != getCountOfCharInString(' ', splitNumbers[i]) + 1) {
         return false;
       }
     }
@@ -62,7 +62,7 @@ public class MatrixServiceImpl implements MatrixService {
   private int getCountOfCharInString(char c, String string) {
     int count = 0;
     for (int i = 0; i < string.length(); i++) {
-      if(string.charAt(i) == c) {
+      if (string.charAt(i) == c) {
         count++;
       }
     }
@@ -81,7 +81,7 @@ public class MatrixServiceImpl implements MatrixService {
           .mapToInt(Integer::parseInt)
           .forEach(matrixNumbers::add);
 
-      if(!matrixNumbers.equals(matrixNumbers.stream().sorted(Integer::compareTo).collect(Collectors.toList()))) {
+      if (!matrixNumbers.equals(matrixNumbers.stream().sorted(Integer::compareTo).collect(Collectors.toList()))) {
         return false;
       }
       matrixNumbers.clear();
