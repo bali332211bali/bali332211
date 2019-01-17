@@ -11,5 +11,7 @@ public interface MatrixRepository extends CrudRepository<Matrix, Long> {
 
   List<Matrix> findAll();
 
+  Matrix findById(long id);
+
 
 }
