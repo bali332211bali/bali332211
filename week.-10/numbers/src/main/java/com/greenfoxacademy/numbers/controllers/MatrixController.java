@@ -47,7 +47,7 @@ public class MatrixController {
     matrixNew.setDate(new Date());
     matrixNew.setMatrix(matrixService.getMatrixFromString(matrixStringDto.getNumbers()));
     matrixService.saveMatrix(matrixNew);
-    redirectAttributes.addFlashAttribute("notAllowed", false);
+    redirectAttributes.addFlashAttribute("notSquareMatrix", false);
     return "redirect:/";
   }
 
