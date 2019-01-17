@@ -44,6 +44,7 @@ public class MatrixController {
       redirectAttributes.addFlashAttribute("notIncreasing", true);
       return "redirect:/";
     }
+
     matrixNew.setDate(new Date());
     matrixNew.setMatrix(matrixService.getMatrixFromString(matrixStringDto.getNumbers()));
     matrixService.saveMatrix(matrixNew);
