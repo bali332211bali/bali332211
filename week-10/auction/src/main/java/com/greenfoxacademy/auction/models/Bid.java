@@ -1,5 +1,7 @@
 package com.greenfoxacademy.auction.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,12 +10,14 @@ public class Bid {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private long id;
 
     private String name;
     private int amount;
 
     @ManyToOne
+    @JsonIgnore
     private Auction auction;
 
 

@@ -1,6 +1,7 @@
 package com.greenfoxacademy.auction.services;
 
 import com.greenfoxacademy.auction.models.Auction;
+import com.greenfoxacademy.auction.models.Bid;
 import com.greenfoxacademy.auction.repositories.AuctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,5 +45,12 @@ public class AuctionServiceImpl implements AuctionService {
             return bidamounts.stream().sorted().collect(Collectors.toList()).get(bidamounts.size() - 1);
         }
         return 0;
+    }
+
+    @Override
+    public void addBidToBidsForAuction(Bid bid, Auction auction) {
+        List<Bid> bids = auction.getBids();
+        bids.add(bid);
+        auction.setBids(bids);
     }
 }
