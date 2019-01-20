@@ -7,8 +7,7 @@ import java.util.List;
 @Entity
 @Table(name = "auctions")
 public class Auction {
-
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -20,7 +19,7 @@ public class Auction {
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "bid_id")
-    List<Bid> bids;
+    private List<Bid> bids;
 
     public long getId() {
         return id;

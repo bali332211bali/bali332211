@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -43,7 +44,6 @@ public class AuctionController {
     public String auctionById(@PathVariable(value = "id") long id,
                               Model model,
                               @ModelAttribute(value = "bidNew") Bid bidNew,
-                              RedirectAttributes redirectAttributes,
                               HttpSession session) {
 
         Auction auctionById = auctionService.getById(id);
@@ -53,6 +53,8 @@ public class AuctionController {
 
         if (auctionById.getExpiryDate().compareTo(new Date()) < 0) {
             model.addAttribute("auctionAvailable", false);
+        } else {
+            model.addAttribute("auctionEnds", auctionById.getExpiryDate());
         }
 
         if (session.getAttribute("bidBelowHighestBid") != null) {
@@ -68,6 +70,12 @@ public class AuctionController {
     @PostMapping("/auctionNew")
     public String auctionNew(@ModelAttribute(value = "auctionNew") Auction auctionNew) {
 
+        Instant instant = Instant.now();
+        instant = instant.plusSeconds(10);
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.now();
+        zonedDateTime = zonedDateTime.plusMinutes(1);
+
         Date currentDate = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(currentDate);
@@ -79,7 +87,7 @@ public class AuctionController {
         c.add(Calendar.SECOND, 1);
         Date currentDatePlusOne = c.getTime();
 
-        auctionNew.setExpiryDate(currentDatePlusOne);
+        auctionNew.setExpiryDate(Date.from(zonedDateTime.toInstant()));
         auctionService.saveAuction(auctionNew);
         return "redirect:/";
     }

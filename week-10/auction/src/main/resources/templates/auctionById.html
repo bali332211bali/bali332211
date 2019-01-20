@@ -18,7 +18,6 @@
 
     </br>
     <p>Highest bid amount is <b th:text="${highestBidAmount}"></b></p>
-    </br>
     <!----------------------------below highest bid---------------------------------->
     <div th:switch="${belowHighestBid}">
         <div th:case="true" class="alert alert-danger">
@@ -26,6 +25,7 @@
         </div>
     </div>
     <div th:if="${auctionAvailable}">
+        <p>Auction ends <b th:text="${auctionEnds}"></b></p>
         <form th:action="@{|/${auctionById.getId()}|}" th:object="${bidNew}" method="post">
             <b>Bid</b>
             </br>

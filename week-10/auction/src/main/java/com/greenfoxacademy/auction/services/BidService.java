@@ -9,5 +9,4 @@ public interface BidService {
 
     void setAuctionForBid(Auction auction, Bid bid);
 
-
 }
