@@ -6,6 +6,7 @@ import com.greenfoxacademy.auction.services.AuctionService;
 import com.greenfoxacademy.auction.services.BidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,30 +27,36 @@ public class BidController {
         this.auctionService = auctionService;
     }
 
+    @ModelAttribute(value = "belowHighestBid")
+    public boolean belowHighestBid() {
+        return false;
+    }
 
     @PostMapping("/{id}")
     public String auctionById(@ModelAttribute(value = "bidNew") Bid bidNew,
                               RedirectAttributes redirectAttributes,
                               @PathVariable(value = "id") long id,
-                              HttpSession session) {
+                              HttpSession session,
+                              Model model) {
 
         Auction auctionById = auctionService.getById(id);
+        redirectAttributes.addAttribute("auctionId", id);
 
         if(bidNew.getAmount() < auctionService.getHighestBid(auctionById)) {
             redirectAttributes.addFlashAttribute("belowHighestBid", true);
-            redirectAttributes.addAttribute("id", id);
             session.setAttribute("bidBelowHighestBid", bidNew);
-            return "redirect:/{id}";
+            return "redirect:/{auctionId}";
         }
 
-        if(auctionById.getExpiryDate().compareTo(new Date()) > 0) {
+        if(auctionById.getExpiryDate().compareTo(new Date()) < 0) {
+            model.addAttribute("auctionAvailable", false);
             return "redirect:/";
         }
 
+        bidService.setAuctionForBid(auctionById, bidNew);
         bidService.saveBid(bidNew);
         auctionService.addBidToBidsForAuction(bidNew, auctionById);
         auctionService.saveAuction(auctionById);
-        redirectAttributes.addAttribute("auctionId", id);
-        return "redirect:/{id}";
+        return "redirect:/{auctionId}";
     }
 }

@@ -12,14 +12,13 @@
 <div class="container">
 
     <div th:object="${auctionById}">
-        <b>Name of auction</b>
+        <p  class="badge badge-pill badge-warning">Name of auction</p>
         </br>
         <b th:text="${auctionById.getTitle()}"></b>
     </div>
 
-    </br>
     <b th:text="|Highest bid amount is ${highestBidAmount}|"></b>
-
+    </br>
     </br>
     <!----------------------------below highest bid---------------------------------->
     <div th:switch="${belowHighestBid}">
@@ -27,8 +26,6 @@
             Your bid is below the highest bid.
         </div>
     </div>
-
-    </br>
     <div th:if="${auctionAvailable}">
         <form th:action="@{|/${auctionById.getId()}|}" th:object="${bidNew}" method="post">
             <b>Bid</b>

@@ -32,11 +32,6 @@ public class AuctionController {
         return true;
     }
 
-    @ModelAttribute(value = "belowHighestBid")
-    public boolean belowHighestBid() {
-        return false;
-    }
-
     @GetMapping("/")
     public String auctions(@ModelAttribute(value = "auctionNew") Auction auctionNew,
                            Model model) {
@@ -56,18 +51,15 @@ public class AuctionController {
         model.addAttribute("auctionById", auctionById);
         model.addAttribute("highestBidAmount", auctionService.getHighestBid(auctionById));
 
-        if (auctionById.getExpiryDate().compareTo(new Date()) > 0) {
+        if (auctionById.getExpiryDate().compareTo(new Date()) < 0) {
             model.addAttribute("auctionAvailable", false);
         }
 
         if (session.getAttribute("bidBelowHighestBid") != null) {
             Bid bidBelowHighestBid = (Bid) session.getAttribute("bidBelowHighestBid");
-
-            bidNew.setAmount(bidBelowHighestBid.getAmount());
             bidNew.setName(bidBelowHighestBid.getName());
-
-            redirectAttributes.addAttribute("id", id);
-            return "redirect:/{id}";
+            bidNew.setAmount(bidBelowHighestBid.getAmount());
+            session.removeAttribute("bidBelowHighestBid");
         }
 
         return "auctionById";

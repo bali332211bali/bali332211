@@ -13,7 +13,7 @@ public class Auction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date expiryDate;
 
     private String title;

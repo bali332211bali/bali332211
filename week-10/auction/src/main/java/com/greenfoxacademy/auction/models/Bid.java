@@ -11,7 +11,7 @@ public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
-    private long id;
+    private long idBid;
 
     private String name;
     private int amount;
@@ -21,12 +21,12 @@ public class Bid {
     private Auction auction;
 
 
-    public long getId() {
-        return id;
+    public long getIdBid() {
+        return idBid;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdBid(long idBid) {
+        this.idBid = idBid;
     }
 
     public String getName() {
