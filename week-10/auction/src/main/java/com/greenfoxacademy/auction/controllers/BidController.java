@@ -42,14 +42,14 @@ public class BidController {
             return "redirect:/{id}";
         }
 
-        if(auctionById.getExpiryDate().compareTo(new Date()) < 0) {
+        if(auctionById.getExpiryDate().compareTo(new Date()) > 0) {
             return "redirect:/";
         }
-        
+
         bidService.saveBid(bidNew);
         auctionService.addBidToBidsForAuction(bidNew, auctionById);
         auctionService.saveAuction(auctionById);
-
+        redirectAttributes.addAttribute("auctionId", id);
         return "redirect:/{id}";
     }
 }
