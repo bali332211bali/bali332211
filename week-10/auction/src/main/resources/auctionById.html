@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+    <meta charset="UTF-8">
+    <title>Auction by id</title>
+</head>
+<body>
+<div class="container">
+
+    <div th:object="${auctionById}">
+        <b>Name of auction</b>
+        </br>
+        <b th:text="${auctionById.getTitle()}"></b>
+    </div>
+
+    </br>
+    <b th:text="|Highest bid amount is ${highestBidAmount}|"></b>
+
+    </br>
+    <!----------------------------below highest bid---------------------------------->
+    <div th:switch="${belowHighestBid}">
+        <div th:case="true" class="alert alert-danger">
+            Your bid is below the highest bid.
+        </div>
+    </div>
+
+
+    <div th:if="${auctionAvailable}">
+        <form th:action="@{|/${auctionById.getId()}|}" th:object="${bidNew}" method="post">
+            <b>Bid</b>
+            </br>
+            <label for="bidNewName">Name</label>
+            <input type="text" name="bidNewName" id="bidNewName" th:field="*{name}">
+            <label for="bidNewAmount">Amount</label>
+            <input type="number" name="bidNewAmount" id="bidNewAmount" th:field="*{amount}">
+            </br>
+            <button type="submit" class="btn btn-primary">Make <span class="badge badge-light">bid</span>
+            </button>
+        </form>
+    </div>
+
+    <div th:unless="${auctionAvailable}">
+        <b>The auction is over</b>
+    </div>
+</div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>
