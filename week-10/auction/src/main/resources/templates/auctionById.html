@@ -13,7 +13,7 @@
 
     <div th:object="${auctionById}">
         <b>Name of auction</b>
-        <h3><b th:text="${auctionById.getTitle()}" class="badge badge-pill badge-warning badge-lg"></b></h3>
+        <h3><button th:text="${auctionById.getTitle()}" class="badge badge-pill badge-warning badge-lg" disabled></button></h3>
     </div>
 
     </br>
