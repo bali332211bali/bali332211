@@ -42,13 +42,13 @@ public class BidController {
         Auction auctionById = auctionService.getById(id);
         redirectAttributes.addAttribute("auctionId", id);
 
-        if(bidNew.getAmount() < auctionService.getHighestBid(auctionById)) {
+        if (bidNew.getAmount() < auctionService.getHighestBid(auctionById)) {
             redirectAttributes.addFlashAttribute("belowHighestBid", true);
             session.setAttribute("bidBelowHighestBid", bidNew);
             return "redirect:/{auctionId}";
         }
 
-        if(auctionById.getExpiryDate().compareTo(new Date()) < 0) {
+        if (auctionById.getExpiryDate().compareTo(new Date()) < 0) {
             model.addAttribute("auctionAvailable", false);
             return "redirect:/";
         }

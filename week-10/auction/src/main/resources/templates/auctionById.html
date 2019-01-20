@@ -12,13 +12,12 @@
 <div class="container">
 
     <div th:object="${auctionById}">
-        <p  class="badge badge-pill badge-warning">Name of auction</p>
-        </br>
-        <b th:text="${auctionById.getTitle()}"></b>
+        <b>Name of auction</b>
+        <h3><b th:text="${auctionById.getTitle()}" class="badge badge-pill badge-warning badge-lg"></b></h3>
     </div>
 
-    <b th:text="|Highest bid amount is ${highestBidAmount}|"></b>
     </br>
+    <p>Highest bid amount is <b th:text="${highestBidAmount}"></b></p>
     </br>
     <!----------------------------below highest bid---------------------------------->
     <div th:switch="${belowHighestBid}">
@@ -40,8 +39,11 @@
         </form>
     </div>
 
+
     <div th:unless="${auctionAvailable}">
-        <b>The auction is over</b>
+        <div class="alert alert-danger" role="alert">
+            <b>The auction is over</b>
+        </div>
     </div>
 </div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
