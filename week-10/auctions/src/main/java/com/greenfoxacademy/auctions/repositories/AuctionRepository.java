@@ -1,6 +1,6 @@
-package com.greenfoxacademy.auction.repositories;
+package com.greenfoxacademy.auctions.repositories;
 
-import com.greenfoxacademy.auction.models.Auction;
+import com.greenfoxacademy.auctions.models.Auction;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

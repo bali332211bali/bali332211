@@ -1,8 +1,8 @@
-package com.greenfoxacademy.auction.services;
+package com.greenfoxacademy.auctions.services;
 
-import com.greenfoxacademy.auction.models.Auction;
-import com.greenfoxacademy.auction.models.Bid;
-import com.greenfoxacademy.auction.repositories.AuctionRepository;
+import com.greenfoxacademy.auctions.models.Auction;
+import com.greenfoxacademy.auctions.models.Bid;
+import com.greenfoxacademy.auctions.repositories.AuctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

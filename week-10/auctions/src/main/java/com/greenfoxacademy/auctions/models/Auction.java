@@ -1,4 +1,4 @@
-package com.greenfoxacademy.auction.models;
+package com.greenfoxacademy.auctions.models;
 
 import javax.persistence.*;
 import java.util.Date;

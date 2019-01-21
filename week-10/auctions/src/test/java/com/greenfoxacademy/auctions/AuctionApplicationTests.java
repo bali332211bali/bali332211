@@ -1,4 +1,4 @@
-package com.greenfoxacademy.auction;
+package com.greenfoxacademy.auctions;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

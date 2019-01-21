@@ -1,6 +1,6 @@
-package com.greenfoxacademy.auction.repositories;
+package com.greenfoxacademy.auctions.repositories;
 
-import com.greenfoxacademy.auction.models.Bid;
+import com.greenfoxacademy.auctions.models.Bid;
 import org.springframework.data.repository.CrudRepository;
 
 public interface BidRepository extends CrudRepository<Bid, Long> {

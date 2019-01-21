@@ -1,9 +1,9 @@
-package com.greenfoxacademy.auction.controllers;
+package com.greenfoxacademy.auctions.controllers;
 
 
-import com.greenfoxacademy.auction.models.Auction;
-import com.greenfoxacademy.auction.models.Bid;
-import com.greenfoxacademy.auction.services.AuctionService;
+import com.greenfoxacademy.auctions.models.Auction;
+import com.greenfoxacademy.auctions.models.Bid;
+import com.greenfoxacademy.auctions.services.AuctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,7 +1,7 @@
-package com.greenfoxacademy.auction.services;
+package com.greenfoxacademy.auctions.services;
 
-import com.greenfoxacademy.auction.models.Auction;
-import com.greenfoxacademy.auction.models.Bid;
+import com.greenfoxacademy.auctions.models.Auction;
+import com.greenfoxacademy.auctions.models.Bid;
 
 import java.util.List;
 

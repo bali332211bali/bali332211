@@ -1,4 +1,4 @@
-package com.greenfoxacademy.auction;
+package com.greenfoxacademy.auctions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
