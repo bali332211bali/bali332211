@@ -83,8 +83,8 @@ public class AuctionController {
 //    c.add(Calendar.MONTH, 1);
 //    c.add(Calendar.DATE, 1);
 //    c.add(Calendar.HOUR, 1);
-        c.add(Calendar.MINUTE, 1);
-        c.add(Calendar.SECOND, 1);
+//        c.add(Calendar.MINUTE, 1);
+        c.add(Calendar.SECOND, 10);
         Date currentDatePlusOne = c.getTime();
 
         auctionNew.setExpiryDate(Date.from(zonedDateTime.toInstant()));
