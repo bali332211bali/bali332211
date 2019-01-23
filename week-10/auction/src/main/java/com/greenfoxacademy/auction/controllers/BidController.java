@@ -49,8 +49,7 @@ public class BidController {
         }
 
         if (auctionById.getExpiryDate().compareTo(new Date()) < 0) {
-            model.addAttribute("auctionAvailable", false);
-            return "redirect:/";
+            return "redirect:/{auctionId}";
         }
 
         bidService.setAuctionForBid(auctionById, bidNew);
