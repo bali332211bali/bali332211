@@ -26,7 +26,8 @@
         </form>
     </div>
 
-    <table class="table table-borderless col-2">
+    <table class="table table-borderless col-2 thead-dark">
+        <th>dsfsdf</th>
         <tr class="bg-light mb-3">
             <div th:each="translation : ${translationsFromDto}">
                 <td><a th:href="@{|/suggest/${translation.getId()}|}" th:text="${translation.getHungarian()}"></a></td>
