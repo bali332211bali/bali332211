@@ -26,13 +26,17 @@
         </form>
     </div>
 
-    <div th:each="translation : ${translationsFromDto}">
-        <a th:href="@{|/suggest/${translation.getId()}|}" th:text="${translation.getHungarian()}"></a>
-    </div>
+    <table class="table table-borderless col-2">
+        <tr class="bg-light mb-3">
+            <div th:each="translation : ${translationsFromDto}">
+                <td><a th:href="@{|/suggest/${translation.getId()}|}" th:text="${translation.getHungarian()}"></a></td>
+            </div>
+            <div th:each="translation : ${translationsFromDto}">
+                <td><a th:href="@{|/suggest/${translation.getId()}|}" th:text="${translation.getCzech()}"></a></td>
+            </div>
+        </tr>
+    </table>
 
-    <div th:each="translation : ${translationsFromDto}">
-        <a th:href="@{|/suggest/${translation.getId()}|}" th:text="${translation.getCzech()}"></a>
-    </div>
 </div>
 </div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
