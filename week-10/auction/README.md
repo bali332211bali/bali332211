@@ -73,19 +73,3 @@ We are going to create a web-based auction application.
 
 ## Question
 Which statement would you use to to obtain information about table structure?
-
-DESCRIBE <table_name>;
-
-With this query, I can see the fields, the type of the data (varchar, etc), the actual value, and the key. For example, here is my table for the earlier exam:
-
-mysql> describe food_order;
-+---------+--------------+------+-----+---------+-------+
-| Field   | Type         | Null | Key | Default | Extra |
-+---------+--------------+------+-----+---------+-------+
-| id      | bigint(20)   | NO   | PRI | NULL    |       |
-| address | varchar(255) | YES  |     | NULL    |       |
-| base    | varchar(255) | YES  |     | NULL    |       |
-| name    | varchar(255) | YES  |     | NULL    |       |
-| topping | varchar(255) | YES  |     | NULL    |       |
-| status  | varchar(255) | YES  |     | NULL    |       |
-+---------+--------------+------+-----+---------+-------+
