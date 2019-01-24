@@ -1,5 +1,6 @@
 package com.greenfoxacademy.tourist.controllers;
 
+import com.greenfoxacademy.tourist.dtos.TranslationDto;
 import com.greenfoxacademy.tourist.models.Translation;
 import com.greenfoxacademy.tourist.services.TranslationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,12 @@ public class ApiController {
   }
 
   @PostMapping("/api/newTranslation")
-  public ResponseEntity<Translation> newTranslation(@RequestBody Translation translation) {
-    if(translation != null) {
+  public ResponseEntity<String> newTranslation(@RequestBody Translation translation) {
+    if(translation.getHungarian() != null && translation.getCzech() != null) {
       translationService.saveTranslation(translation);
-      return new ResponseEntity<>(translation, HttpStatus.OK);
+      return new ResponseEntity<>("Saved translation", HttpStatus.OK);
     }
-    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    return new ResponseEntity<>("Add hungarian and czech fields" , HttpStatus.BAD_REQUEST);
   }
 
 }
