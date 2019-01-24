@@ -1,6 +1,5 @@
 package com.greenfoxacademy.tourist.controllers;
 
-import com.greenfoxacademy.tourist.dtos.TranslationDto;
 import com.greenfoxacademy.tourist.models.Translation;
 import com.greenfoxacademy.tourist.services.TranslationService;
 import org.springframework.beans.factory.annotation.Autowired;
