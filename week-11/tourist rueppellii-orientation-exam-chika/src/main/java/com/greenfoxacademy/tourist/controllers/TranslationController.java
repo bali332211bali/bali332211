@@ -61,6 +61,7 @@ public class TranslationController {
   @PostMapping("/")
   public String translate(@ModelAttribute(value = "translationDto") TranslationDto translationDto,
                           Model model) {
+
     List<Translation> translationsFromDto = translationService.getTranslationsFromDto(translationDto);
 
     if(translationsFromDto.size() == 0) {
@@ -69,7 +70,6 @@ public class TranslationController {
 
     model.addAttribute("translationsFromDto", translationsFromDto);
     translationService.incrementCountForTranslations(translationsFromDto);
-
     return "translated";
   }
 

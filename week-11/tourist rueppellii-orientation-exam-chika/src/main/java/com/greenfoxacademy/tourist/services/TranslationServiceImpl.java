@@ -58,6 +58,7 @@ public class TranslationServiceImpl implements TranslationService {
 
   @Override
   public List<Translation> getTranslationsWithHighCounts() {
+//    return translationRepository.findHighest();
     List<Translation> translations = translationRepository.findAll();
     List<Translation> translationsWithHighCounts = new ArrayList<>();
 
