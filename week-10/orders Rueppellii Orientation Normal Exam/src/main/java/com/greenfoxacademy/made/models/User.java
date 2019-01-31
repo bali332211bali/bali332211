@@ -14,7 +14,7 @@ public class User {
   private String username;
   private String password;
 
-  @OneToMany(fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "user")
   private List<Order> orders;
 
   public long getId() {
