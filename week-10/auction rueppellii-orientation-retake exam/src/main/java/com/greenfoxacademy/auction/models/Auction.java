@@ -17,8 +17,7 @@ public class Auction {
 
     private String title;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bid_id")
+    @OneToMany(mappedBy = "auction")
     private List<Bid> bids;
 
     public long getId() {

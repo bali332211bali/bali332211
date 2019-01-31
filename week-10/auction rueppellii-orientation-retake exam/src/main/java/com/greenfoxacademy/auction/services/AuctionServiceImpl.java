@@ -3,6 +3,7 @@ package com.greenfoxacademy.auction.services;
 import com.greenfoxacademy.auction.models.Auction;
 import com.greenfoxacademy.auction.models.Bid;
 import com.greenfoxacademy.auction.repositories.AuctionRepository;
+import com.greenfoxacademy.auction.repositories.BidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,12 @@ import java.util.stream.Collectors;
 public class AuctionServiceImpl implements AuctionService {
 
     private AuctionRepository auctionRepository;
+    private BidRepository bidRepository;
 
     @Autowired
-    public AuctionServiceImpl(AuctionRepository auctionRepository) {
+    public AuctionServiceImpl(AuctionRepository auctionRepository, BidRepository bidRepository) {
         this.auctionRepository = auctionRepository;
+        this.bidRepository = bidRepository;
     }
 
     @Override
@@ -39,17 +42,19 @@ public class AuctionServiceImpl implements AuctionService {
     public int getHighestBid(Auction auction) {
         List<Integer> bidamounts = new ArrayList<>();
 
-        if(auction.getBids().size() >= 1) {
-            auction.getBids().forEach(s-> bidamounts.add(s.getAmount()));
+        List<Bid> bidsOfAuction = bidRepository.findAllByAuction(auction);
+
+        if(bidsOfAuction.size() >= 1) {
+            bidsOfAuction.forEach(s-> bidamounts.add(s.getAmount()));
             return bidamounts.stream().sorted().collect(Collectors.toList()).get(bidamounts.size() - 1);
         }
         return 0;
     }
 
-    @Override
-    public void addBidToBidsForAuction(Bid bid, Auction auction) {
-        List<Bid> bids = auction.getBids();
-        bids.add(bid);
-        auction.setBids(bids);
-    }
+//    @Override
+//    public void addBidToBidsForAuction(Bid bid, Auction auction) {
+//        List<Bid> bids = bidRepository.findAllByAuction(auction);
+//        bids.add(bid);
+//        auction.setBids(bids);
+//    }
 }

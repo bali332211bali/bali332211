@@ -6,6 +6,8 @@ import com.greenfoxacademy.auction.repositories.BidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BidServiceImpl implements BidService {
 
@@ -24,5 +26,10 @@ public class BidServiceImpl implements BidService {
     @Override
     public void setAuctionForBid(Auction auction, Bid bid) {
         bid.setAuction(auction);
+    }
+
+    @Override
+    public List<Bid> getAllByAuction(Auction auction) {
+        return bidRepository.findAllByAuction(auction);
     }
 }

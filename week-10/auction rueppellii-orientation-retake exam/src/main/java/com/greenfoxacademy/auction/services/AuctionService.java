@@ -15,6 +15,6 @@ public interface AuctionService {
 
     int getHighestBid(Auction auction);
 
-    void addBidToBidsForAuction(Bid bid, Auction auction);
+//    void addBidToBidsForAuction(Bid bid, Auction auction);
 
 }

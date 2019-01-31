@@ -54,7 +54,7 @@ public class BidController {
 
         bidService.setAuctionForBid(auctionById, bidNew);
         bidService.saveBid(bidNew);
-        auctionService.addBidToBidsForAuction(bidNew, auctionById);
+//        auctionService.addBidToBidsForAuction(bidNew, auctionById);
         auctionService.saveAuction(auctionById);
         return "redirect:/{auctionId}";
     }

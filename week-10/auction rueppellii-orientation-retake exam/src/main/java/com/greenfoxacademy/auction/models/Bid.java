@@ -1,7 +1,6 @@
 package com.greenfoxacademy.auction.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +17,7 @@ public class Bid {
 
     @ManyToOne
     @JsonIgnore
+    @JoinColumn(name = "auction_id")
     private Auction auction;
 
 
