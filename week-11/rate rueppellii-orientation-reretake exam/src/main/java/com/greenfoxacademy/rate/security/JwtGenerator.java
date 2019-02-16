@@ -20,7 +20,7 @@ public class JwtGenerator {
 
     return Jwts.builder()
         .setClaims(claims)
-        .signWith(SignatureAlgorithm.HS512, "DelegatingMethodAccessorImplinvokeDelegatingMethodAccessorImplDelegatingMethodAccessorImplinvokeDelegatingMethodAccessorImpl")
+        .signWith(SignatureAlgorithm.HS512, "GeneratorValidationSecretKeyGeneratorValidationSecretKeyGeneratorValidationSecretKeyGeneratorValidationSecretKey")
         .compact();
   }
 }

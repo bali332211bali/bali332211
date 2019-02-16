@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class JwtValidator {
 
 
-  private String secret = "DelegatingMethodAccessorImplinvokeDelegatingMethodAccessorImplDelegatingMethodAccessorImplinvokeDelegatingMethodAccessorImpl";
+  private String secret = "GeneratorValidationSecretKeyGeneratorValidationSecretKeyGeneratorValidationSecretKeyGeneratorValidationSecretKey";
 
   public JwtUser validate(String token) {
 
