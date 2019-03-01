@@ -36,8 +36,7 @@ public class BidController {
     public String auctionById(@ModelAttribute(value = "bidNew") Bid bidNew,
                               RedirectAttributes redirectAttributes,
                               @PathVariable(value = "id") long id,
-                              HttpSession session,
-                              Model model) {
+                              HttpSession session) {
 
         Auction auctionById = auctionService.getById(id);
         redirectAttributes.addAttribute("auctionId", id);
@@ -54,7 +53,6 @@ public class BidController {
 
         bidService.setAuctionForBid(auctionById, bidNew);
         bidService.saveBid(bidNew);
-//        auctionService.addBidToBidsForAuction(bidNew, auctionById);
         auctionService.saveAuction(auctionById);
         return "redirect:/{auctionId}";
     }

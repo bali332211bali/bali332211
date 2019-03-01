@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class JwtRestController {
 
-  private JwtGenerator jwtGenerator;
+    private JwtGenerator jwtGenerator;
 
   public JwtRestController(JwtGenerator jwtGenerator) {
-    this.jwtGenerator = jwtGenerator;
-  }
+      this.jwtGenerator = jwtGenerator;
+    }
 
-  @GetMapping("/login")
-  public String login() {
-    return "Successfully authenticated";
-  }
+    @GetMapping("/login")
+    public String login() {
+      return "Successfully authenticated";
+    }
 
-  @PostMapping("/token")
-  public String generate(@RequestBody JwtUser jwtUser) {
+    @PostMapping("/token")
+    public String generate(@RequestBody JwtUser jwtUser) {
     return jwtGenerator.generate(jwtUser);
   }
 }
